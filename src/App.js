@@ -1,8 +1,12 @@
 import React from "react";
+import { ProfileProvider } from "./context/ProfileContext";
+import Main from "./pages/Main";
 
 const App = () => {
   return (
-    <h1 className="text-3xl font-bold underline">Hello world, i'am zakie!</h1>
+    <ProfileProvider>
+      <Main />
+    </ProfileProvider>
   );
 };
 
