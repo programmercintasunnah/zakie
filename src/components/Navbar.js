@@ -13,10 +13,12 @@ const Navbar = () => {
     <nav className="flex items-center justify-between flex-wrap bg-gray-800 px-6 py-4">
       <div className="flex items-center">
         <img src={zakieimage} alt="profile" className="rounded-full mr-4" />
-        <div className="text-white font-bold text-xl">Zakie</div>
+        <div className="text-white font-bold text-xl sm:block hidden">
+          Zakie
+        </div>
       </div>
-      <div className="flex items-center">
-        <ul className="flex">
+      <div className="md:block hidden">
+        <ul className="flex items-center">
           <li className="mx-2">
             <a href="#" className="text-white hover:text-gray-400">
               Home
