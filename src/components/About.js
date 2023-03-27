@@ -31,7 +31,7 @@ const About = () => {
           <h2 className="text-2xl md:text-3xl font-bold mb-2 rounded-2xl bg-white p-2 text-center">
             About Me
           </h2>
-          <p className="text-sm md:text-base text-gray-800 bg-white rounded-xl p-2">
+          <p className="text-sm md:text-base text-gray-800 bg-white rounded-xl p-2 text-justify">
             {bioAbout}
           </p>
           <div className="mt-4 md:mt-6 flex flex-col md:flex-col items-start gap-3">

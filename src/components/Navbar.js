@@ -41,8 +41,8 @@ const Navbar = () => {
             </a>
           </li>
           <li className="mx-2">
-            <a href="#experience" className="text-white hover:text-gray-400">
-              Experience
+            <a href="#experiences" className="text-white hover:text-gray-400">
+              Experiences
             </a>
           </li>
           <li className="mx-2">
