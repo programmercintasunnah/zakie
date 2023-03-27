@@ -6,6 +6,7 @@ import {
   FaReact,
   FaDatabase,
   FaLinux,
+  FaCode,
 } from "react-icons/fa";
 
 const Skills = () => {
@@ -27,6 +28,14 @@ const Skills = () => {
         <div className="flex flex-col items-center justify-center">
           <FaJs className="text-6xl mb-2 text-yellow-500" />
           <span className="text-lg font-medium">JavaScript</span>
+        </div>
+        <div className="flex flex-col items-center justify-center">
+          <FaCode className="text-6xl mb-2 text-blue-500" />
+          <span className="text-lg font-medium">JQuery</span>
+        </div>
+        <div className="flex flex-col items-center justify-center">
+          <FaCode className="text-6xl mb-2 text-purple-500" />
+          <span className="text-lg font-medium">Ajax</span>
         </div>
         <div className="flex flex-col items-center justify-center">
           <FaReact className="text-6xl mb-2 text-blue-400" />
