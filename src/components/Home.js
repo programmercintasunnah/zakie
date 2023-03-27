@@ -4,7 +4,7 @@ import profilePic from "../assets/zakie-circle.png";
 import { useProfile } from "../context/ProfileContext";
 
 const Home = () => {
-  const { name } = useProfile();
+  const { name, bioHome, jobTitles } = useProfile();
 
   return (
     <div
@@ -21,17 +21,10 @@ const Home = () => {
       <div className="mt-4 md:mt-8 text-center">
         <h1 className="text-2xl md:text-4xl font-bold text-white">{name}</h1>
         <p className="text-2xl md:text-xl text-gray-300 mt-2 md:mt-4">
-          Full Stack Developer
+          {jobTitles}
         </p>
         <p className="text-gray-400 text-sm mb-6 px-6 md:px-10 text-justify sm:text-center">
-          I am a full-stack developer with a passion for building web
-          applications. I specialize in technologies such as React, PHP,
-          Laravel, JavaScript, JQuery, Ajax, MySQL, and Linux. With 2 years of
-          experience, I have developed a strong foundation in software
-          development principles and enjoy working on both front-end and
-          back-end development. I am a quick learner, problem-solver, and always
-          looking for ways to improve my skills. Let's work together to build
-          something great!
+          {bioHome}
         </p>
         <div className="mt-6 md:mt-8">
           <a

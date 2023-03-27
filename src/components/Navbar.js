@@ -7,8 +7,10 @@ import {
   FaYoutube,
 } from "react-icons/fa";
 import zakieimage from "../assets/zakie-circle.ico";
+import { useProfile } from "../context/ProfileContext";
 
 const Navbar = () => {
+  const { nickName } = useProfile();
   return (
     <nav className="flex items-center justify-between flex-wrap bg-gray-800 px-6 py-4">
       <div className="flex items-center">
@@ -18,7 +20,7 @@ const Navbar = () => {
           className="rounded-full border-red-400 border-2 mr-4"
         />
         <div className="text-white font-bold text-xl sm:block hidden">
-          Zakie
+          {nickName}
         </div>
       </div>
       <div className="md:block hidden">
