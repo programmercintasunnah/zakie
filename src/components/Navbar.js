@@ -29,27 +29,27 @@ const Navbar = () => {
             </a>
           </li>
           <li className="mx-2">
-            <a href="#" className="text-white hover:text-gray-400">
+            <a href="#about" className="text-white hover:text-gray-400">
               About
             </a>
           </li>
           <li className="mx-2">
-            <a href="#" className="text-white hover:text-gray-400">
+            <a href="#skills" className="text-white hover:text-gray-400">
               Skills
             </a>
           </li>
           <li className="mx-2">
-            <a href="#" className="text-white hover:text-gray-400">
+            <a href="#experience" className="text-white hover:text-gray-400">
               Experience
             </a>
           </li>
           <li className="mx-2">
-            <a href="#" className="text-white hover:text-gray-400">
+            <a href="#projects" className="text-white hover:text-gray-400">
               Projects
             </a>
           </li>
           <li className="mx-2">
-            <a href="#" className="text-white hover:text-gray-400">
+            <a href="#resume" className="text-white hover:text-gray-400">
               Resume
             </a>
           </li>
