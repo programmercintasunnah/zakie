@@ -7,7 +7,10 @@ const Home = () => {
   const { name } = useProfile();
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-800">
+    <div
+      id="home"
+      className="flex flex-col items-center justify-center min-h-screen bg-gray-800"
+    >
       <div className="w-48 h-48 md:w-64 md:h-64 rounded-full border-red-600 border-2 overflow-hidden">
         <img
           src={profilePic}
@@ -20,7 +23,7 @@ const Home = () => {
         <p className="text-2xl md:text-xl text-gray-300 mt-2 md:mt-4">
           Full Stack Developer
         </p>
-        <p className="text-gray-400 text-sm mb-6 px-6 md:px-10">
+        <p className="text-gray-400 text-sm mb-6 px-6 md:px-10 text-justify sm:text-center">
           I am a full-stack developer with a passion for building web
           applications. I specialize in technologies such as React, PHP,
           Laravel, JavaScript, JQuery, Ajax, MySQL, and Linux. With 2 years of
@@ -32,8 +35,9 @@ const Home = () => {
         </p>
         <div className="mt-6 md:mt-8">
           <a
-            href="#"
-            className="inline-flex hover:bg-red-500 bg-red-600 text-white font-bold py-3 px-6 rounded-lg items-center"
+            target="_blank"
+            href="https://drive.google.com/drive/folders/15O8n-smVbigJYJV2BbfdRZ2feBKaprLc?usp=share_link"
+            className="inline-flex hover:bg-red-500 bg-red-600 hover:border-2 hover:border-white text-white font-bold py-3 px-6 rounded-lg items-center"
           >
             <FaFilePdf className="mr-2" />
             Download CV

@@ -24,7 +24,7 @@ const Navbar = () => {
       <div className="md:block hidden">
         <ul className="flex items-center">
           <li className="mx-2">
-            <a href="#" className="text-white hover:text-gray-400">
+            <a href="#home" className="text-white hover:text-gray-400">
               Home
             </a>
           </li>
