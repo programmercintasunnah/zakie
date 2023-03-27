@@ -12,7 +12,11 @@ const Navbar = () => {
   return (
     <nav className="flex items-center justify-between flex-wrap bg-gray-800 px-6 py-4">
       <div className="flex items-center">
-        <img src={zakieimage} alt="profile" className="rounded-full mr-4" />
+        <img
+          src={zakieimage}
+          alt="profile"
+          className="rounded-full border-red-400 border-2 mr-4"
+        />
         <div className="text-white font-bold text-xl sm:block hidden">
           Zakie
         </div>
