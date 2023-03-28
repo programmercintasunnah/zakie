@@ -1,10 +1,19 @@
 import React from "react";
 import logoPragma from "../assets/pragma.png";
 import logoRakitek from "../assets/rakitek.jpg";
+import logoIbnuMasud from "../assets/ibnumasud.png";
 
 const experiencesData = [
   {
     id: 1,
+    logo: logoIbnuMasud,
+    company: "PPS Ibnu Mas'ud",
+    position: "Software Developer",
+    type: "Internship",
+    location: "Kampar, Indonesia",
+  },
+  {
+    id: 2,
     logo: logoPragma,
     company: "Pragma Informatika",
     position: "Web Developer",
@@ -12,7 +21,7 @@ const experiencesData = [
     location: "Bandung, Indonesia",
   },
   {
-    id: 2,
+    id: 3,
     logo: logoRakitek,
     company: "Rakitek",
     position: "Web Programmer",
