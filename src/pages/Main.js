@@ -6,11 +6,13 @@ import Navbar from "../components/Navbar";
 import Projects from "../components/Projects";
 import Resume from "../components/Resume";
 import Skills from "../components/Skills";
+import VerticalMenu from "../components/VerticalMenu";
 
 const Main = () => {
   return (
     <>
       <Navbar />
+      <VerticalMenu />
       <Home />
       <About />
       <Skills />
