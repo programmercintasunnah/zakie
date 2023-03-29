@@ -50,11 +50,6 @@ const Navbar = () => {
               Projects
             </a>
           </li>
-          <li className="mx-2">
-            <a href="#resume" className="text-white hover:text-gray-400">
-              Resume
-            </a>
-          </li>
         </ul>
       </div>
       <div className="flex items-center ml-4">
