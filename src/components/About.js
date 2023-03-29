@@ -13,7 +13,7 @@ const About = () => {
   const { bioAbout, email, github, wa, gitlab, address } = useProfile();
 
   return (
-    <div className="bg-white py-12 px-4 sm:px-6 lg:py-24 lg:px-8 overflow-x-hidden">
+    <div id="about" className="bg-white py-12 px-4 sm:px-6 lg:py-24 lg:px-8 overflow-x-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="lg:grid lg:grid-cols-2 lg:gap-8">
           <div className="relative mb-8 lg:mb-0 lg:flex-shrink-0">

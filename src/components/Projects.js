@@ -23,7 +23,7 @@ const projects = [
 
 const ProjectCard = ({ name, screenshot, description }) => {
   return (
-    <div className="bg-white shadow-md rounded-md p-6 m-4 max-w-sm">
+    <div className="bg-white shadow-md rounded-md p-6 m-2 max-w-sm">
       <img src={screenshot} alt={`Screenshot dari ${name}`} className="mb-4" />
       <h2 className="text-2xl font-bold mb-2">{name}</h2>
       <p className="text-gray-700">{description}</p>
