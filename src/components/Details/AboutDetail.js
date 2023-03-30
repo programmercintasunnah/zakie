@@ -1,11 +1,18 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import profilePic from "../../assets/zakie-dev.jpg";
+import { useProfile } from "../../context/ProfileContext";
 
 const personalData = [
   { label: "Nama", value: "Muhammad Zakie" },
   { label: "Tanggal Lahir", value: "22 September 1998" },
-  { label: "Alamat", value: "Jl. Nangka" },
+  { label: "Gender", value: "Male" },
+  {
+    label: "Alamat",
+    value:
+      "Jl. Gulama, Tengkerang Barat, Kec. Marpoyan Damai, Kota" +
+      "Pekanbaru, Riau 28124, Indonesia",
+  },
 ];
 
 const educationData = [
@@ -18,14 +25,14 @@ const familyData = [
   { label: "Ibu", value: "-" },
 ];
 
-const bio = "lorem dklskjdja dadnajkanda dadaudnajkdnjak";
-
 const AboutDetail = () => {
   const navigate = useNavigate();
 
   const handleBack = () => {
     navigate("/");
   };
+
+  const { bioAbout, email, github, wa, gitlab, address } = useProfile();
 
   return (
     <div className="container px-4 py-8 bg-gradient-to-b from-red-500 to-blue-400">
@@ -42,52 +49,61 @@ const AboutDetail = () => {
             <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">
               Bio
             </div>
-            <p className="mt-2 text-gray-500">{bio}</p>
-            <button
-              onClick={handleBack}
-              className="bg-gradient-to-r from-red-500 to-blue-400 text-white hover:text-white rounded-lg p-2 mt-4"
-            >
-              Back to Home
-            </button>
+            <p className="mt-2 text-gray-500">{bioAbout}</p>
+            <div className="text-center md:text-start">
+              <button
+                onClick={handleBack}
+                className="bg-gradient-to-r from-red-500 to-blue-400 text-white hover:text-white rounded-lg p-2 mt-4"
+              >
+                Back to Home
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div className="md:flex">
+          <div className="p-8">
+            <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">
+              Data Pribadi
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mt-4">
+              {personalData.map((data) => (
+                <div
+                  key={data.label}
+                  className="border border-gray-300 rounded-md shadow-sm w-auto"
+                >
+                  <div className="px-4 py-2 bg-gray-100 rounded-t-md">
+                    <h3 className="text-lg font-semibold">{data.label}</h3>
+                  </div>
+                  <div className="px-4 py-2">
+                    <p className="text-gray-700">{data.value}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
         <div className="md:flex">
           <div className="p-8 w-full">
             <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">
-              Data Pribadi
-            </div>
-            <table className="table-auto mt-2">
-              <tbody>
-                {personalData.map((data) => (
-                  <tr key={data.label}>
-                    <td className="border px-4 py-2 font-semibold">
-                      {data.label}
-                    </td>
-                    <td className="border px-4 py-2">{data.value}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
-        <div className="md:flex">
-          <div className="p-8 w-full">
-            <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">
               Pendidikan
             </div>
-            <table className="table-auto mt-2">
-              <tbody>
-                {educationData.map((data) => (
-                  <tr key={data.label}>
-                    <td className="border px-4 py-2 font-semibold">
-                      {data.label}
-                    </td>
-                    <td className="border px-4 py-2">{data.value}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mt-4">
+              {educationData.map((data) => (
+                <div
+                  key={data.label}
+                  className="border border-gray-300 rounded-md shadow-sm"
+                >
+                  <div className="px-4 py-2 bg-gray-100 rounded-t-md">
+                    <h3 className="text-lg font-semibold">{data.label}</h3>
+                  </div>
+                  <div className="px-4 py-2">
+                    <p className="text-gray-700">{data.value}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
