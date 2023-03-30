@@ -26,7 +26,7 @@ const Home = () => {
         <p className="text-gray-400 text-sm mb-6 px-6 md:px-10 text-justify sm:text-center">
           {bioHome}
         </p>
-        <div className="mt-6 md:mt-8">
+        <div className="mt-6 md:mt-8 mb-4">
           <a
             target="_blank"
             href="https://drive.google.com/drive/folders/15O8n-smVbigJYJV2BbfdRZ2feBKaprLc?usp=share_link"

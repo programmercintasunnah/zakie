@@ -6,14 +6,24 @@ import {
   FaGithub,
   FaGitlab,
 } from "react-icons/fa";
+import { useNavigate } from "react-router";
 import profilePic from "../assets/zakie-fotor.png";
 import { useProfile } from "../context/ProfileContext";
 
 const About = () => {
   const { bioAbout, email, github, wa, gitlab, address } = useProfile();
 
+  const navigate = useNavigate();
+
+  const handleToDetail = () => {
+    navigate("/about-detail");
+  };
+
   return (
-    <div id="about" className="bg-white py-12 px-4 sm:px-6 lg:py-24 lg:px-8 overflow-x-hidden">
+    <div
+      id="about"
+      className="bg-white py-12 px-4 sm:px-6 lg:py-24 lg:px-8 overflow-x-hidden"
+    >
       <div className="max-w-7xl mx-auto">
         <div className="lg:grid lg:grid-cols-2 lg:gap-8">
           <div className="relative mb-8 lg:mb-0 lg:flex-shrink-0">
@@ -68,7 +78,10 @@ const About = () => {
                 </a>
               </div>
               <div className="flex justify-center mt-12">
-                <button className="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full">
+                <button
+                  onClick={handleToDetail}
+                  className="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full"
+                >
                   Detail
                 </button>
               </div>
