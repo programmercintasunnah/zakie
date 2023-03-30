@@ -2,6 +2,7 @@ import React from "react";
 import logoPragma from "../assets/pragma.png";
 import logoRakitek from "../assets/rakitek.jpg";
 import logoIbnuMasud from "../assets/ibnumasud.png";
+import { useNavigate } from "react-router-dom";
 
 const experiences = [
   {
@@ -11,6 +12,7 @@ const experiences = [
     position: "Software Developer",
     type: "Internship",
     location: "Kampar, Indonesia",
+    path: "/ibnumasud",
   },
   {
     id: 2,
@@ -19,6 +21,7 @@ const experiences = [
     position: "Web Developer",
     type: "Full-time WFO",
     location: "Bandung, Indonesia",
+    path: "/pragma",
   },
   {
     id: 3,
@@ -27,10 +30,16 @@ const experiences = [
     position: "Web Programmer",
     type: "Full-time WFH",
     location: "Jakarta, Indonesia",
+    path: "/rakitek",
   },
 ];
 
 const Experiences = () => {
+  const navigate = useNavigate();
+
+  const handleToResume = (path) => {
+    navigate(path);
+  };
   return (
     <div id="experiences" className="bg-slate-200 min-h-screen py-8">
       <div className="container mx-auto px-4 lg:px-8">
@@ -55,7 +64,10 @@ const Experiences = () => {
                 <p className="text-gray-600">{experience.location}</p>
               </div>
               <div className="flex justify-end">
-                <button className="bg-gray-700 text-white px-4 py-2 rounded-lg font-bold uppercase cursor-pointer hover:bg-gray-800">
+                <button
+                  onClick={() => handleToResume(experience.path)}
+                  className="bg-gray-700 text-white px-4 py-2 rounded-lg font-bold uppercase cursor-pointer hover:bg-gray-800"
+                >
                   Resume
                 </button>
               </div>

@@ -30,7 +30,7 @@ export const ProfileProvider = ({ children }) => {
 
   useEffect(() => {
     hitungPengalaman();
-  }, [totalPengalaman]);
+  }, []);
 
   const [bioHome, setBioHome] = useState("");
 

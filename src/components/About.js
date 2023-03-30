@@ -6,7 +6,7 @@ import {
   FaGithub,
   FaGitlab,
 } from "react-icons/fa";
-import { useNavigate } from "react-router";
+import { useNavigate } from "react-router-dom";
 import profilePic from "../assets/zakie-fotor.png";
 import { useProfile } from "../context/ProfileContext";
 
