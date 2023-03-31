@@ -4,6 +4,14 @@ import CompanyLogo from "../../assets/ibnumasud.png";
 import ProjectImage from "../../assets/kp-app.png";
 import { FaHome, FaGithub, FaPhotoVideo, FaYoutube } from "react-icons/fa";
 const IbnuMasud = () => {
+  const company = "PPS IBNU MAS'UD KAMPAR";
+
+  const jobType = "Internship";
+
+  const position = "Software Developer";
+
+  const period = "Februari, 1st 2020 to March, 1st 2020";
+
   const about =
     "Pondok Pesantren Tahfidz Al-Qur'an Ibnu Mas'ud Kampar or better known " +
     "as PPS Ibnu Mas'ud is one of the tahfidz Islamic boarding schools " +
@@ -27,6 +35,7 @@ const IbnuMasud = () => {
   const handleBack = () => {
     navigate("/");
   };
+
   return (
     <div className="container px-4 py-8 bg-gradient-to-b from-green-500 to-blue-400">
       <div className="border-red-700 rounded-xl shadow-md overflow-hidden bg-white px-4 border-2 sm:px-6 lg:px-8 py-8">
@@ -37,7 +46,7 @@ const IbnuMasud = () => {
             className="h-16 md:h-20 w-auto mx-auto md:mx-0 mb-4 md:mb-0"
           />
           <h1 className="text-2xl font-bold text-center md:text-left ml-2">
-            PPS IBNU MAS'UD KAMPAR
+            {company}
           </h1>
           <div className="flex">
             <a
@@ -72,14 +81,12 @@ const IbnuMasud = () => {
             </button>
           </div>
         </div>
-        <p className="text-justify md:text-left">{about}</p>
+        <p className="text-justify md:text-left mt-3">{about}</p>
         <div className="flex flex-col sm:flex-row justify-between items-center my-4">
           <div className="mb-4 sm:mb-0">
-            <p className="text-lg font-bold">Job Type: Internship</p>
-            <p className="text-lg font-bold">Position: Software Developer</p>
-            <p className="text-md">
-              Work Period: 1 February 2020 to 1 March 2020
-            </p>
+            <p className="text-lg font-bold">Job Type: {jobType}</p>
+            <p className="text-lg font-bold">Position: {position}</p>
+            <p className="text-md">Work Period: {period}</p>
           </div>
           <div className="flex justify-center sm:justify-end items-center">
             <a
@@ -87,8 +94,8 @@ const IbnuMasud = () => {
               target="_blank"
               rel="noreferrer"
             >
-              <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                Download Project PDF
+              <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+                Show Project PDF
               </button>
             </a>
           </div>
