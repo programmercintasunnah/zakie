@@ -5,18 +5,18 @@ import ProjectImage from "../../assets/kp-app.png";
 import { FaHome, FaGithub, FaPhotoVideo, FaYoutube } from "react-icons/fa";
 const IbnuMasud = () => {
   const about =
-    "Pondok Pesantren Tahfidz Al-Qur'an Ibnu Mas'ud Kampar or better known" +
-    "as PPS Ibnu Mas'ud is one of the tahfidz Islamic boarding schools" +
-    "al-Qur'an which has salafus-sholeh manhaj in Kampar district under the foundation" +
-    "nida' as-sunnah. This school was founded in 2011 M/1432 H, so this school is still there" +
-    "relatively new and requires application, one of which is for attendance" +
-    "employee attendance and employee exit activities which are known there as" +
-    "journal designation. In general, the attendance and contents of the journal are still in attendance" +
-    "using paper. At this school the number of absences and the number of minutes out" +
-    "from the school yard there will be salary cuts for employees and there will be a plan" +
-    "The number of minutes late will also result in a pay cut. To solve the problem" +
-    "Based on this, an Information System for Employee Exit Activities and Absences was built" +
-    "Attendance of Employees with QR-Code who will use the waterfall method" +
+    "Pondok Pesantren Tahfidz Al-Qur'an Ibnu Mas'ud Kampar or better known " +
+    "as PPS Ibnu Mas'ud is one of the tahfidz Islamic boarding schools " +
+    "al-Qur'an which has salafus-sholeh manhaj in Kampar district under the foundation " +
+    "nida' as-sunnah. This school was founded in 2011 M/1432 H, so this school is still there " +
+    "relatively new and requires application, one of which is for attendance " +
+    "employee attendance and employee exit activities which are known there as " +
+    "journal designation. In general, the attendance and contents of the journal are still in attendance " +
+    "using paper. At this school the number of absences and the number of minutes out " +
+    "from the school yard there will be salary cuts for employees and there will be a plan " +
+    "The number of minutes late will also result in a pay cut. To solve the problem " +
+    "Based on this, an Information System for Employee Exit Activities and Absences was built " +
+    "Attendance of Employees with QR-Code who will use the waterfall method " +
     "and PHP programming language with MySQL DBMS.";
 
   const aboutProject =
