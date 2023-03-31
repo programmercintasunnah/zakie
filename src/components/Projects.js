@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import taApp from "../assets/ta-app.png";
 import kpApp from "../assets/kp-app.png";
 import darsalApp from "../assets/darsal-app.png";
+import { useNavigate } from "react-router";
 
 const projects = [
   {
@@ -39,6 +40,12 @@ const ProjectCard = ({ name, screenshot, description }) => {
 const Projects = () => {
   const [showMore, setShowMore] = useState(false);
 
+  const navigate = useNavigate();
+
+  const handleToMoreProjects = () => {
+    navigate("/project-detail");
+  };
+
   return (
     <div id="projects" className="min-h-screen p-8">
       <h1 className="text-3xl text-center font-bold mb-10">Projects</h1>
@@ -49,16 +56,14 @@ const Projects = () => {
             <ProjectCard key={index} {...project} />
           ))}
       </div>
-      {!showMore && (
-        <div className="flex justify-center mt-4">
-          <button
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-            onClick={() => setShowMore(true)}
-          >
-            View More Projects
-          </button>
-        </div>
-      )}
+      <div className="flex justify-center mt-4">
+        <button
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+          onClick={handleToMoreProjects}
+        >
+          View More Projects
+        </button>
+      </div>
     </div>
   );
 };
