@@ -77,8 +77,11 @@ const IbnuMasud = () => {
           <div className="mb-4 sm:mb-0">
             <p className="text-lg font-bold">Job Type: Internship</p>
             <p className="text-lg font-bold">Position: Software Developer</p>
+            <p className="text-md">
+              Work Period: 1 February 2020 to 1 March 2020
+            </p>
           </div>
-          <div className="flex justify-center sm:justify-end items-center mt-2">
+          <div className="flex justify-center sm:justify-end items-center">
             <a
               href="https://drive.google.com/file/d/1qmRCHve8qW3IZ11KZreBczAQFuaUd55z/view?usp=sharing"
               target="_blank"
