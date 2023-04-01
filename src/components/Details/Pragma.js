@@ -1,37 +1,32 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
 import CompanyLogo from "../../assets/pragma.png";
-import ProjectImage from "../../assets/kp-app.png";
 import { FaHome, FaFileAlt, FaPhotoVideo, FaYoutube } from "react-icons/fa";
+import Project1 from "../../assets/hsse-kalbar.png";
+import Project2 from "../../assets/hsse-kalimantan.png";
+import Project3 from "../../assets/waskita-app.png";
 
 const projects = [
   {
     id: "project1",
-    title: "Project 1",
+    title: "HSSE KALBAR",
     description: "Deskripsi singkat mengenai project 1",
-    imageUrl: "https://via.placeholder.com/640x480",
+    imageUrl: Project1,
     detailDescription: "Deskripsi detail mengenai project 1",
   },
   {
     id: "project2",
-    title: "Project 2",
+    title: "HSSE KALIMANTAN",
     description: "Deskripsi singkat mengenai project 2",
-    imageUrl: "https://via.placeholder.com/640x480",
+    imageUrl: Project2,
     detailDescription: "Deskripsi detail mengenai project 2",
   },
   {
     id: "project3",
-    title: "Project 3",
+    title: "WASKITA",
     description: "Deskripsi singkat mengenai project 3",
-    imageUrl: "https://via.placeholder.com/640x480",
+    imageUrl: Project3,
     detailDescription: "Deskripsi detail mengenai project 3",
-  },
-  {
-    id: "project4",
-    title: "Project 4",
-    description: "Deskripsi singkat mengenai project 4",
-    imageUrl: "https://via.placeholder.com/640x480",
-    detailDescription: "Deskripsi detail mengenai project 4",
   },
 ];
 
@@ -143,7 +138,7 @@ const Pragma = () => {
                 name="project-select"
                 value={selectedProject || ""}
                 onChange={handleProjectSelect}
-                className="block w-full mt-1 rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                className="block w-full mt-1 p-2 rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
               >
                 <option value="">Pilih</option>
                 {projects.map((project) => (
@@ -161,7 +156,11 @@ const Pragma = () => {
             </div>
           </div>
           <div className="w-full md:w-3/4 pt-4">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div
+              className={`grid ${
+                selectedProject ? "grid-cols-1" : "md:grid-cols-3"
+              } gap-4`}
+            >
               {filteredProjects.map((project) => (
                 <div
                   key={project.id}
@@ -170,24 +169,18 @@ const Pragma = () => {
                   <img
                     src={project.imageUrl}
                     alt="Screenshot"
-                    className="w-full h-48 object-cover"
+                    className="w-full h-auto"
                   />
                   <div className="p-4">
                     <h3 className="text-lg font-medium text-gray-900">
                       {project.title}
                     </h3>
-                    <p class="text-sm text-gray-500">{project.description}</p>
+                    {selectedProject && (
+                      <p class="text-sm text-gray-500">{project.description}</p>
+                    )}
                   </div>
                 </div>
               ))}
-            </div>
-            <div class="mt-8">
-              <h2 class="text-lg font-medium text-gray-900">Detail Project</h2>
-              <img src="" alt="Screenshot" class="w-full h-full object-cover" />
-              <p>
-                Deskripsi detail mengenai project yang dipilih akan muncul di
-                sini.
-              </p>
             </div>
           </div>
         </div>
