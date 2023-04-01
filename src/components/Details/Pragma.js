@@ -135,7 +135,7 @@ const Pragma = () => {
           </div>
         </div>
         <div className="flex flex-col md:flex-row">
-          <div className="w-full md:w-1/4">
+          <div className="w-full md:w-1/4 p-4">
             <div className="pt-4 pr-4">
               <label htmlFor="project-select">Pilih Project:</label>
               <select
@@ -160,7 +160,7 @@ const Pragma = () => {
               </button>
             </div>
           </div>
-          <div className="w-full md:w-3/4">
+          <div className="w-full md:w-3/4 pt-4">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {filteredProjects.map((project) => (
                 <div
