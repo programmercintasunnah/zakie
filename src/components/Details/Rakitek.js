@@ -55,8 +55,8 @@ const Rakitek = () => {
     : projects;
 
   return (
-    <div className="container px-4 py-8 bg-gradient-to-b from-blue-400 to-blue-800">
-      <div className="border-blue-700 rounded-xl shadow-md overflow-hidden bg-white px-4 border-2 sm:px-6 lg:px-8 py-8">
+    <div className="min-h-screen container px-4 py-8 bg-gradient-to-b from-blue-400 to-blue-800">
+      <div className="min-h-screen border-blue-700 rounded-xl shadow-md overflow-hidden bg-white px-4 border-2 sm:px-6 lg:px-8 py-8">
         <div className="flex flex-col md:flex-row justify-between items-center px-12 py-2">
           <img
             src={CompanyLogo}
