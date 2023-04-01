@@ -100,7 +100,7 @@ const ProjectDetail = () => {
         <div className="flex flex-col md:flex-row">
           <div className="w-full md:w-1/4 p-4">
             <div className="pt-4 pr-4">
-              <label htmlFor="project-select">Pilih Project:</label>
+              <label htmlFor="project-select">Choose Project:</label>
               <select
                 id="project-select"
                 name="project-select"
@@ -108,7 +108,7 @@ const ProjectDetail = () => {
                 onChange={handleProjectSelect}
                 className="block w-full mt-1 rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
               >
-                <option value="">Pilih</option>
+                <option value="">Choose</option>
                 {projects.map((project) => (
                   <option key={project.id} value={project.id}>
                     {project.title}
@@ -143,14 +143,6 @@ const ProjectDetail = () => {
                   </div>
                 </div>
               ))}
-            </div>
-            <div class="mt-8">
-              <h2 class="text-lg font-medium text-gray-900">Detail Project</h2>
-              <img src="" alt="Screenshot" class="w-full h-full object-cover" />
-              <p>
-                Deskripsi detail mengenai project yang dipilih akan muncul di
-                sini.
-              </p>
             </div>
           </div>
         </div>

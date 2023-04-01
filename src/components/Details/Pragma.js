@@ -132,7 +132,7 @@ const Pragma = () => {
         <div className="flex flex-col md:flex-row">
           <div className="w-full md:w-1/4 p-4">
             <div className="pt-4 pr-4">
-              <label htmlFor="project-select">Pilih Project:</label>
+              <label htmlFor="project-select">Choose Project:</label>
               <select
                 id="project-select"
                 name="project-select"
@@ -140,7 +140,7 @@ const Pragma = () => {
                 onChange={handleProjectSelect}
                 className="block w-full mt-1 p-2 rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
               >
-                <option value="">Pilih</option>
+                <option value="">Choose</option>
                 {projects.map((project) => (
                   <option key={project.id} value={project.id}>
                     {project.title}
