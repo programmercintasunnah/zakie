@@ -9,13 +9,13 @@ const projects = [
   {
     id: "project1",
     title: "Rakomsis",
-    description: "Deskripsi singkat mengenai project 1",
+    description: "using laravel, mysql, api",
     imageUrl: Project1,
   },
   {
     id: "project2",
     title: "Portal Rakomsis",
-    description: "Deskripsi singkat mengenai project 2",
+    description: "using vue js",
     imageUrl: Project2,
   },
 ];
