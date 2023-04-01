@@ -1,36 +1,28 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
-import ProjectImage from "../../assets/kp-app.png";
 import { FaHome, FaFileAlt, FaPhotoVideo, FaYoutube } from "react-icons/fa";
+import Project1 from "../../assets/ta-app.png";
+import Project2 from "../../assets/kp-app.png";
+import Project3 from "../../assets/darsal-app.png";
 
 const projects = [
   {
     id: "project1",
-    title: "Project 1",
-    description: "Deskripsi singkat mengenai project 1",
-    imageUrl: "https://via.placeholder.com/640x480",
-    detailDescription: "Deskripsi detail mengenai project 1",
+    title: "E-Voting Blockchain",
+    description: "using react js and ethereum blockchain",
+    imageUrl: Project1,
   },
   {
     id: "project2",
-    title: "Project 2",
-    description: "Deskripsi singkat mengenai project 2",
-    imageUrl: "https://via.placeholder.com/640x480",
-    detailDescription: "Deskripsi detail mengenai project 2",
+    title: "Presence App",
+    description: "using codeigniter 3 and mysql",
+    imageUrl: Project2,
   },
   {
     id: "project3",
-    title: "Project 3",
-    description: "Deskripsi singkat mengenai project 3",
-    imageUrl: "https://via.placeholder.com/640x480",
-    detailDescription: "Deskripsi detail mengenai project 3",
-  },
-  {
-    id: "project4",
-    title: "Project 4",
-    description: "Deskripsi singkat mengenai project 4",
-    imageUrl: "https://via.placeholder.com/640x480",
-    detailDescription: "Deskripsi detail mengenai project 4",
+    title: "Darsalafy App",
+    description: "using laravel 8 and mysql",
+    imageUrl: Project3,
   },
 ];
 
@@ -58,8 +50,8 @@ const ProjectDetail = () => {
     : projects;
 
   return (
-    <div className="container px-4 py-8 bg-gradient-to-b from-blue-500 to-red-400">
-      <div className="border-blue-700 rounded-xl shadow-md overflow-hidden bg-white px-4 border-2 sm:px-6 lg:px-8 py-8">
+    <div className="min-h-screen container px-4 py-8 bg-gradient-to-b from-blue-500 to-red-400">
+      <div className="min-h-screen border-blue-700 rounded-xl shadow-md overflow-hidden bg-white px-4 border-2 sm:px-6 lg:px-8 py-8">
         <div className="flex flex-col md:flex-row justify-between items-center px-12 py-2">
           <h1 className="text-2xl font-bold text-center md:text-left ml-2">
             {title}
@@ -106,7 +98,7 @@ const ProjectDetail = () => {
                 name="project-select"
                 value={selectedProject || ""}
                 onChange={handleProjectSelect}
-                className="block w-full mt-1 rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                className="block w-full mt-1 p-2 rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
               >
                 <option value="">Choose</option>
                 {projects.map((project) => (
@@ -124,7 +116,11 @@ const ProjectDetail = () => {
             </div>
           </div>
           <div className="w-full md:w-3/4 pt-4">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div
+              className={`grid ${
+                selectedProject ? "grid-cols-1" : "md:grid-cols-3"
+              } gap-4`}
+            >
               {filteredProjects.map((project) => (
                 <div
                   key={project.id}
@@ -133,13 +129,15 @@ const ProjectDetail = () => {
                   <img
                     src={project.imageUrl}
                     alt="Screenshot"
-                    className="w-full h-48 object-cover"
+                    className="w-full h-auto"
                   />
                   <div className="p-4">
                     <h3 className="text-lg font-medium text-gray-900">
                       {project.title}
                     </h3>
-                    <p class="text-sm text-gray-500">{project.description}</p>
+                    {selectedProject && (
+                      <p class="text-sm text-gray-500">{project.description}</p>
+                    )}
                   </div>
                 </div>
               ))}
