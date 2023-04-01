@@ -41,12 +41,6 @@ const About = () => {
             <h2 className="text-2xl font-bold mb-2">Contact Information</h2>
             <div className="flex flex-col space-y-4">
               <div className="flex items-center">
-                <FaEnvelope className="text-gray-600 mr-2" />
-                <a href={`mailto:${email}`} className="text-lg text-gray-900">
-                  {email}
-                </a>
-              </div>
-              <div className="flex items-center">
                 <FaWhatsapp className="text-gray-600 mr-2" />
                 <a
                   href={`https://wa.me/${wa}`}
@@ -54,10 +48,6 @@ const About = () => {
                 >
                   {wa}
                 </a>
-              </div>
-              <div className="flex items-center">
-                <FaMapMarker className="text-gray-600 mr-2" />
-                <p className="text-lg text-gray-900">{address}</p>
               </div>
               <div className="flex items-center">
                 <FaGithub className="text-gray-600 mr-2" />
@@ -76,6 +66,16 @@ const About = () => {
                 >
                   {gitlab}
                 </a>
+              </div>
+              <div className="flex items-center">
+                <FaEnvelope className="text-gray-600 mr-2" />
+                <a href={`mailto:${email}`} className="text-lg text-gray-900">
+                  {email}
+                </a>
+              </div>
+              <div className="flex items-center">
+                <FaMapMarker className="text-gray-600 mr-2" />
+                <p className="text-lg text-gray-900">{address}</p>
               </div>
               <div className="flex justify-center mt-12">
                 <button
