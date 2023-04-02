@@ -4,8 +4,12 @@ import { FaHome, FaFileAlt, FaPhotoVideo, FaYoutube } from "react-icons/fa";
 import Project1 from "../../assets/ta-app.png";
 import Project2 from "../../assets/kp-app.png";
 import Project3 from "../../assets/darsal-app.png";
+import { useProfile } from "../../context/ProfileContext";
+import { motion } from "framer-motion";
 
 const ProjectDetail = () => {
+  const { textVariants, buttonVariants, imageVariants } = useProfile();
+
   const title = "MY PROJECTS";
 
   const navigate = useNavigate();
@@ -100,12 +104,22 @@ const ProjectDetail = () => {
     <div className="min-h-screen container px-4 py-8 bg-gradient-to-b from-blue-500 to-red-400">
       <div className="min-h-screen border-blue-700 rounded-xl shadow-md overflow-hidden bg-white px-4 border-2 sm:px-6 lg:px-8 py-8">
         <div className="flex flex-col md:flex-row justify-between items-center px-12 py-2">
-          <h1 className="text-2xl font-bold text-center md:text-left ml-2">
+          <motion.h1
+            variants={textVariants}
+            initial="initial"
+            animate="animate"
+            transition={{ duration: 0.5 }}
+            className="text-2xl font-bold text-center md:text-left ml-2"
+          >
             {title}
-          </h1>
+          </motion.h1>
           <div className="flex">
             {links.map((link) => (
-              <a
+              <motion.a
+                variants={textVariants}
+                initial="initial"
+                animate="animate"
+                transition={{ duration: 0.5, delay: 0.1 }}
                 key={link.href}
                 href={link.href}
                 target="_blank"
@@ -113,19 +127,29 @@ const ProjectDetail = () => {
                 className="p-2 rounded-full bg-blue-500 text-white hover:bg-blue-700 mr-2"
               >
                 {link.icon}
-              </a>
+              </motion.a>
             ))}
-            <button
+            <motion.button
+              variants={buttonVariants}
+              initial="initial"
+              animate="animate"
+              transition={{ duration: 0.5, delay: 0.2 }}
               onClick={handleBack}
               className="p-2 rounded-full bg-blue-500 text-white hover:bg-blue-700 ml-auto"
             >
               <FaHome />
-            </button>
+            </motion.button>
           </div>
         </div>
         <div className="flex flex-col md:flex-row">
           <div className="w-full md:w-1/4 p-4">
-            <div className="pt-4 pr-4">
+            <motion.div
+              variants={textVariants}
+              initial="initial"
+              animate="animate"
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="pt-4 pr-4"
+            >
               <label htmlFor="project-select">Choose Project:</label>
               <select
                 id="project-select"
@@ -147,7 +171,7 @@ const ProjectDetail = () => {
               >
                 Clear
               </button>
-            </div>
+            </motion.div>
           </div>
           <div className="w-full md:w-3/4 pt-4">
             <div
@@ -156,7 +180,11 @@ const ProjectDetail = () => {
               } gap-4`}
             >
               {filteredProjects.map((project) => (
-                <div
+                <motion.div
+                  variants={imageVariants}
+                  initial="initial"
+                  animate="animate"
+                  transition={{ duration: 0.5, delay: 0.4 }}
                   key={project.id}
                   className="bg-white rounded-lg shadow-lg overflow-hidden"
                 >
@@ -173,7 +201,7 @@ const ProjectDetail = () => {
                       <p class="text-sm text-gray-500">{project.description}</p>
                     )}
                   </div>
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>

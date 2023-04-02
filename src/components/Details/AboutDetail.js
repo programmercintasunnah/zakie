@@ -8,6 +8,7 @@ import Certificate3 from "../../assets/certificate3.png";
 import Certificate4 from "../../assets/certificate4.png";
 import Certificate5 from "../../assets/certificate5.png";
 import Certificate6 from "../../assets/certificate6.png";
+import { motion } from "framer-motion";
 
 const personalData = [
   { label: "Name", value: "Muhammad Zakie" },
@@ -84,43 +85,76 @@ const AboutDetail = () => {
     navigate("/");
   };
 
-  const { bioAbout, email, github, wa, gitlab, address } = useProfile();
+  const { bioAbout, textVariants, buttonVariants, imageVariants } =
+    useProfile();
 
   return (
     <div className="container px-4 py-8 bg-gradient-to-b from-red-500 to-blue-400">
       <div className="border-2 border-red-700 rounded-xl shadow-md overflow-hidden bg-white">
         <div className="md:flex">
           <div className="md:flex-shrink-0">
-            <img
+            <motion.img
+              variants={imageVariants}
+              initial="initial"
+              animate="animate"
+              transition={{ duration: 0.5 }}
               className="h-48 w-full object-cover md:w-48"
               src={profilePic}
               alt="Profile"
             />
           </div>
           <div className="p-8">
-            <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">
+            <motion.div
+              variants={textVariants}
+              initial="initial"
+              animate="animate"
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="uppercase tracking-wide text-sm text-indigo-500 font-semibold"
+            >
               Bio
-            </div>
-            <p className="mt-2 text-gray-500">{bioAbout}</p>
+            </motion.div>
+            <motion.p
+              variants={textVariants}
+              initial="initial"
+              animate="animate"
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="mt-2 text-gray-500"
+            >
+              {bioAbout}
+            </motion.p>
             <div className="text-center md:text-start">
-              <button
+              <motion.button
+                variants={buttonVariants}
+                initial="initial"
+                animate="animate"
+                transition={{ duration: 0.5, delay: 0.3 }}
                 onClick={handleBack}
                 className="bg-gradient-to-r from-red-500 to-blue-400 text-white hover:text-white rounded-lg p-2 mt-4"
               >
                 Back to Home
-              </button>
+              </motion.button>
             </div>
           </div>
         </div>
 
         <div className="md:flex">
           <div className="p-8">
-            <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">
+            <motion.div
+              variants={textVariants}
+              initial="initial"
+              animate="animate"
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="uppercase tracking-wide text-sm text-indigo-500 font-semibold"
+            >
               Personal Data
-            </div>
+            </motion.div>
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mt-4">
               {personalData.map((data) => (
-                <div
+                <motion.div
+                  variants={imageVariants}
+                  initial="initial"
+                  animate="animate"
+                  transition={{ duration: 0.5, delay: 0.5 }}
                   key={data.label}
                   className="border border-gray-300 rounded-md shadow-sm w-auto"
                 >
@@ -130,7 +164,7 @@ const AboutDetail = () => {
                   <div className="px-4 py-2">
                     <p className="text-gray-700">{data.value}</p>
                   </div>
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>
@@ -138,12 +172,22 @@ const AboutDetail = () => {
 
         <div className="md:flex">
           <div className="p-8 w-full">
-            <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">
+            <motion.div
+              variants={textVariants}
+              initial="initial"
+              animate="animate"
+              transition={{ duration: 0.5, delay: 0.6 }}
+              className="uppercase tracking-wide text-sm text-indigo-500 font-semibold"
+            >
               Education
-            </div>
+            </motion.div>
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mt-4">
               {educationData.map((data) => (
-                <div
+                <motion.div
+                  variants={textVariants}
+                  initial="initial"
+                  animate="animate"
+                  transition={{ duration: 0.5, delay: 0.6 }}
                   key={data.label}
                   className="border border-gray-300 rounded-md shadow-sm"
                 >
@@ -156,7 +200,7 @@ const AboutDetail = () => {
                   <div className="px-4 py-2">
                     <p className="text-gray-700">{data.period}</p>
                   </div>
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>
@@ -164,13 +208,23 @@ const AboutDetail = () => {
 
         <div className="md:flex">
           <div className="p-8 w-full">
-            <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">
+            <motion.div
+              variants={textVariants}
+              initial="initial"
+              animate="animate"
+              transition={{ duration: 0.5, delay: 0.7 }}
+              className="uppercase tracking-wide text-sm text-indigo-500 font-semibold"
+            >
               Certificates
-            </div>
+            </motion.div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
               {certificates.map((certificate) => (
                 <div key={certificate.id} className="col-span-1">
-                  <img
+                  <motion.img
+                    variants={imageVariants}
+                    initial="initial"
+                    animate="animate"
+                    transition={{ duration: 0.5, delay: 0.7 }}
                     src={certificate.image}
                     alt={certificate.alt}
                     className="w-full h-auto"

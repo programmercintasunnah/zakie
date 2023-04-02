@@ -3,6 +3,8 @@ import logoPragma from "../assets/pragma.png";
 import logoRakitek from "../assets/rakitek.jpg";
 import logoIbnuMasud from "../assets/ibnumasud.png";
 import { useNavigate } from "react-router-dom";
+import { useProfile } from "../context/ProfileContext";
+import { motion } from "framer-motion";
 
 const experiences = [
   {
@@ -40,13 +42,27 @@ const Experiences = () => {
   const handleToResume = (path) => {
     navigate(path);
   };
+  const { textVariants, imageVariants } = useProfile();
+
   return (
     <div id="experiences" className="bg-slate-200 min-h-screen py-8">
       <div className="container mx-auto px-4 lg:px-8">
-        <h1 className="text-3xl font-bold text-center mb-10">Experiences</h1>
+        <motion.h1
+          variants={textVariants}
+          initial="initial"
+          animate="animate"
+          transition={{ duration: 0.5 }}
+          className="text-3xl font-bold text-center mb-10"
+        >
+          Experiences
+        </motion.h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {experiences.map((experience) => (
-            <div
+            <motion.div
+              variants={imageVariants}
+              initial="initial"
+              animate="animate"
+              transition={{ duration: 0.5, delay: 0.2 }}
               key={experience.id}
               className="bg-white shadow-md rounded-lg p-6"
             >
@@ -71,7 +87,7 @@ const Experiences = () => {
                   Resume
                 </button>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

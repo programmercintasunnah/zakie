@@ -70,6 +70,22 @@ export const ProfileProvider = ({ children }) => {
   );
   const [jobTitles, setJobTitles] = useState("Full Stack Developer");
 
+  //animasi with framer motion
+  const textVariants = {
+    initial: { opacity: 0, y: -20 },
+    animate: { opacity: 1, y: 0 },
+  };
+
+  const buttonVariants = {
+    initial: { opacity: 0, x: 20 },
+    animate: { opacity: 1, x: 0 },
+  };
+
+  const imageVariants = {
+    initial: { scale: 0 },
+    animate: { scale: 1 },
+  };
+
   return (
     <ProfileContext.Provider
       value={{
@@ -83,6 +99,9 @@ export const ProfileProvider = ({ children }) => {
         gitlab,
         address,
         jobTitles,
+        textVariants,
+        buttonVariants,
+        imageVariants,
       }}
     >
       {children}

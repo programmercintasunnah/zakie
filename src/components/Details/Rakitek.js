@@ -4,6 +4,29 @@ import CompanyLogo from "../../assets/rakitek.jpg";
 import { FaHome, FaFileAlt, FaPhotoVideo, FaYoutube } from "react-icons/fa";
 import Project1 from "../../assets/rakomsis-app.png";
 import Project2 from "../../assets/portal-rakomsis.png";
+import { motion } from "framer-motion";
+import { useProfile } from "../../context/ProfileContext";
+
+const links = [
+  {
+    id: 1,
+    title: "Photo/Video",
+    link: "https://drive.google.com/file/d/14JePYsb-7cy9qWyX7vCxIr8CHy0t7jp5/view?usp=share_link",
+    icon: <FaPhotoVideo />,
+  },
+  {
+    id: 2,
+    title: "YouTube",
+    link: "https://www.youtube.com/watch?v=6ctdEJ5wctA&list=PLGwA21JLpwoMtXpnQHnhv0kasbL2tXWlt&index=24",
+    icon: <FaYoutube />,
+  },
+  {
+    id: 3,
+    title: "File",
+    link: "https://drive.google.com/file/d/1hSvLMee5s4q_e4BjKAPmXtS4B7Mmc-bJ/view?usp=share_link",
+    icon: <FaFileAlt />,
+  },
+];
 
 const projects = [
   {
@@ -21,6 +44,8 @@ const projects = [
 ];
 
 const Rakitek = () => {
+  const { textVariants, buttonVariants, imageVariants } = useProfile();
+
   const company = "Ruang Kreasi Inovasi Teknologi";
 
   const jobType = "Full-time WFH";
@@ -58,39 +83,40 @@ const Rakitek = () => {
     <div className="min-h-screen container px-4 py-8 bg-gradient-to-b from-blue-400 to-blue-800">
       <div className="min-h-screen border-blue-700 rounded-xl shadow-md overflow-hidden bg-white px-4 border-2 sm:px-6 lg:px-8 py-8">
         <div className="flex flex-col md:flex-row justify-between items-center px-12 py-2">
-          <img
+          <motion.img
+            variants={imageVariants}
+            initial="initial"
+            animate="animate"
+            transition={{ duration: 0.5 }}
             src={CompanyLogo}
             alt="Company Logo"
             className="h-16 md:h-20 w-auto mx-auto md:mx-0 mb-4 md:mb-0"
           />
-          <h1 className="text-2xl font-bold text-center md:text-left ml-2">
+          <motion.h1
+            variants={textVariants}
+            initial="initial"
+            animate="animate"
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="text-2xl font-bold text-center md:text-left ml-2"
+          >
             {company}
-          </h1>
+          </motion.h1>
           <div className="flex">
-            <a
-              href="https://drive.google.com/file/d/14JePYsb-7cy9qWyX7vCxIr8CHy0t7jp5/view?usp=share_link"
-              target="_blank"
-              rel="noreferrer"
-              className="p-2 rounded-full bg-blue-500 text-white hover:bg-blue-700 mr-2"
-            >
-              <FaPhotoVideo />
-            </a>
-            <a
-              href="https://www.youtube.com/watch?v=6ctdEJ5wctA&list=PLGwA21JLpwoMtXpnQHnhv0kasbL2tXWlt&index=24"
-              target="_blank"
-              rel="noreferrer"
-              className="p-2 rounded-full bg-blue-500 text-white hover:bg-blue-700 mr-2"
-            >
-              <FaYoutube />
-            </a>
-            <a
-              href="https://drive.google.com/file/d/1hSvLMee5s4q_e4BjKAPmXtS4B7Mmc-bJ/view?usp=share_link"
-              target="_blank"
-              rel="noreferrer"
-              className="p-2 rounded-full bg-blue-500 text-white hover:bg-blue-700 mr-2"
-            >
-              <FaFileAlt />
-            </a>
+            {links.map((item) => (
+              <a
+                variants={textVariants}
+                initial="initial"
+                animate="animate"
+                transition={{ duration: 0.5, delay: 0.2 }}
+                key={item.id}
+                href={item.link}
+                target="_blank"
+                rel="noreferrer"
+                className="p-2 rounded-full bg-blue-500 text-white hover:bg-blue-700 mr-2"
+              >
+                {item.icon}
+              </a>
+            ))}
             <button
               onClick={handleBack}
               className="p-2 rounded-full bg-blue-500 text-white hover:bg-blue-700 ml-auto"
@@ -101,22 +127,40 @@ const Rakitek = () => {
         </div>
         <p className="text-justify md:text-left mt-3">{about}</p>
         <div className="flex flex-col sm:flex-row justify-between items-center my-4">
-          <div className="mb-4 sm:mb-0">
+          <motion.div
+            variants={textVariants}
+            initial="initial"
+            animate="animate"
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="mb-4 sm:mb-0"
+          >
             <p className="text-lg font-bold">Job Type: {jobType}</p>
             <p className="text-lg font-bold">Position: {position}</p>
             <p className="text-md">Work Period: {period}</p>
-          </div>
+          </motion.div>
           <div className="flex justify-center sm:justify-end items-center">
             <a href="" target="_blank" rel="noreferrer">
-              <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+              <motion.button
+                variants={buttonVariants}
+                initial="initial"
+                animate="animate"
+                transition={{ duration: 0.5, delay: 0.4 }}
+                className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+              >
                 Show Project PDF
-              </button>
+              </motion.button>
             </a>
           </div>
         </div>
         <div className="flex flex-col md:flex-row">
           <div className="w-full md:w-1/4 p-4">
-            <div className="pt-4 pr-4">
+            <motion.div
+              variants={textVariants}
+              initial="initial"
+              animate="animate"
+              transition={{ duration: 0.5, delay: 0.5 }}
+              className="pt-4 pr-4"
+            >
               <label htmlFor="project-select">Choose Project:</label>
               <select
                 id="project-select"
@@ -138,7 +182,7 @@ const Rakitek = () => {
               >
                 Clear
               </button>
-            </div>
+            </motion.div>
           </div>
           <div className="w-full md:w-3/4 pt-4">
             <div
@@ -147,7 +191,11 @@ const Rakitek = () => {
               } gap-4`}
             >
               {filteredProjects.map((project) => (
-                <div
+                <motion.div
+                  variants={imageVariants}
+                  initial="initial"
+                  animate="animate"
+                  transition={{ duration: 0.5, delay: 0.6 }}
                   key={project.id}
                   className="bg-white rounded-lg shadow-lg overflow-hidden"
                 >
@@ -164,7 +212,7 @@ const Rakitek = () => {
                       <p class="text-sm text-gray-500">{project.description}</p>
                     )}
                   </div>
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>

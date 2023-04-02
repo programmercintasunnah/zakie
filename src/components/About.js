@@ -9,9 +9,20 @@ import {
 import { useNavigate } from "react-router-dom";
 import profilePic from "../assets/zakie-fotor.png";
 import { useProfile } from "../context/ProfileContext";
+import { motion } from "framer-motion";
 
 const About = () => {
-  const { bioAbout, email, github, wa, gitlab, address } = useProfile();
+  const {
+    bioAbout,
+    email,
+    github,
+    wa,
+    gitlab,
+    address,
+    textVariants,
+    buttonVariants,
+    imageVariants,
+  } = useProfile();
 
   const navigate = useNavigate();
 
@@ -20,26 +31,58 @@ const About = () => {
   };
 
   return (
-    <div
+    <motion.div
       id="about"
       className="bg-white py-12 px-4 sm:px-6 lg:py-24 lg:px-8 overflow-x-hidden"
     >
       <div className="max-w-7xl mx-auto">
         <div className="lg:grid lg:grid-cols-2 lg:gap-8">
           <div className="relative mb-8 lg:mb-0 lg:flex-shrink-0">
-            <img
+            <motion.img
               className="w-full rounded-lg lg:absolute lg:h-full lg:w-auto lg:rounded-none"
               src={profilePic}
               alt="Zakie's profile picture"
+              variants={imageVariants}
+              initial="initial"
+              animate="animate"
+              transition={{ duration: 0.5 }}
             />
           </div>
           <div className="lg:self-center">
-            <h1 className="text-4xl font-bold mb-4">About Me</h1>
-            <p className="text-gray-600 text-lg leading-relaxed mb-8">
+            <motion.h1
+              variants={textVariants}
+              initial="initial"
+              animate="animate"
+              className="text-4xl font-bold mb-4"
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              About Me
+            </motion.h1>
+            <motion.p
+              variants={textVariants}
+              initial="initial"
+              animate="animate"
+              className="text-gray-600 text-lg leading-relaxed mb-8"
+              transition={{ duration: 0.5, delay: 0.3 }}
+            >
               {bioAbout}
-            </p>
-            <h2 className="text-2xl font-bold mb-2">Contact Information</h2>
-            <div className="flex flex-col space-y-4">
+            </motion.p>
+            <motion.h2
+              variants={textVariants}
+              initial="initial"
+              animate="animate"
+              className="text-2xl font-bold mb-2"
+              transition={{ duration: 0.5, delay: 0.4 }}
+            >
+              Contact Information
+            </motion.h2>
+            <motion.div
+              variants={textVariants}
+              initial="initial"
+              animate="animate"
+              transition={{ duration: 0.5, delay: 0.5 }}
+              className="flex flex-col space-y-4"
+            >
               <div className="flex items-center">
                 <FaWhatsapp className="text-gray-600 mr-2" />
                 <a
@@ -78,18 +121,22 @@ const About = () => {
                 <p className="text-lg text-gray-900">{address}</p>
               </div>
               <div className="flex justify-center mt-12">
-                <button
+                <motion.button
+                  variants={buttonVariants}
+                  initial="initial"
+                  animate="animate"
+                  transition={{ duration: 0.5, delay: 0.6 }}
                   onClick={handleToDetail}
                   className="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full"
                 >
                   Detail
-                </button>
+                </motion.button>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
