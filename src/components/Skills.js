@@ -8,12 +8,8 @@ import {
   FaLinux,
   FaCode,
 } from "react-icons/fa";
-import { useProfile } from "../context/ProfileContext";
-import { motion } from "framer-motion";
 
 const Skills = () => {
-  const { textVariants, imageVariants } = useProfile();
-
   const skills = [
     {
       id: 1,
@@ -62,29 +58,26 @@ const Skills = () => {
       id="skills"
       className="min-h-screen bg-gray-50 flex flex-col items-center justify-center"
     >
-      <motion.h2
-        variants={textVariants}
-        initial="initial"
-        animate="animate"
-        transition={{ duration: 0.5 }}
+      <h2
+        data-aos="fade-up"
+        data-aos-duration="1000"
         className="text-3xl md:text-4xl font-bold mb-10"
       >
         Skills
-      </motion.h2>
+      </h2>
       <div className="flex flex-wrap gap-10 justify-center items-center mx-8">
         {skills.map((item) => {
           return (
-            <motion.div
-              variants={imageVariants}
-              initial="initial"
-              animate="animate"
-              transition={{ duration: 0.5, delay: 0.2 }}
+            <div
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              data-aos-delay="200"
               key={item.id}
               className="flex flex-col items-center justify-center"
             >
               {item.icon}
               <span className="text-lg font-medium">{item.text}</span>
-            </motion.div>
+            </div>
           );
         })}
       </div>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   FaEnvelope,
   FaWhatsapp,
@@ -9,20 +9,36 @@ import {
 import { useNavigate } from "react-router-dom";
 import profilePic from "../assets/zakie-fotor.png";
 import { useProfile } from "../context/ProfileContext";
-import { motion } from "framer-motion";
 
 const About = () => {
-  const {
-    bioAbout,
-    email,
-    github,
-    wa,
-    gitlab,
-    address,
-    textVariants,
-    buttonVariants,
-    imageVariants,
-  } = useProfile();
+  const { bioAbout, email, github, wa, gitlab, address } = useProfile();
+
+  const contactMethods = [
+    {
+      icon: <FaWhatsapp className="text-gray-600 mr-2" />,
+      link: `https://wa.me/${wa}`,
+      label: wa,
+    },
+    {
+      icon: <FaGithub className="text-gray-600 mr-2" />,
+      link: `https://github.com/${github}`,
+      label: github,
+    },
+    {
+      icon: <FaGitlab className="text-gray-600 mr-2" />,
+      link: `https://gitlab.com/${gitlab}`,
+      label: gitlab,
+    },
+    {
+      icon: <FaEnvelope className="text-gray-600 mr-2" />,
+      link: `mailto:${email}`,
+      label: email,
+    },
+    {
+      icon: <FaMapMarker className="text-gray-600 mr-2" />,
+      label: address,
+    },
+  ];
 
   const navigate = useNavigate();
 
@@ -31,112 +47,77 @@ const About = () => {
   };
 
   return (
-    <motion.div
+    <div
       id="about"
       className="bg-white py-12 px-4 sm:px-6 lg:py-24 lg:px-8 overflow-x-hidden"
     >
       <div className="max-w-7xl mx-auto">
         <div className="lg:grid lg:grid-cols-2 lg:gap-8">
           <div className="relative mb-8 lg:mb-0 lg:flex-shrink-0">
-            <motion.img
+            <img
+              data-aos="fade-up"
+              data-aos-duration="1000"
               className="w-full rounded-lg lg:absolute lg:h-full lg:w-auto lg:rounded-none"
               src={profilePic}
               alt="Zakie's profile picture"
-              variants={imageVariants}
-              initial="initial"
-              animate="animate"
-              transition={{ duration: 0.5 }}
             />
           </div>
           <div className="lg:self-center">
-            <motion.h1
-              variants={textVariants}
-              initial="initial"
-              animate="animate"
+            <h1
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              data-aos-delay="100"
               className="text-4xl font-bold mb-4"
-              transition={{ duration: 0.5, delay: 0.2 }}
             >
               About Me
-            </motion.h1>
-            <motion.p
-              variants={textVariants}
-              initial="initial"
-              animate="animate"
+            </h1>
+            <p
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              data-aos-delay="200"
               className="text-gray-600 text-lg leading-relaxed mb-8"
-              transition={{ duration: 0.5, delay: 0.3 }}
             >
               {bioAbout}
-            </motion.p>
-            <motion.h2
-              variants={textVariants}
-              initial="initial"
-              animate="animate"
+            </p>
+            <h2
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              data-aos-delay="300"
               className="text-2xl font-bold mb-2"
-              transition={{ duration: 0.5, delay: 0.4 }}
             >
               Contact Information
-            </motion.h2>
-            <motion.div
-              variants={textVariants}
-              initial="initial"
-              animate="animate"
-              transition={{ duration: 0.5, delay: 0.5 }}
-              className="flex flex-col space-y-4"
-            >
-              <div className="flex items-center">
-                <FaWhatsapp className="text-gray-600 mr-2" />
-                <a
-                  href={`https://wa.me/${wa}`}
-                  className="text-lg text-gray-900"
+            </h2>
+            <div className="flex flex-col space-y-4">
+              {contactMethods.map((method, index) => (
+                <div
+                  data-aos="fade-up"
+                  data-aos-duration="1000"
+                  data-aos-delay="400"
+                  key={index}
+                  className="flex items-center"
                 >
-                  {wa}
-                </a>
-              </div>
-              <div className="flex items-center">
-                <FaGithub className="text-gray-600 mr-2" />
-                <a
-                  href={`https://github.com/${github}`}
-                  className="text-lg text-gray-900"
-                >
-                  {github}
-                </a>
-              </div>
-              <div className="flex items-center">
-                <FaGitlab className="text-gray-600 mr-2" />
-                <a
-                  href={`https://gitlab.com/${gitlab}`}
-                  className="text-lg text-gray-900"
-                >
-                  {gitlab}
-                </a>
-              </div>
-              <div className="flex items-center">
-                <FaEnvelope className="text-gray-600 mr-2" />
-                <a href={`mailto:${email}`} className="text-lg text-gray-900">
-                  {email}
-                </a>
-              </div>
-              <div className="flex items-center">
-                <FaMapMarker className="text-gray-600 mr-2" />
-                <p className="text-lg text-gray-900">{address}</p>
-              </div>
+                  {method.icon}
+                  <a href={method.link} className="text-lg text-gray-900">
+                    {method.label}
+                  </a>
+                </div>
+              ))}
               <div className="flex justify-center mt-12">
-                <motion.button
-                  variants={buttonVariants}
-                  initial="initial"
-                  animate="animate"
-                  transition={{ duration: 0.5, delay: 0.6 }}
+                <button
+                  data-aos="fade-up"
+                  data-aos-duration="1000"
+                  data-aos-delay="500"
                   onClick={handleToDetail}
                   className="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full"
                 >
                   Detail
-                </motion.button>
+                </button>
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 
