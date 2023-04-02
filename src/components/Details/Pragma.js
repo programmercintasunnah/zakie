@@ -10,23 +10,20 @@ const projects = [
   {
     id: "project1",
     title: "HSSE KALBAR",
-    description: "Deskripsi singkat mengenai project 1",
+    description: "using laravel 8 and mysql",
     imageUrl: Project1,
-    detailDescription: "using laravel 8 and mysql",
   },
   {
     id: "project2",
     title: "HSSE KALIMANTAN",
-    description: "Deskripsi singkat mengenai project 2",
+    description: "using laravel 8 and mysql",
     imageUrl: Project2,
-    detailDescription: "using laravel 8 and mysql",
   },
   {
     id: "project3",
     title: "WASKITA",
-    description: "Deskripsi singkat mengenai project 3",
+    description: "using laravel 8 + spatie and mysql",
     imageUrl: Project3,
-    detailDescription: "using laravel 8 + spatie and mysql",
   },
 ];
 

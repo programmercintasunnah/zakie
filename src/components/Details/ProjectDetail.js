@@ -5,27 +5,6 @@ import Project1 from "../../assets/ta-app.png";
 import Project2 from "../../assets/kp-app.png";
 import Project3 from "../../assets/darsal-app.png";
 
-const projects = [
-  {
-    id: "project1",
-    title: "E-Voting Blockchain",
-    description: "using react js and ethereum blockchain",
-    imageUrl: Project1,
-  },
-  {
-    id: "project2",
-    title: "Presence App",
-    description: "using codeigniter 3 and mysql",
-    imageUrl: Project2,
-  },
-  {
-    id: "project3",
-    title: "Darsalafy App",
-    description: "using laravel 8 and mysql",
-    imageUrl: Project3,
-  },
-];
-
 const ProjectDetail = () => {
   const title = "MY PROJECTS";
 
@@ -35,14 +14,82 @@ const ProjectDetail = () => {
     navigate("/");
   };
 
+  const projects = [
+    {
+      id: "project1",
+      title: "E-Voting Blockchain",
+      description: "using react js and ethereum blockchain",
+      imageUrl: Project1,
+      photoLink:
+        "https://drive.google.com/drive/folders/1Ldwc4z4sRoZ02m_47MnZ1av-j8vme_Hp?usp=share_link",
+      youtubeLink:
+        "https://drive.google.com/file/d/1YnWmXpUCLXGvckNcPK6kS79mYmT_gnWw/view?usp=share_link",
+      fileLink:
+        "https://drive.google.com/file/d/13sBtMJYVvlvJBxXhCkTvrWKestOpHS9V/view?usp=sharing",
+    },
+    {
+      id: "project2",
+      title: "Presence App",
+      description:
+        "this is a project for employee attendance, and this project is a college assignment, namely an internship assignment. This web-based application uses the codeigniter framework with a database in the form of mysql. To see more details, you can click the icon file button",
+      imageUrl: Project2,
+      photoLink:
+        "https://drive.google.com/drive/folders/1i2_93PzA_nvZKagSAYdxwfaMu4s5L6ql?usp=sharing",
+      youtubeLink:
+        "https://www.youtube.com/watch?v=OCB_eXbcEJc&list=PLGwA21JLpwoMtXpnQHnhv0kasbL2tXWlt&index=12",
+      fileLink:
+        "https://drive.google.com/file/d/1qmRCHve8qW3IZ11KZreBczAQFuaUd55z/view?usp=sharing",
+    },
+    {
+      id: "project3",
+      title: "Darsalafy App",
+      description: "using laravel 8 and mysql",
+      imageUrl: Project3,
+      photoLink:
+        "https://www.youtube.com/watch?v=6Mz97_9o9Ww&list=PLGwA21JLpwoMtXpnQHnhv0kasbL2tXWlt&index=27",
+      youtubeLink:
+        "https://www.youtube.com/watch?v=Y0H0mE7x_TQ&list=PLGwA21JLpwoMtXpnQHnhv0kasbL2tXWlt&index=21",
+      fileLink:
+        "https://drive.google.com/drive/folders/1K-BJsYkDLeG1ovnBlyJDp7piKHCHFyKA?usp=share_link",
+    },
+  ];
+
   const [selectedProject, setSelectedProject] = useState(null);
+  const [links, setLinks] = useState([]);
 
   const handleProjectSelect = (event) => {
-    setSelectedProject(event.target.value);
+    const selectedProjectId = event.target.value;
+    const selectedProject = projects.find(
+      (project) => project.id === selectedProjectId
+    );
+
+    if (selectedProject) {
+      const projectLinks = [
+        {
+          href: selectedProject.photoLink,
+          icon: <FaPhotoVideo />,
+        },
+        {
+          href: selectedProject.youtubeLink,
+          icon: <FaYoutube />,
+        },
+        {
+          href: selectedProject.fileLink,
+          icon: <FaFileAlt />,
+        },
+      ];
+
+      setLinks(projectLinks);
+    } else {
+      setLinks([]);
+    }
+
+    setSelectedProject(selectedProjectId);
   };
 
   const handleClearSelect = () => {
     setSelectedProject(null);
+    setLinks([]);
   };
 
   const filteredProjects = selectedProject
@@ -57,30 +104,17 @@ const ProjectDetail = () => {
             {title}
           </h1>
           <div className="flex">
-            <a
-              href=""
-              target="_blank"
-              rel="noreferrer"
-              className="p-2 rounded-full bg-blue-500 text-white hover:bg-blue-700 mr-2"
-            >
-              <FaPhotoVideo />
-            </a>
-            <a
-              href=""
-              target="_blank"
-              rel="noreferrer"
-              className="p-2 rounded-full bg-blue-500 text-white hover:bg-blue-700 mr-2"
-            >
-              <FaYoutube />
-            </a>
-            <a
-              href=""
-              target="_blank"
-              rel="noreferrer"
-              className="p-2 rounded-full bg-blue-500 text-white hover:bg-blue-700 mr-2"
-            >
-              <FaFileAlt />
-            </a>
+            {links.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                target="_blank"
+                rel="noreferrer"
+                className="p-2 rounded-full bg-blue-500 text-white hover:bg-blue-700 mr-2"
+              >
+                {link.icon}
+              </a>
+            ))}
             <button
               onClick={handleBack}
               className="p-2 rounded-full bg-blue-500 text-white hover:bg-blue-700 ml-auto"

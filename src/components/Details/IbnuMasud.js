@@ -28,7 +28,7 @@ const IbnuMasud = () => {
     "and PHP programming language with MySQL DBMS.";
 
   const aboutProject =
-    "this is a project for employee attendance, and this project is a college assignment, namely an internship assignment. This web-based application uses the codeigniter framework with a database in the form of mysql. To see more details, you can click the download button";
+    "this is a project for employee attendance, and this project is a college assignment, namely an internship assignment. This web-based application uses the codeigniter framework with a database in the form of mysql. To see more details, you can click the show button";
 
   const navigate = useNavigate();
 

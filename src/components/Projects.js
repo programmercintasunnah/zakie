@@ -1,8 +1,8 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router";
 import taApp from "../assets/ta-app.png";
 import kpApp from "../assets/kp-app.png";
 import darsalApp from "../assets/darsal-app.png";
-import { useNavigate } from "react-router";
 
 const projects = [
   {
@@ -28,11 +28,6 @@ const ProjectCard = ({ name, screenshot, description }) => {
       <img src={screenshot} alt={`Screenshot dari ${name}`} className="mb-4" />
       <h2 className="text-2xl font-bold mb-2">{name}</h2>
       <p className="text-gray-700">{description}</p>
-      <div className="mt-4 flex justify-center">
-        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
-          Detail
-        </button>
-      </div>
     </div>
   );
 };
@@ -61,7 +56,7 @@ const Projects = () => {
           className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
           onClick={handleToMoreProjects}
         >
-          View More Projects
+          Project Details
         </button>
       </div>
     </div>
