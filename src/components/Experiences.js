@@ -1,8 +1,10 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import logoPragma from "../assets/pragma.png";
 import logoRakitek from "../assets/rakitek.jpg";
 import logoIbnuMasud from "../assets/ibnumasud.png";
-import { useNavigate } from "react-router-dom";
+import logoJogjaCamp from "../assets/jogjacamp.jpeg";
+import logoAlmadania from "../assets/almadania-riau.png";
 
 const experiences = [
   {
@@ -32,6 +34,24 @@ const experiences = [
     location: "Jakarta, Indonesia",
     path: "/rakitek",
   },
+  // {
+  //   id: 4,
+  //   logo: logoJogjaCamp,
+  //   company: "Jogja Camp",
+  //   position: "Loading...",
+  //   type: "Full-time WFH",
+  //   location: "Yogyakarta, Indonesia",
+  //   path: "/jogjacamp",
+  // },
+  // {
+  //   id: 5,
+  //   logo: logoAlmadania,
+  //   company: "Al-Madania Riau",
+  //   position: "Loading...",
+  //   type: "Part-time Hybrid",
+  //   location: "Kampar, Indonesia",
+  //   path: "/almadania",
+  // },
 ];
 
 const Experiences = () => {

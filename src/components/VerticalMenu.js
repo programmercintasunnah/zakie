@@ -8,47 +8,45 @@ import {
   FaFileAlt,
 } from "react-icons/fa";
 
+const menuLinks = [
+  {
+    href: "#home",
+    icon: <FaHome size={24} />,
+  },
+  {
+    href: "#about",
+    icon: <FaUser size={24} />,
+  },
+  {
+    href: "#skills",
+    icon: <FaCode size={24} />,
+  },
+  {
+    href: "#experiences",
+    icon: <FaBriefcase size={24} />,
+  },
+  {
+    href: "#projects",
+    icon: <FaProjectDiagram size={24} />,
+  },
+  {
+    href: "https://drive.google.com/drive/folders/15O8n-smVbigJYJV2BbfdRZ2feBKaprLc?usp=share_link",
+    icon: <FaFileAlt size={24} />,
+  },
+];
+
 const VerticalMenu = () => {
   return (
     <div className="fixed right-2 top-1/2 transform -translate-y-1/2 flex flex-col items-center space-y-4 z-50">
-      <a
-        href="#home"
-        className="p-2 rounded-full bg-red-600 text-white hover:bg-red-700"
-      >
-        <FaHome size={24} />
-      </a>
-      <a
-        href="#about"
-        className="p-2 rounded-full bg-red-600 text-white hover:bg-red-700"
-      >
-        <FaUser size={24} />
-      </a>
-      <a
-        href="#skills"
-        className="p-2 rounded-full bg-red-600 text-white hover:bg-red-700"
-      >
-        <FaCode size={24} />
-      </a>
-      <a
-        href="#experiences"
-        className="p-2 rounded-full bg-red-600 text-white hover:bg-red-700"
-      >
-        <FaBriefcase size={24} />
-      </a>
-      <a
-        href="#projects"
-        className="p-2 rounded-full bg-red-600 text-white hover:bg-red-700"
-      >
-        <FaProjectDiagram size={24} />
-      </a>
-      <a
-        href="https://drive.google.com/drive/folders/15O8n-smVbigJYJV2BbfdRZ2feBKaprLc?usp=share_link"
-        target="_blank"
-        rel="noreferrer"
-        className="p-2 rounded-full bg-red-600 text-white hover:bg-red-700"
-      >
-        <FaFileAlt size={24} />
-      </a>
+      {menuLinks.map((link, index) => (
+        <a
+          key={index}
+          href={link.href}
+          className="p-2 rounded-full bg-red-600 text-white hover:bg-red-700"
+        >
+          {link.icon}
+        </a>
+      ))}
     </div>
   );
 };
