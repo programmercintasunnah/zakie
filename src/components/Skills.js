@@ -1,7 +1,6 @@
 import React from "react";
 import {
-  FaPhp,
-  FaLaravel,
+  FaNodeJs,
   FaJs,
   FaReact,
   FaDatabase,
@@ -13,41 +12,36 @@ const Skills = () => {
   const skills = [
     {
       id: 1,
-      icon: <FaPhp className="text-6xl mb-2 text-blue-600" />,
-      text: "PHP",
-    },
-    {
-      id: 2,
-      icon: <FaLaravel className="text-6xl mb-2 text-red-500" />,
+      icon: <FaNodeJs className="text-6xl mb-2 text-green-500" />,
       text: "Laravel",
     },
     {
-      id: 3,
+      id: 2,
       icon: <FaJs className="text-6xl mb-2 text-yellow-500" />,
       text: "JavaScript",
     },
     {
-      id: 4,
+      id: 3,
       icon: <FaCode className="text-6xl mb-2 text-blue-500" />,
       text: "JQuery",
     },
     {
-      id: 5,
+      id: 4,
       icon: <FaCode className="text-6xl mb-2 text-purple-500" />,
       text: "Ajax",
     },
     {
-      id: 6,
+      id: 5,
       icon: <FaReact className="text-6xl mb-2 text-blue-400" />,
       text: "React",
     },
     {
-      id: 7,
+      id: 6,
       icon: <FaDatabase className="text-6xl mb-2 text-gray-500" />,
       text: "MySQL",
     },
     {
-      id: 8,
+      id: 7,
       icon: <FaLinux className="text-6xl mb-2 text-red-400" />,
       text: "Linux",
     },
