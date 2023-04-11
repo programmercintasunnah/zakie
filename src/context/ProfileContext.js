@@ -37,8 +37,8 @@ export const ProfileProvider = ({ children }) => {
   useEffect(() => {
     setBioHome(
       "I am a full-stack developer with a passion for building web " +
-        "applications. I specialize in technologies such as React, PHP, " +
-        "Laravel, JavaScript, JQuery, Ajax, MySQL, and Linux. With " +
+        "applications. I specialize in technologies such as React, Node, " +
+        "JavaScript, JQuery, Ajax, MySQL, and Linux. With " +
         totalPengalaman.tahun +
         " year and " +
         totalPengalaman.bulan +
