@@ -12,28 +12,28 @@ const Skills = () => {
   const skills = [
     {
       id: 1,
-      icon: <FaNodeJs className="text-6xl mb-2 text-green-500" />,
-      text: "Laravel",
+      icon: <FaReact className="text-6xl mb-2 text-blue-400" />,
+      text: "React",
     },
     {
       id: 2,
+      icon: <FaNodeJs className="text-6xl mb-2 text-green-500" />,
+      text: "Node JS",
+    },
+    {
+      id: 3,
       icon: <FaJs className="text-6xl mb-2 text-yellow-500" />,
       text: "JavaScript",
     },
     {
-      id: 3,
+      id: 4,
       icon: <FaCode className="text-6xl mb-2 text-blue-500" />,
       text: "JQuery",
     },
     {
-      id: 4,
+      id: 5,
       icon: <FaCode className="text-6xl mb-2 text-purple-500" />,
       text: "Ajax",
-    },
-    {
-      id: 5,
-      icon: <FaReact className="text-6xl mb-2 text-blue-400" />,
-      text: "React",
     },
     {
       id: 6,
