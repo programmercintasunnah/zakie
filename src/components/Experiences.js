@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import logoPragma from "../assets/pragma.png";
 import logoRakitek from "../assets/rakitek.jpg";
 import logoIbnuMasud from "../assets/ibnumasud.png";
-import logoJogjaCamp from "../assets/jogjacamp.jpeg";
+import logoHunayn from "../assets/hunayn-logo.png";
 import logoAlmadania from "../assets/almadania-riau.png";
 
 const experiences = [
@@ -34,15 +34,15 @@ const experiences = [
     location: "Jakarta, Indonesia",
     path: "/rakitek",
   },
-  // {
-  //   id: 4,
-  //   logo: logoJogjaCamp,
-  //   company: "Jogja Camp",
-  //   position: "Loading...",
-  //   type: "Full-time WFH",
-  //   location: "Yogyakarta, Indonesia",
-  //   path: "/jogjacamp",
-  // },
+  {
+    id: 4,
+    logo: logoHunayn,
+    company: "Hunayn Teknologi",
+    position: "Software Engineer",
+    type: "Full-time WFH",
+    location: "Tangerang, Indonesia",
+    path: "/hunayn",
+  },
   // {
   //   id: 5,
   //   logo: logoAlmadania,

@@ -7,6 +7,7 @@ import IbnuMasud from "./components/Details/IbnuMasud";
 import Pragma from "./components/Details/Pragma";
 import Rakitek from "./components/Details/Rakitek";
 import ProjectDetail from "./components/Details/ProjectDetail";
+import Hunayn from "./components/Details/Hunayn";
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
           <Route path="/ibnumasud" element={<IbnuMasud />} />
           <Route path="/pragma" element={<Pragma />} />
           <Route path="/rakitek" element={<Rakitek />} />
+          <Route path="/hunayn" element={<Hunayn />} />
           <Route path="/project-detail" element={<ProjectDetail />} />
         </Routes>
       </Router>
