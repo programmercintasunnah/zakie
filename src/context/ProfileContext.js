@@ -36,8 +36,8 @@ export const ProfileProvider = ({ children }) => {
 
   useEffect(() => {
     setBioHome(
-      "I am a full-stack developer with a passion for building web " +
-        "applications. I specialize in technologies such as React, Node, " +
+      "I am a software engineer with a passion for building web " +
+        "applications. I specialize in technologies such as Go, React, Node, " +
         "JavaScript, JQuery, Ajax, MySQL, and Linux. With " +
         totalPengalaman.tahun +
         " year and " +
@@ -65,10 +65,9 @@ export const ProfileProvider = ({ children }) => {
   const [github, setGithub] = useState("programmercintasunnah");
   const [gitlab, setGitlab] = useState("zakiepragma");
   const [address, setAddress] = useState(
-    "Jl. Gulama, Tengkerang Barat, Kec. Marpoyan Damai, Kota " +
-      "Pekanbaru, Riau 28124, Indonesia"
+    "Jl Al-Ikhlas, Labuh Baru Tim., Kec. Payung Sekaki, Kota Pekanbaru, Riau 28123, Indonesia"
   );
-  const [jobTitles, setJobTitles] = useState("Full Stack Developer");
+  const [jobTitles, setJobTitles] = useState("Software Engineer");
 
   //animasi with framer motion
   const textVariants = {

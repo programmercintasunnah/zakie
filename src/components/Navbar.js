@@ -23,7 +23,7 @@ const socialLinks = [
     icon: <FaInstagram className="text-white mr-4 hover:text-gray-400" />,
   },
   {
-    url: "https://www.linkedin.com/in/muhammadzakie220998/",
+    url: "https://www.linkedin.com/in/muhammadzakie/",
     icon: <FaLinkedin className="text-white mr-4 hover:text-gray-400" />,
   },
   {
