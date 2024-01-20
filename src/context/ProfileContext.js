@@ -65,7 +65,7 @@ export const ProfileProvider = ({ children }) => {
   const [github, setGithub] = useState("programmercintasunnah");
   const [gitlab, setGitlab] = useState("zakiepragma");
   const [address, setAddress] = useState(
-    "Jl Al-Ikhlas, Labuh Baru Tim., Kec. Payung Sekaki, Kota Pekanbaru, Riau 28123, Indonesia"
+    "Jl. Yos Sudarso, Limbungan Baru, Kec. Rumbai Pesisir, Kota Pekanbaru, Riau 28266"
   );
   const [jobTitles, setJobTitles] = useState("Software Engineer");
 
