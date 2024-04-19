@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router";
 import CompanyLogo from "../../assets/hunayn-logo.png";
 import { FaHome, FaFileAlt, FaPhotoVideo, FaYoutube } from "react-icons/fa";
-import Project1 from "../../assets/rakomsis-app.png";
-import Project2 from "../../assets/portal-rakomsis.png";
+import Project1 from "../../assets/dashboard-syirkah.png";
+import Project2 from "../../assets/landing-company.png";
 import { motion } from "framer-motion";
 import { useProfile } from "../../context/ProfileContext";
 
@@ -11,7 +11,7 @@ const links = [
   {
     id: 1,
     title: "Photo/Video",
-    link: "",
+    link: "https://drive.google.com/drive/folders/11KB8Fg_E6xItulb63BPsbPNLzT_6hGQa?usp=sharing",
     icon: <FaPhotoVideo />,
   },
   {
@@ -23,24 +23,24 @@ const links = [
   {
     id: 3,
     title: "File",
-    link: "",
+    link: "https://drive.google.com/drive/folders/11KB8Fg_E6xItulb63BPsbPNLzT_6hGQa?usp=sharing",
     icon: <FaFileAlt />,
   },
 ];
 
 const projects = [
-  // {
-  //   id: "project1",
-  //   title: "Rakomsis",
-  //   description: "using laravel, mysql, api",
-  //   imageUrl: Project1,
-  // },
-  // {
-  //   id: "project2",
-  //   title: "Portal Rakomsis",
-  //   description: "using vue js",
-  //   imageUrl: Project2,
-  // },
+  {
+    id: "project1",
+    title: "Syirkah",
+    description: "using golang, react js, postgress",
+    imageUrl: Project1,
+  },
+  {
+    id: "project2",
+    title: "Landing Company",
+    description: "using svelte js",
+    imageUrl: Project2,
+  },
 ];
 
 const Hunayn = () => {
