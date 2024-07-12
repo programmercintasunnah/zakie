@@ -4,6 +4,7 @@ import CompanyLogo from "../../assets/hunayn-logo.png";
 import { FaHome, FaFileAlt, FaPhotoVideo, FaYoutube } from "react-icons/fa";
 import Project1 from "../../assets/dashboard-syirkah.png";
 import Project2 from "../../assets/landing-company.png";
+import Project3 from "../../assets/jakarta-halal-expo.png";
 import { motion } from "framer-motion";
 import { useProfile } from "../../context/ProfileContext";
 
@@ -40,6 +41,12 @@ const projects = [
     title: "Landing Company",
     description: "using svelte js",
     imageUrl: Project2,
+  },
+  {
+    id: "project3",
+    title: "Jakarta Halal Expo",
+    description: "using svelte js",
+    imageUrl: Project3,
   },
 ];
 
