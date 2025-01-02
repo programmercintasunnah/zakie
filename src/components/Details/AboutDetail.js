@@ -21,8 +21,7 @@ const personalData = [
   {
     label: "Address",
     value:
-      "Jl. Gulama, Tengkerang Barat, Kec. Marpoyan Damai, Kota " +
-      "Pekanbaru, Riau 28124, Indonesia",
+      "Jl. Uka, Simpang Baru, Kelurahan Air Putih, Tampan, Pekanbaru, Riau, Indonesia",
   },
 ];
 

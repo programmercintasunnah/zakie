@@ -37,7 +37,7 @@ export const ProfileProvider = ({ children }) => {
   useEffect(() => {
     setBioHome(
       "I am a software engineer with a passion for building web " +
-        "applications. I specialize in technologies such as Go, React, Node, " +
+        "applications. I specialize in technologies such as Go, React, React Native, Node, " +
         "JavaScript, JQuery, Ajax, MySQL, and Linux. With " +
         totalPengalaman.tahun +
         " year and " +
@@ -65,7 +65,7 @@ export const ProfileProvider = ({ children }) => {
   const [github, setGithub] = useState("programmercintasunnah");
   const [gitlab, setGitlab] = useState("zakiepragma");
   const [address, setAddress] = useState(
-    "Jl. Yos Sudarso, Limbungan Baru, Kec. Rumbai Pesisir, Kota Pekanbaru, Riau 28266"
+    "Jl. Uka, Simpang Baru, Kelurahan Air Putih, Tampan, Pekanbaru, Riau, Indonesia"
   );
   const [jobTitles, setJobTitles] = useState("Software Engineer");
 
