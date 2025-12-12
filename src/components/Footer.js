@@ -26,7 +26,7 @@ const Footer = () => {
         <div className="flex flex-wrap justify-between items-center">
           <div className="w-full md:w-auto text-center md:text-left">
             <p className="text-gray-400">
-              &copy; 2023 At-Tarmiz Technology. All rights reserved.
+              &copy; 2025 Alelm Technology. All rights reserved.
             </p>
           </div>
           <div className="w-full md:w-auto text-center">

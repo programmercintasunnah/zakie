@@ -36,32 +36,35 @@ export const ProfileProvider = ({ children }) => {
 
   useEffect(() => {
     setBioHome(
-      "I am a software engineer with a passion for building web " +
-        "applications. I specialize in technologies such as Go, React, React Native, Node, " +
-        "JavaScript, JQuery, Ajax, MySQL, and Linux. With " +
-        totalPengalaman.tahun +
-        " year and " +
-        totalPengalaman.bulan +
-        " months " +
-        "experience, I have developed a strong foundation in software " +
-        "development principles and enjoy working on both front-end and " +
-        "back-end development. I am a quick learner, problem-solver, and always " +
-        "looking for ways to improve my skills. Let's work together to build " +
-        "something great!"
+      "I am a software engineer with a strong passion for building modern " +
+      "and high-quality web applications. I specialize in technologies such " +
+      "as Go, React, TypeScript, JavaScript, jQuery, Ajax, MySQL, PostgreSQL and Linux." +
+      "With " +
+      totalPengalaman.tahun +
+      " year and " +
+      totalPengalaman.bulan +
+      " months " +
+      "of experience, I have developed a solid foundation in software development " +
+      "principles and enjoy working on both front-end and back-end development. " +
+      "I am a fast learner, a problem solver, and someone who " +
+      "consistently seeks opportunities to improve my skills and deliver better solutions. " +
+      "Let’s work together to build something exceptional. "
     );
   });
+
   const [bioAbout, setBioAbout] = useState(
     "My name is " +
-      name +
-      ", and I graduated from State Islamic " +
-      "University Sultan Syarif Kasim Riau (UIN Suska Riau) with a " +
-      "Bachelor's degree in Information Technology. I studied from 2017 to " +
-      "2021 and graduated with a GPA of 3.51 out of 4.00. I am a passionate " +
-      "learner and always looking for opportunities to improve my skills " +
-      "and knowledge in the field of technology."
+    name +
+    ", and I graduated from State Islamic " +
+    "University Sultan Syarif Kasim Riau (UIN Suska Riau) with a " +
+    "Bachelor's degree in Information Technology. I studied from 2017 to " +
+    "2021 and graduated with a GPA of 3.51 out of 4.00. I am a passionate " +
+    "learner and always looking for opportunities to improve my skills " +
+    "and knowledge in the field of technology."
   );
+
   const [email, setEmail] = useState("muhammadzakie22g@gmail.com");
-  const [wa, setWa] = useState("+62 822-8625-xxxx");
+  const [wa, setWa] = useState("+62 822-8625-0694");
   const [github, setGithub] = useState("programmercintasunnah");
   const [gitlab, setGitlab] = useState("zakiepragma");
   const [address, setAddress] = useState(

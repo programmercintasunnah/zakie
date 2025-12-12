@@ -22,8 +22,8 @@ const Skills = () => {
     },
     {
       id: 3,
-      icon: <FaNodeJs className="text-6xl mb-2 text-green-500" />,
-      text: "Node JS",
+      icon: <FaCode className="text-6xl mb-2 text-blue-500" />,
+      text: "TypeScript",
     },
     {
       id: 4,
@@ -31,14 +31,19 @@ const Skills = () => {
       text: "JavaScript",
     },
     {
-      id: 5,
+      id: 4,
       icon: <FaCode className="text-6xl mb-2 text-blue-500" />,
       text: "JQuery",
     },
     {
-      id: 6,
+      id: 5,
       icon: <FaCode className="text-6xl mb-2 text-purple-500" />,
       text: "Ajax",
+    },
+    {
+      id: 6,
+      icon: <FaDatabase className="text-6xl mb-2 text-gray-500" />,
+      text: "PostgreSQL",
     },
     {
       id: 7,

@@ -3,9 +3,11 @@ import { useNavigate } from "react-router";
 import CompanyLogo from "../../assets/hunayn-logo.png";
 import { FaHome, FaFileAlt, FaPhotoVideo, FaYoutube } from "react-icons/fa";
 import Project1 from "../../assets/dashboard-syirkah.png";
-import Project2 from "../../assets/homescreen-ibank.png";
-import Project3 from "../../assets/landing-company.png";
-import Project4 from "../../assets/jakarta-halal-expo.png";
+import Project2 from "../../assets/syirkah-web.png";
+import Project3 from "../../assets/web-mumtazah.png";
+import Project4 from "../../assets/homescreen-ibank.png";
+import Project5 from "../../assets/landing-company.png";
+import Project6 from "../../assets/jakarta-halal-expo.png";
 import { motion } from "framer-motion";
 import { useProfile } from "../../context/ProfileContext";
 
@@ -33,27 +35,39 @@ const links = [
 const projects = [
   {
     id: "project1",
-    title: "Syirkah",
-    description: "using golang, react js, postgress",
+    title: "Syirkah App",
+    description: "using golang, react js, postgres",
     imageUrl: Project1,
   },
-  {
+   {
     id: "project2",
-    title: "IBank Syirkah",
-    description: "using react native expo, typescript",
+    title: "Syirkah Web",
+    description: "using react js",
     imageUrl: Project2,
   },
   {
     id: "project3",
-    title: "Landing Company",
-    description: "using svelte js",
+    title: "Website Syirkah Per Tenant",
+    description: "using golang, react js, postgres",
     imageUrl: Project3,
   },
   {
     id: "project4",
+    title: "IBank Syirkah",
+    description: "using react native expo, typescript",
+    imageUrl: Project4,
+  },
+  {
+    id: "project5",
+    title: "Landing Company",
+    description: "using svelte js",
+    imageUrl: Project5,
+  },
+  {
+    id: "project6",
     title: "Jakarta Halal Expo",
     description: "using svelte js",
-    imageUrl: Project4,
+    imageUrl: Project6,
   },
 ];
 
