@@ -44,5 +44,8 @@
     "aos": "^2.3.4",
     "react-aos": "^1.0.1",
     "tailwindcss": "^3.2.7"
+  },
+  "engines": {
+    "node": "24.x"
   }
 }
