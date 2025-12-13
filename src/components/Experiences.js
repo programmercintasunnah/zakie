@@ -1,10 +1,9 @@
-import React from "react";
 import { useNavigate } from "react-router-dom";
 import logoPragma from "../assets/pragma.png";
 import logoRakitek from "../assets/rakitek.jpg";
 import logoIbnuMasud from "../assets/ibnumasud.png";
 import logoHunayn from "../assets/hunayn-logo.png";
-import logoAlmadania from "../assets/almadania-riau.png";
+import logoHijra from "../assets/ss-hijra-logo.png";
 
 const experiences = [
   {
@@ -45,12 +44,12 @@ const experiences = [
   },
   // {
   //   id: 5,
-  //   logo: logoAlmadania,
-  //   company: "Al-Madania Riau",
+  //   logo: logoHijra,
+  //   company: "Hijra Bank",
   //   position: "Loading...",
-  //   type: "Part-time Hybrid",
-  //   location: "Kampar, Indonesia",
-  //   path: "/almadania",
+  //   type: "Fulltime Hybrid",
+  //   location: "Jakarta, Indonesia",
+  //   path: "/hijra",
   // },
 ];
 

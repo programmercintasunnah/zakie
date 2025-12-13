@@ -8,6 +8,7 @@ import Pragma from "./components/Details/Pragma";
 import Rakitek from "./components/Details/Rakitek";
 import ProjectDetail from "./components/Details/ProjectDetail";
 import Hunayn from "./components/Details/Hunayn";
+import Portofolio from "./components/Details/Portofolio";
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
           <Route path="/rakitek" element={<Rakitek />} />
           <Route path="/hunayn" element={<Hunayn />} />
           <Route path="/project-detail" element={<ProjectDetail />} />
+          <Route path="/portofolio" element={<Portofolio />} />
         </Routes>
       </Router>
     </ProfileProvider>

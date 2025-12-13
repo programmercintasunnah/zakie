@@ -1,4 +1,3 @@
-import React from "react";
 import {
   FaHome,
   FaUser,
@@ -6,6 +5,7 @@ import {
   FaBriefcase,
   FaProjectDiagram,
   FaFileAlt,
+  FaBookReader,
 } from "react-icons/fa";
 
 const menuLinks = [
@@ -28,6 +28,10 @@ const menuLinks = [
   {
     href: "#projects",
     icon: <FaProjectDiagram size={24} />,
+  },
+  {
+    href: "#portofolio",
+    icon: <FaBookReader size={24} />,
   },
   {
     href: "https://drive.google.com/drive/folders/15O8n-smVbigJYJV2BbfdRZ2feBKaprLc?usp=share_link",

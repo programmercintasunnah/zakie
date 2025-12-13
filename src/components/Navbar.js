@@ -15,6 +15,7 @@ const menuItems = [
   { id: "skills", label: "Skills" },
   { id: "experiences", label: "Experiences" },
   { id: "projects", label: "Projects" },
+  { id: "portofolio", label: "Portofolio" },
 ];
 
 const socialLinks = [

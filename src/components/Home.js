@@ -76,6 +76,7 @@ const Home = () => {
       >
         <a
           target="_blank"
+          rel="noreferrer"
           href="https://drive.google.com/drive/folders/15O8n-smVbigJYJV2BbfdRZ2feBKaprLc?usp=share_link"
           className="inline-flex hover:bg-red-500 bg-red-600 hover:border-2 hover:border-white text-white font-bold py-3 px-6 rounded-lg items-center"
         >
