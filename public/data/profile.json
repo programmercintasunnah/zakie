@@ -1,0 +1,14 @@
+{
+    "name": "Muhammad Zakie",
+    "nickName": "Zakie",
+    "jobTitle": "Software Engineer",
+    "startWorkDate": "15-10-2021",
+    "bioHome": "I am a software engineer with a strong passion for building modern and high-quality web applications. I specialize in technologies such as Go, React, TypeScript, JavaScript, jQuery, Ajax, MySQL, PostgreSQL and Linux. With {experience} of experience, I have developed a solid foundation in software development principles and enjoy working on both front-end and back-end development. I am a fast learner, a problem solver, and someone who consistently seeks opportunities to improve my skills and deliver better solutions. Let's work together to build something exceptional.",
+    "bioAbout": "My name is {name}, and I graduated from State Islamic University Sultan Syarif Kasim Riau (UIN Suska Riau) with a Bachelor's degree in Information Technology. I studied from 2017 to 2021 and graduated with a GPA of 3.51 out of 4.00. I am a passionate learner and always looking for opportunities to improve my skills and knowledge in the field of technology.",
+    "cvLink": "https://drive.google.com/drive/folders/15O8n-smVbigJYJV2BbfdRZ2feBKaprLc?usp=share_link",
+    "images": {
+        "profile": "/assets/zakie-fotor.png",
+        "circle": "/assets/zakie-circle.png",
+        "icon": "/assets/zakie-circle.ico"
+    }
+}

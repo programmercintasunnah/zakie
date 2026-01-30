@@ -1,0 +1,58 @@
+{
+    "menuItems": [
+        {
+            "id": "home",
+            "label": "Home"
+        },
+        {
+            "id": "about",
+            "label": "About"
+        },
+        {
+            "id": "skills",
+            "label": "Skills"
+        },
+        {
+            "id": "experiences",
+            "label": "Experiences"
+        },
+        {
+            "id": "projects",
+            "label": "Projects"
+        },
+        {
+            "id": "portofolio",
+            "label": "Portofolio"
+        }
+    ],
+    "verticalMenuLinks": [
+        {
+            "href": "#home",
+            "icon": "FaHome"
+        },
+        {
+            "href": "#about",
+            "icon": "FaUser"
+        },
+        {
+            "href": "#skills",
+            "icon": "FaCode"
+        },
+        {
+            "href": "#experiences",
+            "icon": "FaBriefcase"
+        },
+        {
+            "href": "#projects",
+            "icon": "FaProjectDiagram"
+        },
+        {
+            "href": "#portofolio",
+            "icon": "FaBookReader"
+        },
+        {
+            "href": "https://drive.google.com/drive/folders/15O8n-smVbigJYJV2BbfdRZ2feBKaprLc?usp=share_link",
+            "icon": "FaFileAlt"
+        }
+    ]
+}

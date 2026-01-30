@@ -6,53 +6,33 @@ import {
   FaGitlab,
   FaYoutube,
 } from "react-icons/fa";
-import zakieimage from "../assets/zakie-circle.ico";
 import { useProfile } from "../context/ProfileContext";
 
-const menuItems = [
-  { id: "home", label: "Home" },
-  { id: "about", label: "About" },
-  { id: "skills", label: "Skills" },
-  { id: "experiences", label: "Experiences" },
-  { id: "projects", label: "Projects" },
-  { id: "portofolio", label: "Portofolio" },
-];
-
-const socialLinks = [
-  {
-    url: "https://instagram.com/muhammadzakie22",
-    icon: <FaInstagram className="text-white mr-4 hover:text-gray-400" />,
-  },
-  {
-    url: "https://www.linkedin.com/in/muhammadzakie/",
-    icon: <FaLinkedin className="text-white mr-4 hover:text-gray-400" />,
-  },
-  {
-    url: "https://github.com/programmercintasunnah",
-    icon: <FaGithub className="text-white mr-4 hover:text-gray-400" />,
-  },
-  {
-    url: "https://gitlab.com/zakiepragma",
-    icon: <FaGitlab className="text-white mr-4 hover:text-gray-400" />,
-  },
-  {
-    url: "https://www.youtube.com/channel/UCfLBG0ean6WnQ1ftTsyMt0w",
-    icon: <FaYoutube className="text-white hover:text-gray-400" />,
-  },
-];
+// Icon mapping
+const iconMap = {
+  FaInstagram: FaInstagram,
+  FaLinkedin: FaLinkedin,
+  FaGithub: FaGithub,
+  FaGitlab: FaGitlab,
+  FaYoutube: FaYoutube,
+};
 
 const Navbar = () => {
-  const { nickName } = useProfile();
+  const { nickName, images, menuItems, socialLinks, loading } = useProfile();
 
   useEffect(() => {
     document.querySelector("html").style.scrollBehavior = "smooth";
   }, []);
 
+  if (loading) {
+    return null;
+  }
+
   return (
     <nav className="flex items-center justify-between flex-wrap bg-gray-800 px-6 py-4">
       <div className="flex items-center">
         <img
-          src={zakieimage}
+          src={images.icon}
           alt="profile"
           className="rounded-full border-red-400 border-2 mr-4"
         />
@@ -75,16 +55,21 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="flex items-center ml-4">
-        {socialLinks.map((socialLink, index) => (
-          <a
-            key={index}
-            href={socialLink.url}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {socialLink.icon}
-          </a>
-        ))}
+        {socialLinks.map((socialLink) => {
+          const IconComponent = iconMap[socialLink.icon];
+          return (
+            <a
+              key={socialLink.id}
+              href={socialLink.url}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {IconComponent && (
+                <IconComponent className="text-white mr-4 hover:text-gray-400" />
+              )}
+            </a>
+          );
+        })}
       </div>
     </nav>
   );

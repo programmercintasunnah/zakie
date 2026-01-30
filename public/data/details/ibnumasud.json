@@ -1,0 +1,28 @@
+{
+    "company": "PPS IBNU MAS'UD KAMPAR",
+    "logo": "/assets/ibnumasud.png",
+    "jobType": "Internship",
+    "position": "Software Developer",
+    "period": "Februari, 1st 2020 to March, 1st 2020",
+    "about": "Pondok Pesantren Tahfidz Al-Qur'an Ibnu Mas'ud Kampar or better known as PPS Ibnu Mas'ud is one of the tahfidz Islamic boarding schools al-Qur'an which has salafus-sholeh manhaj in Kampar district under the foundation nida' as-sunnah. This school was founded in 2011 M/1432 H, so this school is still relatively new and requires application, one of which is for attendance employee attendance and employee exit activities which are known there as journal designation. In general, the attendance and contents of the journal are still in attendance using paper. At this school the number of absences and the number of minutes out from the school yard there will be salary cuts for employees and there will be a plan The number of minutes late will also result in a pay cut. To solve the problem Based on this, an Information System for Employee Exit Activities and Absences was built Attendance of Employees with QR-Code who will use the waterfall method and PHP programming language with MySQL DBMS.",
+    "aboutProject": "this is a project for employee attendance, and this project is a college assignment, namely an internship assignment. This web-based application uses the codeigniter framework with a database in the form of mysql. To see more details, you can click the show button",
+    "projectImage": "/assets/kp-app.png",
+    "links": [
+        {
+            "id": 1,
+            "url": "https://github.com/programmercintasunnah/kp-ibnu_masud_kampar-ci",
+            "icon": "FaGithub"
+        },
+        {
+            "id": 2,
+            "url": "https://drive.google.com/drive/folders/1i2_93PzA_nvZKagSAYdxwfaMu4s5L6ql?usp=sharing",
+            "icon": "FaPhotoVideo"
+        },
+        {
+            "id": 3,
+            "url": "https://www.youtube.com/watch?v=OCB_eXbcEJc&list=PLGwA21JLpwoMtXpnQHnhv0kasbL2tXWlt&index=12",
+            "icon": "FaYoutube"
+        }
+    ],
+    "pdfLink": "https://drive.google.com/file/d/1qmRCHve8qW3IZ11KZreBczAQFuaUd55z/view?usp=sharing"
+}

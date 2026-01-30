@@ -1,64 +1,22 @@
+import React from "react";
 import { useNavigate } from "react-router-dom";
-import logoPragma from "../assets/pragma.png";
-import logoRakitek from "../assets/rakitek.jpg";
-import logoIbnuMasud from "../assets/ibnumasud.png";
-import logoHunayn from "../assets/hunayn-logo.png";
-import logoHijra from "../assets/ss-hijra-logo.png";
-
-const experiences = [
-  {
-    id: 1,
-    logo: logoIbnuMasud,
-    company: "PPS Ibnu Mas'ud",
-    position: "Software Developer",
-    type: "Internship",
-    location: "Kampar, Indonesia",
-    path: "/ibnumasud",
-  },
-  {
-    id: 2,
-    logo: logoPragma,
-    company: "Pragma Informatika",
-    position: "Web Developer",
-    type: "Full-time WFO",
-    location: "Bandung, Indonesia",
-    path: "/pragma",
-  },
-  {
-    id: 3,
-    logo: logoRakitek,
-    company: "Rakitek",
-    position: "Web Programmer",
-    type: "Full-time WFH",
-    location: "Jakarta, Indonesia",
-    path: "/rakitek",
-  },
-  {
-    id: 4,
-    logo: logoHunayn,
-    company: "Hunayn Teknologi",
-    position: "Software Engineer",
-    type: "Full-time WFH",
-    location: "Tangerang, Indonesia",
-    path: "/hunayn",
-  },
-  // {
-  //   id: 5,
-  //   logo: logoHijra,
-  //   company: "Hijra Bank",
-  //   position: "Loading...",
-  //   type: "Fulltime Hybrid",
-  //   location: "Jakarta, Indonesia",
-  //   path: "/hijra",
-  // },
-];
+import { useProfile } from "../context/ProfileContext";
 
 const Experiences = () => {
+  const { experiences, loading } = useProfile();
   const navigate = useNavigate();
 
   const handleToResume = (path) => {
     navigate(path);
   };
+
+  if (loading) {
+    return (
+      <div id="experiences" className="bg-slate-200 min-h-screen py-8 flex items-center justify-center">
+        <p>Loading...</p>
+      </div>
+    );
+  }
 
   return (
     <div id="experiences" className="bg-slate-200 min-h-screen py-8">

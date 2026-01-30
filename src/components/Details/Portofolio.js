@@ -7,6 +7,7 @@ import SyirkahWebTenant from "../../assets/web-mumtazah.png";
 import IBankMobileApp from "../../assets/homescreen-ibank.png";
 import LandingCompanyWeb from "../../assets/landing-company.png";
 import JKTHalalExpoWeb from "../../assets/jakarta-halal-expo.png";
+import SiamMianHomePage from "../../assets/siam-mian-homepage.png"
 
 const Portfolio = () => {
   const [selectedCategory, setSelectedCategory] = useState("hunayn");
@@ -250,6 +251,38 @@ const Portfolio = () => {
           type: "frontend",
           role: "Frontend Developer",
           image: LandingCompanyWeb,
+        },
+        {
+          id: "siam-mian",
+          name: "Sistem Informasi Akademik MIAN",
+          description: {
+            ar: ".....",
+            en: "A web-based academic information system for Ma'had Imam An-Nawawi that helps students access schedules, quizzes, attendance, learning materials, and academic activities through a modern and responsive interface.",
+            id: "Sistem informasi akademik berbasis web untuk Ma'had Imam An-Nawawi yang memudahkan santri mengakses jadwal, kuis, presensi, materi pembelajaran, dan aktivitas akademik melalui antarmuka yang modern dan responsif.",
+          },
+          techStack: ["React", "Typescript"],
+          features: {
+            ar: ["....."],
+            en: [
+              "Student dashboard with academic overview",
+              "Quiz and exam listing with deadline information",
+              "Attendance management (present, permission, etc)",
+              "Class schedule and detailed schedule modal",
+              "Responsive mobile-first UI",
+              "Interactive tab navigation and smooth scrolling",
+            ],
+            id: [
+              "Dashboard santri dengan ringkasan akademik",
+              "Daftar kuis dan ujian beserta batas waktu",
+              "Manajemen presensi (hadir, izin, dll)",
+              "Jadwal pelajaran dan detail jadwal dalam modal",
+              "Tampilan responsif dengan pendekatan mobile-first",
+              "Navigasi tab interaktif dengan scroll yang halus",
+            ],
+          },
+          type: "frontend",
+          role: "Frontend Developer",
+          image: SiamMianHomePage,
         }
       ],
     },

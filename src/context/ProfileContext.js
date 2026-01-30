@@ -1,78 +1,72 @@
 import { createContext, useContext, useEffect, useState } from "react";
-import moment from "moment";
+import { useJsonData, useMultipleJsonData } from "../hooks/useJsonData";
+import { calculateExperience, replacePlaceholders } from "../utils/helpers";
 
 const ProfileContext = createContext();
 
 export const useProfile = () => useContext(ProfileContext);
 
 export const ProfileProvider = ({ children }) => {
-  const [name, setName] = useState("Muhammad Zakie");
-  const [nickName, setNickName] = useState("Zakie");
-  const [tanggalMulaiKerja, setTanggalMulaiKerja] = useState("15-10-2021");
-  const [totalPengalaman, setTotalPengalaman] = useState({
-    tahun: 0,
-    bulan: 0,
+  // Load semua data JSON yang diperlukan
+  const { data: allData, loading } = useMultipleJsonData({
+    profile: '/data/profile.json',
+    contacts: '/data/contacts.json',
+    skills: '/data/skills.json',
+    experiences: '/data/experiences.json',
+    projects: '/data/projects.json',
+    navigation: '/data/navigation.json'
   });
 
-  const hitungPengalaman = () => {
-    const mulaiKerja = moment(tanggalMulaiKerja, "DD-MM-YYYY");
-    const sekarang = moment();
-
-    const selisihTahun = sekarang.diff(mulaiKerja, "years");
-    mulaiKerja.add(selisihTahun, "years"); // tambahkan selisih tahun ke tanggal mulai kerja
-    const selisihBulan = sekarang.diff(mulaiKerja, "months");
-
-    setTotalPengalaman({
-      tahun: selisihTahun,
-      bulan: selisihBulan,
-    });
-  };
-
-  useEffect(() => {
-    hitungPengalaman();
-  }, []);
-
-  const [bioHome, setBioHome] = useState("");
-
-  useEffect(() => {
-    setBioHome(
-      "I am a software engineer with a strong passion for building modern " +
-      "and high-quality web applications. I specialize in technologies such " +
-      "as Go, React, TypeScript, JavaScript, jQuery, Ajax, MySQL, PostgreSQL and Linux." +
-      "With " +
-      totalPengalaman.tahun +
-      " year and " +
-      totalPengalaman.bulan +
-      " months " +
-      "of experience, I have developed a solid foundation in software development " +
-      "principles and enjoy working on both front-end and back-end development. " +
-      "I am a fast learner, a problem solver, and someone who " +
-      "consistently seeks opportunities to improve my skills and deliver better solutions. " +
-      "Let’s work together to build something exceptional. "
-    );
+  const [profileData, setProfileData] = useState({
+    name: "",
+    nickName: "",
+    jobTitle: "",
+    bioHome: "",
+    bioAbout: "",
+    email: "",
+    wa: "",
+    github: "",
+    gitlab: "",
+    address: "",
+    cvLink: "",
+    images: {},
+    totalPengalaman: { tahun: 0, bulan: 0, formatted: "" }
   });
 
-  const [bioAbout, setBioAbout] = useState(
-    "My name is " +
-    name +
-    ", and I graduated from State Islamic " +
-    "University Sultan Syarif Kasim Riau (UIN Suska Riau) with a " +
-    "Bachelor's degree in Information Technology. I studied from 2017 to " +
-    "2021 and graduated with a GPA of 3.51 out of 4.00. I am a passionate " +
-    "learner and always looking for opportunities to improve my skills " +
-    "and knowledge in the field of technology."
-  );
+  useEffect(() => {
+    if (!loading && allData.profile && allData.contacts) {
+      const experience = calculateExperience(allData.profile.startWorkDate);
 
-  const [email, setEmail] = useState("muhammadzakie22g@gmail.com");
-  const [wa, setWa] = useState("+62 822-8625-0694");
-  const [github, setGithub] = useState("programmercintasunnah");
-  const [gitlab, setGitlab] = useState("zakiepragma");
-  const [address, setAddress] = useState(
-    "Jl. Uka, Simpang Baru, Kelurahan Air Putih, Tampan, Pekanbaru, Riau, Indonesia"
-  );
-  const [jobTitles, setJobTitles] = useState("Software Engineer");
+      // Replace placeholder di bio
+      const bioHomeWithExp = replacePlaceholders(
+        allData.profile.bioHome,
+        { experience: experience.formatted }
+      );
 
-  //animasi with framer motion
+      const bioAboutWithName = replacePlaceholders(
+        allData.profile.bioAbout,
+        { name: allData.profile.name }
+      );
+
+      setProfileData({
+        name: allData.profile.name,
+        nickName: allData.profile.nickName,
+        jobTitle: allData.profile.jobTitle,
+        bioHome: bioHomeWithExp,
+        bioAbout: bioAboutWithName,
+        email: allData.contacts.email,
+        wa: allData.contacts.whatsapp,
+        github: allData.contacts.github,
+        gitlab: allData.contacts.gitlab,
+        address: allData.contacts.address,
+        cvLink: allData.profile.cvLink,
+        images: allData.profile.images,
+        totalPengalaman: experience
+      });
+    }
+  }, [loading, allData]);
+
+  // Animasi variants untuk framer motion
   const textVariants = {
     initial: { opacity: 0, y: -20 },
     animate: { opacity: 1, y: 0 },
@@ -91,19 +85,20 @@ export const ProfileProvider = ({ children }) => {
   return (
     <ProfileContext.Provider
       value={{
-        name,
-        nickName,
-        bioHome,
-        bioAbout,
-        email,
-        wa,
-        github,
-        gitlab,
-        address,
-        jobTitles,
+        ...profileData,
+        // Data dari JSON files
+        skills: allData.skills?.skills || [],
+        experiences: allData.experiences?.experiences || [],
+        projects: allData.projects?.projects || [],
+        socialLinks: allData.contacts?.socialLinks || [],
+        menuItems: allData.navigation?.menuItems || [],
+        verticalMenuLinks: allData.navigation?.verticalMenuLinks || [],
+        // Animation variants
         textVariants,
         buttonVariants,
         imageVariants,
+        // Loading state
+        loading
       }}
     >
       {children}

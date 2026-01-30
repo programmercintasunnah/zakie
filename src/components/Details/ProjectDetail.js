@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
 import { FaHome, FaFileAlt, FaPhotoVideo, FaYoutube } from "react-icons/fa";
-import Project1 from "../../assets/ta-app.png";
-import Project2 from "../../assets/kp-app.png";
-import Project3 from "../../assets/darsal-app.png";
+// import Project1 from "../../assets/ta-app.png";
+// import Project2 from "../../assets/kp-app.png";
+// import Project3 from "../../assets/darsal-app.png";
 import { useProfile } from "../../context/ProfileContext";
 import { motion } from "framer-motion";
 
@@ -23,7 +23,7 @@ const ProjectDetail = () => {
       id: "project1",
       title: "E-Voting Blockchain",
       description: "using react js and ethereum blockchain",
-      imageUrl: Project1,
+      // imageUrl: Project1,
       photoLink:
         "https://drive.google.com/drive/folders/1Ldwc4z4sRoZ02m_47MnZ1av-j8vme_Hp?usp=share_link",
       youtubeLink:
@@ -36,7 +36,7 @@ const ProjectDetail = () => {
       title: "Presence App",
       description:
         "this is a project for employee attendance, and this project is a college assignment, namely an internship assignment. This web-based application uses the codeigniter framework with a database in the form of mysql. To see more details, you can click the icon file button",
-      imageUrl: Project2,
+      // imageUrl: Project2,
       photoLink:
         "https://drive.google.com/drive/folders/1i2_93PzA_nvZKagSAYdxwfaMu4s5L6ql?usp=sharing",
       youtubeLink:
@@ -48,7 +48,7 @@ const ProjectDetail = () => {
       id: "project3",
       title: "Darsalafy App",
       description: "using laravel 8 and mysql",
-      imageUrl: Project3,
+      // imageUrl: Project3,
       photoLink:
         "https://www.youtube.com/watch?v=6Mz97_9o9Ww&list=PLGwA21JLpwoMtXpnQHnhv0kasbL2tXWlt&index=27",
       youtubeLink:
@@ -175,9 +175,8 @@ const ProjectDetail = () => {
           </div>
           <div className="w-full md:w-3/4 pt-4">
             <div
-              className={`grid ${
-                selectedProject ? "grid-cols-1" : "md:grid-cols-3"
-              } gap-4`}
+              className={`grid ${selectedProject ? "grid-cols-1" : "md:grid-cols-3"
+                } gap-4`}
             >
               {filteredProjects.map((project) => (
                 <motion.div

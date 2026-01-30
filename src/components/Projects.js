@@ -1,35 +1,23 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
-import taApp from "../assets/ta-app.png";
-import kpApp from "../assets/kp-app.png";
-import darsalApp from "../assets/darsal-app.png";
-
-const projects = [
-  {
-    name: "E-Voting Blockchain",
-    screenshot: taApp,
-    description: "using react js and ethereum blockchain",
-  },
-  {
-    name: "Presence App",
-    screenshot: kpApp,
-    description: "using codeigniter 3 and mysql",
-  },
-  {
-    name: "Darsalafy App",
-    screenshot: darsalApp,
-    description: "using laravel 8 and mysql",
-  },
-];
+import { useProfile } from "../context/ProfileContext";
 
 const Projects = () => {
+  const { projects, loading } = useProfile();
   const [showMore, setShowMore] = useState(false);
-
   const navigate = useNavigate();
 
   const handleToMoreProjects = () => {
     navigate("/project-detail");
   };
+
+  if (loading) {
+    return (
+      <div id="projects" className="min-h-screen p-8 flex items-center justify-center">
+        <p>Loading...</p>
+      </div>
+    );
+  }
 
   return (
     <div id="projects" className="min-h-screen p-8">
@@ -43,11 +31,12 @@ const Projects = () => {
       <div className="flex flex-wrap justify-center">
         {projects
           .slice(0, showMore ? projects.length : 3)
-          .map((project, index) => (
+          .map((project) => (
             <div
               data-aos="fade-up"
               data-aos-duration="1000"
               data-aos-delay="100"
+              key={project.id}
               className="bg-white shadow-md rounded-md p-6 m-2 max-w-sm"
             >
               <img
@@ -60,7 +49,7 @@ const Projects = () => {
             </div>
           ))}
       </div>
-      <div className="flex justify-center mt-4">
+      {/* <div className="flex justify-center mt-4">
         <button
           data-aos="fade-up"
           data-aos-duration="1000"
@@ -70,7 +59,7 @@ const Projects = () => {
         >
           Project Details
         </button>
-      </div>
+      </div> */}
     </div>
   );
 };

@@ -1,0 +1,74 @@
+{
+    "company": "Hunayn Teknologi",
+    "logo": "/assets/hunayn-logo.png",
+    "jobType": "Full-time WFH",
+    "position": "Software Engineer",
+    "period": "May, 15th 2023 to now",
+    "about": "Hunayn Teknologi or known as the Hunayn is an IT consulting company founded in 2023 which is now located in BSD Tangerang, Indonesia.",
+    "aboutProject": "",
+    "links": [
+        {
+            "id": 1,
+            "title": "Photo/Video",
+            "link": "https://drive.google.com/drive/folders/11KB8Fg_E6xItulb63BPsbPNLzT_6hGQa?usp=sharing",
+            "icon": "FaPhotoVideo"
+        },
+        {
+            "id": 2,
+            "title": "YouTube",
+            "link": "",
+            "icon": "FaYoutube"
+        },
+        {
+            "id": 3,
+            "title": "File",
+            "link": "https://drive.google.com/drive/folders/11KB8Fg_E6xItulb63BPsbPNLzT_6hGQa?usp=sharing",
+            "icon": "FaFileAlt"
+        }
+    ],
+    "pdfLink": "",
+    "projects": [
+        {
+            "id": "project1",
+            "title": "Syirkah App",
+            "description": "using golang, react js, postgres",
+            "imageUrl": "/assets/dashboard-syirkah.png"
+        },
+        {
+            "id": "project2",
+            "title": "Syirkah Web",
+            "description": "using react js",
+            "imageUrl": "/assets/syirkah-web.png"
+        },
+        {
+            "id": "project3",
+            "title": "Website Syirkah Per Tenant",
+            "description": "using golang, react js, postgres",
+            "imageUrl": "/assets/web-mumtazah.png"
+        },
+        {
+            "id": "project4",
+            "title": "IBank Syirkah",
+            "description": "using react native expo, typescript",
+            "imageUrl": "/assets/homescreen-ibank.png"
+        },
+        {
+            "id": "project5",
+            "title": "Landing Company",
+            "description": "using svelte js",
+            "imageUrl": "/assets/landing-company.png"
+        },
+        {
+            "id": "project6",
+            "title": "Jakarta Halal Expo",
+            "description": "using svelte js",
+            "imageUrl": "/assets/jakarta-halal-expo.png"
+        },
+        {
+            "id": "project7",
+            "title": "Sistem Informasi Akedemik MIAN",
+            "description": "using react + vite, tailwind, typescript",
+            "imageUrl": "/assets/siam-mian-homepage.png"
+        }
+    ]
+}

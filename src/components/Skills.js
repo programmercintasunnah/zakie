@@ -1,61 +1,32 @@
 import React from "react";
 import {
-  FaNodeJs,
+  FaCode,
   FaJs,
   FaReact,
   FaDatabase,
   FaLinux,
-  FaCode,
 } from "react-icons/fa";
+import { useProfile } from "../context/ProfileContext";
+
+// Icon mapping untuk convert string ke component
+const iconMap = {
+  FaCode: FaCode,
+  FaJs: FaJs,
+  FaReact: FaReact,
+  FaDatabase: FaDatabase,
+  FaLinux: FaLinux,
+};
 
 const Skills = () => {
-  const skills = [
-    {
-      id: 1,
-      icon: <FaCode className="text-6xl mb-2 text-blue-400" />,
-      text: "Golang",
-    },
-    {
-      id: 2,
-      icon: <FaReact className="text-6xl mb-2 text-blue-400" />,
-      text: "React",
-    },
-    {
-      id: 3,
-      icon: <FaCode className="text-6xl mb-2 text-blue-500" />,
-      text: "TypeScript",
-    },
-    {
-      id: 4,
-      icon: <FaJs className="text-6xl mb-2 text-yellow-500" />,
-      text: "JavaScript",
-    },
-    {
-      id: 4,
-      icon: <FaCode className="text-6xl mb-2 text-blue-500" />,
-      text: "JQuery",
-    },
-    {
-      id: 5,
-      icon: <FaCode className="text-6xl mb-2 text-purple-500" />,
-      text: "Ajax",
-    },
-    {
-      id: 6,
-      icon: <FaDatabase className="text-6xl mb-2 text-gray-500" />,
-      text: "PostgreSQL",
-    },
-    {
-      id: 7,
-      icon: <FaDatabase className="text-6xl mb-2 text-gray-500" />,
-      text: "MySQL",
-    },
-    {
-      id: 8,
-      icon: <FaLinux className="text-6xl mb-2 text-red-400" />,
-      text: "Linux",
-    },
-  ];
+  const { skills, loading } = useProfile();
+
+  if (loading) {
+    return (
+      <div id="skills" className="min-h-screen bg-gray-50 flex items-center justify-center">
+        <p>Loading...</p>
+      </div>
+    );
+  }
 
   return (
     <div
@@ -70,17 +41,18 @@ const Skills = () => {
         Skills
       </h2>
       <div className="flex flex-wrap gap-10 justify-center items-center mx-8">
-        {skills.map((item) => {
+        {skills.map((skill) => {
+          const IconComponent = iconMap[skill.icon];
           return (
             <div
               data-aos="fade-up"
               data-aos-duration="1000"
               data-aos-delay="200"
-              key={item.id}
+              key={skill.id}
               className="flex flex-col items-center justify-center"
             >
-              {item.icon}
-              <span className="text-lg font-medium">{item.text}</span>
+              {IconComponent && <IconComponent className={`text-6xl mb-2 ${skill.color}`} />}
+              <span className="text-lg font-medium">{skill.name}</span>
             </div>
           );
         })}

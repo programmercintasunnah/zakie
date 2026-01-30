@@ -1,0 +1,44 @@
+{
+    "experiences": [
+        {
+            "id": 1,
+            "logo": "/assets/ibnumasud.png",
+            "company": "PPS Ibnu Mas'ud",
+            "position": "Software Developer",
+            "type": "Internship",
+            "location": "Kampar, Indonesia",
+            "period": "Februari 1st 2020 to March 1st 2020",
+            "path": "/ibnumasud"
+        },
+        {
+            "id": 2,
+            "logo": "/assets/pragma.png",
+            "company": "Pragma Informatika",
+            "position": "Web Developer",
+            "type": "Full-time WFO",
+            "location": "Bandung, Indonesia",
+            "period": "October 15th 2021 to March 31th 2022",
+            "path": "/pragma"
+        },
+        {
+            "id": 3,
+            "logo": "/assets/rakitek.jpg",
+            "company": "Rakitek",
+            "position": "Web Programmer",
+            "type": "Full-time WFH",
+            "location": "Jakarta, Indonesia",
+            "period": "April 1st 2022 to Februari 28th 2023",
+            "path": "/rakitek"
+        },
+        {
+            "id": 4,
+            "logo": "/assets/hunayn-logo.png",
+            "company": "Hunayn Teknologi",
+            "position": "Software Engineer",
+            "type": "Full-time WFH",
+            "location": "Tangerang, Indonesia",
+            "period": "May 15th 2023 to now",
+            "path": "/hunayn"
+        }
+    ]
+}
