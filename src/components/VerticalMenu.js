@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { useProfile } from "../context/ProfileContext";
 import {
   FaHome,
@@ -22,7 +22,7 @@ const iconMap = {
 };
 
 const VerticalMenu = () => {
-  const {  verticalMenuLinks, loading } = useProfile();
+  const { verticalMenuLinks, loading } = useProfile();
 
   useEffect(() => {
     document.querySelector("html").style.scrollBehavior = "smooth";
@@ -41,7 +41,7 @@ const VerticalMenu = () => {
       {verticalMenuLinks?.map((link, index) => {
         const IconComponent = getIconComponent(link.icon);
         const isExternalLink = link.href.startsWith('http');
-        
+
         return (
           <a
             key={index}

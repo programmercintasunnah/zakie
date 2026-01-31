@@ -1,11 +1,9 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { 
-  FaBriefcase, 
-  FaTools, 
-  FaLaptopCode, 
-  FaExternalLinkAlt, 
-  FaBuilding, 
+import {
+  FaBriefcase,
+  FaTools,
+  FaLaptopCode,
   FaTimes,
   FaCode,
   FaJs,
@@ -45,10 +43,10 @@ const PortfolioExperiences = () => {
 
     // Handle initial load
     handleHashChange();
-    
+
     // Handle hash change
     window.addEventListener('hashchange', handleHashChange);
-    
+
     return () => {
       window.removeEventListener('hashchange', handleHashChange);
     };
@@ -97,11 +95,10 @@ const PortfolioExperiences = () => {
             <button
               data-aos="fade-up"
               data-aos-duration="1000"
-              className={`px-6 py-2 rounded-lg font-semibold transition-all flex items-center gap-2 ${
-                activeTab === "work"
+              className={`px-6 py-2 rounded-lg font-semibold transition-all flex items-center gap-2 ${activeTab === "work"
                   ? "bg-blue-500 text-white"
                   : "text-gray-600 hover:text-gray-800"
-              }`}
+                }`}
               onClick={() => setActiveTab("work")}
             >
               <FaBriefcase />
@@ -110,11 +107,10 @@ const PortfolioExperiences = () => {
             <button
               data-aos="fade-up"
               data-aos-duration="1000"
-              className={`px-6 py-2 rounded-lg font-semibold transition-all flex items-center gap-2 ${
-                activeTab === "skills"
+              className={`px-6 py-2 rounded-lg font-semibold transition-all flex items-center gap-2 ${activeTab === "skills"
                   ? "bg-blue-500 text-white"
                   : "text-gray-600 hover:text-gray-800"
-              }`}
+                }`}
               onClick={() => setActiveTab("skills")}
             >
               <FaTools />
@@ -123,11 +119,10 @@ const PortfolioExperiences = () => {
             <button
               data-aos="fade-up"
               data-aos-duration="1000"
-              className={`px-6 py-2 rounded-lg font-semibold transition-all flex items-center gap-2 ${
-                activeTab === "personal"
+              className={`px-6 py-2 rounded-lg font-semibold transition-all flex items-center gap-2 ${activeTab === "personal"
                   ? "bg-blue-500 text-white"
                   : "text-gray-600 hover:text-gray-800"
-              }`}
+                }`}
               onClick={() => setActiveTab("personal")}
             >
               <FaLaptopCode />
@@ -233,7 +228,7 @@ const PortfolioExperiences = () => {
         {/* Personal Projects Tab */}
         {activeTab === "personal" && (
           <div id="personal-projects" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {personalProjects.map((project, index) => (
+            {personalProjects.map((project, index) => (
               <div
                 data-aos="fade-up"
                 data-aos-duration="1000"
@@ -314,10 +309,10 @@ const PortfolioExperiences = () => {
           <div className="text-center py-12 bg-yellow-50 border border-yellow-200 rounded">
             <p className="text-gray-600 mb-2">No personal projects available.</p>
             <div className="text-xs text-left bg-white p-2 rounded border">
-              <strong>Debug Info:</strong><br/>
-              Length: {personalProjects?.length}<br/>
-              Loading: {loading ? 'Yes' : 'No'}<br/>
-              Type: {typeof personalProjects}<br/>
+              <strong>Debug Info:</strong><br />
+              Length: {personalProjects?.length}<br />
+              Loading: {loading ? 'Yes' : 'No'}<br />
+              Type: {typeof personalProjects}<br />
               Keys: {Object.keys(personalProjects || {}).join(', ')}
             </div>
           </div>
