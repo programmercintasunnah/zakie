@@ -101,7 +101,7 @@ const About = () => {
                 <img
                   className="w-full rounded-xl lg:rounded-lg"
                   src={images?.profile || "/assets/zakie-fotor.png"}
-                  alt="profile picture"
+                  alt="Profile"
                 />
               </div>
             </div>

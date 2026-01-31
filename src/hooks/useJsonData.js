@@ -57,53 +57,31 @@ export const useMultipleJsonData = (jsonPaths) => {
         const loadAllData = async () => {
             try {
                 setLoading(true);
-                const promises = Object.entries(jsonPaths).map(async ([key, path]) => {
-                    try {
-                        // Handle both development and production environments
-                        const fullPath = path.startsWith('/') ? path : `/${path}`;
-                        const response = await fetch(fullPath);
-                        if (!response.ok) {
-                            throw new Error(`Failed to load ${key} from ${fullPath}`);
-                        }
-                        const jsonData = await response.json();
-                        return [key, jsonData];
-                    } catch (fileError) {
-                        console.warn(`Failed to load ${key}, using fallback:`, fileError.message);
-                        // Return fallback data for each type
-                        const fallbackData = {
-                            profile: { name: '', nickName: '', jobTitle: '', bioHome: '', bioAbout: '', startWorkDate: '', cvLink: '', images: {} },
-                            contacts: { email: '', whatsapp: '', github: '', gitlab: '', address: '', socialLinks: [] },
-                            skills: { skills: [] },
-                            experiences: { experiences: [] },
-                            projects: { projects: [] },
-                            navigation: { menuItems: [], verticalMenuLinks: [] }
-                        };
-                        return [key, fallbackData[key] || {}];
+
+                const promises = Object.entries(stablePaths).map(async ([key, path]) => {
+                    const fullPath = path.startsWith('/') ? path : `/${path}`;
+                    const response = await fetch(fullPath);
+
+                    if (!response.ok) {
+                        throw new Error(`Failed to load ${key} from ${fullPath}`);
                     }
+
+                    const jsonData = await response.json();
+                    return [key, jsonData];
                 });
 
                 const results = await Promise.all(promises);
-                const dataObject = Object.fromEntries(results);
-                setData(dataObject);
+                setData(Object.fromEntries(results));
                 setError(null);
             } catch (err) {
                 setError(err.message);
-                console.error('Error loading JSON data:', err);
-                // Set fallback data to prevent crashes
-                setData({
-                    profile: { name: '', nickName: '', jobTitle: '', bioHome: '', bioAbout: '', startWorkDate: '', cvLink: '', images: {} },
-                    contacts: { email: '', whatsapp: '', github: '', gitlab: '', address: '', socialLinks: [] },
-                    skills: { skills: [] },
-                    experiences: { experiences: [] },
-                    projects: { projects: [] },
-                    navigation: { menuItems: [], verticalMenuLinks: [] }
-                });
+                console.error(err);
             } finally {
                 setLoading(false);
             }
         };
 
-        if (Object.keys(jsonPaths).length > 0) {
+        if (Object.keys(stablePaths).length > 0) {
             loadAllData();
         }
     }, [stablePaths]);
