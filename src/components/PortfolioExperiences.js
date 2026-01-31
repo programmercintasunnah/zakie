@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import {
   FaBriefcase,
@@ -28,32 +28,6 @@ const PortfolioExperiences = () => {
   const [activeTab, setActiveTab] = useState("work");
   const [selectedCompanyModal, setSelectedCompanyModal] = useState(null);
 
-  // DISABLED HASHCHANGE LISTENER FOR DEBUGGING
-  // useEffect(() => {
-  //   const handleHashChange = () => {
-  //     const hash = window.location.hash.substring(1);
-  //     if (hash === 'portfolio') {
-  //       setActiveTab('work'); // Default to work tab
-  //     } else if (hash === 'work-experiences') {
-  //       setActiveTab('work');
-  //     } else if (hash === 'personal-projects') {
-  //       setActiveTab('personal');
-  //     }
-  //   };
-
-  //   // Handle initial load
-  //   handleHashChange();
-
-  //   // Handle hash change
-  //   window.addEventListener('hashchange', handleHashChange);
-
-  //   return () => {
-  //     window.removeEventListener('hashchange', handleHashChange);
-  //   };
-  // }, []);
-
-
-
   const openCompanyModal = (company) => {
     setSelectedCompanyModal(company);
   };
@@ -72,7 +46,7 @@ const PortfolioExperiences = () => {
 
   if (loading) {
     return (
-        <div id="portfolio" className="bg-slate-200 min-h-screen py-8 flex items-center justify-center">
+      <div id="portfolio" className="bg-slate-200 min-h-screen py-8 flex items-center justify-center">
         <p>Loading...</p>
       </div>
     );
@@ -82,8 +56,6 @@ const PortfolioExperiences = () => {
     <div id="portfolio" className="bg-slate-200 min-h-screen py-8">
       <div className="container mx-auto px-4 lg:px-8">
         <h1
-          
-          
           className="text-3xl font-bold text-center mb-10"
         >
           Portfolio & Skills
@@ -93,11 +65,11 @@ const PortfolioExperiences = () => {
         <div className="flex justify-center mb-8">
           <div className="bg-white rounded-lg p-1 shadow-md flex">
             <button
-              
-              
+
+
               className={`px-6 py-2 rounded-lg font-semibold  flex items-center gap-2 ${activeTab === "work"
-                  ? "bg-blue-500 text-white"
-                  : "text-gray-600 hover:text-gray-800"
+                ? "bg-blue-500 text-white"
+                : "text-gray-600 hover:text-gray-800"
                 }`}
               onClick={() => setActiveTab("work")}
             >
@@ -105,11 +77,9 @@ const PortfolioExperiences = () => {
               Work Experiences
             </button>
             <button
-              
-              
               className={`px-6 py-2 rounded-lg font-semibold  flex items-center gap-2 ${activeTab === "skills"
-                  ? "bg-blue-500 text-white"
-                  : "text-gray-600 hover:text-gray-800"
+                ? "bg-blue-500 text-white"
+                : "text-gray-600 hover:text-gray-800"
                 }`}
               onClick={() => setActiveTab("skills")}
             >
@@ -117,11 +87,9 @@ const PortfolioExperiences = () => {
               Skills
             </button>
             <button
-              
-              
               className={`px-6 py-2 rounded-lg font-semibold  flex items-center gap-2 ${activeTab === "personal"
-                  ? "bg-blue-500 text-white"
-                  : "text-gray-600 hover:text-gray-800"
+                ? "bg-blue-500 text-white"
+                : "text-gray-600 hover:text-gray-800"
                 }`}
               onClick={() => setActiveTab("personal")}
             >
@@ -136,9 +104,6 @@ const PortfolioExperiences = () => {
           <div id="work-experiences" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {experiences?.map((experience) => (
               <div
-                
-                
-                
                 key={experience.id}
                 className="bg-white shadow-md rounded-lg p-6"
               >
@@ -199,8 +164,6 @@ const PortfolioExperiences = () => {
         {activeTab === "skills" && (
           <div id="skills-section" className="min-h-screen bg-gray-50 flex flex-col items-center justify-center">
             <h2
-              
-              
               className="text-3xl md:text-4xl font-bold mb-10"
             >
               Skills
@@ -210,9 +173,6 @@ const PortfolioExperiences = () => {
                 const IconComponent = getIconComponent(skill.icon);
                 return (
                   <div
-                    
-                    
-                    
                     key={skill.id}
                     className="flex flex-col items-center justify-center"
                   >
@@ -230,8 +190,6 @@ const PortfolioExperiences = () => {
           <div id="personal-projects" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {personalProjects.map((project, index) => (
               <div
-                
-                
                 data-aos-delay={`${index * 100}`}
                 key={project.id}
                 className="bg-white shadow-md rounded-lg p-6"

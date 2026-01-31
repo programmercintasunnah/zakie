@@ -17,28 +17,6 @@ export const ProfileProvider = ({ children }) => {
     navigation: '/data/navigation.json'
   });
 
-
-
-
-
-
-
-  // DISABLED ANIMATION VARIANTS
-  // const textVariants = {
-  //   initial: { opacity: 0, y: -20 },
-  //   animate: { opacity: 1, y: 0 },
-  // };
-
-  // const buttonVariants = {
-  //   initial: { opacity: 0, x: 20 },
-  //   animate: { opacity: 1, x: 0 },
-  // };
-
-  // const imageVariants = {
-  //   initial: { scale: 0 },
-  //   animate: { scale: 1 },
-  // };
-
   const [profileData, setProfileData] = useState({
     name: "",
     nickName: "",
@@ -131,11 +109,6 @@ export const ProfileProvider = ({ children }) => {
         socialLinks: allData.contacts?.socialLinks || [],
         menuItems: allData.navigation?.menuItems || [],
         verticalMenuLinks: allData.navigation?.verticalMenuLinks || [],
-        
-        // Animation variants - DISABLED
-        // textVariants,
-        // buttonVariants,
-        // imageVariants,
         
         // Loading state
         loading

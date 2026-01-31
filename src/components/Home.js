@@ -8,9 +8,9 @@ const Home = () => {
     name,
     bioHome,
     jobTitle,
-    textVariants,
-    buttonVariants,
-    imageVariants,
+    // textVariants,
+    // buttonVariants,
+    // imageVariants,
   } = useProfile();
 
   return (

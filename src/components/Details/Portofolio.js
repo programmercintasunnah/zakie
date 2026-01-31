@@ -1,5 +1,5 @@
-import React, { useState, useRef } from "react";
-import { motion } from "framer-motion";
+import { useState, useRef } from "react";
+// import { motion } from "framer-motion";
 import { FaHome, FaGithub, FaExternalLinkAlt, FaBuilding, FaGlobe } from "react-icons/fa";
 // import SyirkahWeb from "../../assets/syirkah-web.png"
 // import DashboardSyirkah from "../../assets/dashboard-syirkah.png"

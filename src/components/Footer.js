@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 const Footer = () => {
-  const [time, setTime] = useState(new Date());
+  const time = new Date()
 
   // DISABLED FOR DEBUGGING
   // useEffect(() => {
