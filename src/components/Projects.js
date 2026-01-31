@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router";
+import { useNavigate } from "react-router-dom";
 import { useProfile } from "../context/ProfileContext";
 
 const Projects = () => {
@@ -19,6 +19,18 @@ const Projects = () => {
     );
   }
 
+  // Handle case when projects is not available or empty
+  if (!projects || projects.length === 0) {
+    return (
+      <div id="projects" className="min-h-screen p-8 flex items-center justify-center">
+        <div className="text-center">
+          <h1 className="text-3xl font-bold mb-4">Projects</h1>
+          <p className="text-gray-600">No projects available at the moment.</p>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div id="projects" className="min-h-screen p-8">
       <h1
@@ -31,21 +43,30 @@ const Projects = () => {
       <div className="flex flex-wrap justify-center">
         {projects
           .slice(0, showMore ? projects.length : 3)
-          .map((project) => (
+          .map((project, index) => (
             <div
               data-aos="fade-up"
               data-aos-duration="1000"
-              data-aos-delay="100"
-              key={project.id}
+              data-aos-delay={`${index * 100}`}
+              key={project.id || index}
               className="bg-white shadow-md rounded-md p-6 m-2 max-w-sm"
             >
-              <img
-                src={project.screenshot}
-                alt={project.name}
-                className="mb-4"
-              />
-              <h2 className="text-2xl font-bold mb-2">{project.name}</h2>
-              <p className="text-gray-700">{project.description}</p>
+              {project.screenshot ? (
+                <img
+                  src={project.screenshot}
+                  alt={project.name || 'Project'}
+                  className="mb-4 w-full h-48 object-cover rounded"
+                  onError={(e) => {
+                    e.target.style.display = 'none';
+                  }}
+                />
+              ) : (
+                <div className="mb-4 w-full h-48 bg-gray-200 rounded flex items-center justify-center">
+                  <span className="text-gray-500">No Image</span>
+                </div>
+              )}
+              <h2 className="text-2xl font-bold mb-2">{project.name || 'Untitled Project'}</h2>
+              <p className="text-gray-700">{project.description || 'No description available'}</p>
             </div>
           ))}
       </div>

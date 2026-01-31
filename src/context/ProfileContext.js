@@ -8,7 +8,7 @@ export const useProfile = () => useContext(ProfileContext);
 
 export const ProfileProvider = ({ children }) => {
   // Load semua data JSON yang diperlukan
-  const { data: allData, loading } = useMultipleJsonData({
+  const { data: allData, loading, error } = useMultipleJsonData({
     profile: '/data/profile.json',
     contacts: '/data/contacts.json',
     skills: '/data/skills.json',
@@ -35,36 +35,73 @@ export const ProfileProvider = ({ children }) => {
 
   useEffect(() => {
     if (!loading && allData.profile && allData.contacts) {
-      const experience = calculateExperience(allData.profile.startWorkDate);
+      try {
+        const experience = calculateExperience(allData.profile.startWorkDate || '');
 
-      // Replace placeholder di bio
-      const bioHomeWithExp = replacePlaceholders(
-        allData.profile.bioHome,
-        { experience: experience.formatted }
-      );
+        // Replace placeholder di bio dengan fallback values
+        const bioHomeWithExp = replacePlaceholders(
+          allData.profile.bioHome || 'Experienced developer',
+          { experience: experience.formatted }
+        );
 
-      const bioAboutWithName = replacePlaceholders(
-        allData.profile.bioAbout,
-        { name: allData.profile.name }
-      );
+        const bioAboutWithName = replacePlaceholders(
+          allData.profile.bioAbout || 'About me',
+          { name: allData.profile.name || 'Developer' }
+        );
 
+        setProfileData({
+          name: allData.profile.name || '',
+          nickName: allData.profile.nickName || '',
+          jobTitle: allData.profile.jobTitle || '',
+          bioHome: bioHomeWithExp,
+          bioAbout: bioAboutWithName,
+          email: allData.contacts.email || '',
+          wa: allData.contacts.whatsapp || '',
+          github: allData.contacts.github || '',
+          gitlab: allData.contacts.gitlab || '',
+          address: allData.contacts.address || '',
+          cvLink: allData.profile.cvLink || '',
+          images: allData.profile.images || {},
+          totalPengalaman: experience
+        });
+      } catch (err) {
+        console.error('Error processing profile data:', err);
+        // Set default values to prevent crashes
+        setProfileData({
+          name: '',
+          nickName: '',
+          jobTitle: '',
+          bioHome: '',
+          bioAbout: '',
+          email: '',
+          wa: '',
+          github: '',
+          gitlab: '',
+          address: '',
+          cvLink: '',
+          images: {},
+          totalPengalaman: { tahun: 0, bulan: 0, formatted: '0 years' }
+        });
+      }
+    } else if (error) {
+      // Set default values when there's an error
       setProfileData({
-        name: allData.profile.name,
-        nickName: allData.profile.nickName,
-        jobTitle: allData.profile.jobTitle,
-        bioHome: bioHomeWithExp,
-        bioAbout: bioAboutWithName,
-        email: allData.contacts.email,
-        wa: allData.contacts.whatsapp,
-        github: allData.contacts.github,
-        gitlab: allData.contacts.gitlab,
-        address: allData.contacts.address,
-        cvLink: allData.profile.cvLink,
-        images: allData.profile.images,
-        totalPengalaman: experience
+        name: '',
+        nickName: '',
+        jobTitle: '',
+        bioHome: '',
+        bioAbout: '',
+        email: '',
+        wa: '',
+        github: '',
+        gitlab: '',
+        address: '',
+        cvLink: '',
+        images: {},
+        totalPengalaman: { tahun: 0, bulan: 0, formatted: '0 years' }
       });
     }
-  }, [loading, allData]);
+  }, [loading, allData, error]);
 
   // Animasi variants untuk framer motion
   const textVariants = {
