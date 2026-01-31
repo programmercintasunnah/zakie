@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react";
-import { useJsonData, useMultipleJsonData } from "../hooks/useJsonData";
+import { useMultipleJsonData } from "../hooks/useJsonData";
 import { calculateExperience, replacePlaceholders } from "../utils/helpers";
 
 const ProfileContext = createContext();
