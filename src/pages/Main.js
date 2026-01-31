@@ -1,12 +1,9 @@
 import About from "../components/About";
-import Experiences from "../components/Experiences";
+import PortfolioExperiences from "../components/PortfolioExperiences";
 import Home from "../components/Home";
 import Navbar from "../components/Navbar";
-import Projects from "../components/Projects";
 import Footer from "../components/Footer";
-import Skills from "../components/Skills";
 import VerticalMenu from "../components/VerticalMenu";
-import Portofolio from "../components/Portofolio";
 
 const Main = () => {
   return (
@@ -15,10 +12,7 @@ const Main = () => {
       <VerticalMenu />
       <Home />
       <About />
-      <Skills />
-      <Experiences />
-      <Projects />
-      <Portofolio />
+      <PortfolioExperiences />
       <Footer />
     </>
   );

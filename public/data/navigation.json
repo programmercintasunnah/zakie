@@ -2,27 +2,24 @@
     "menuItems": [
         {
             "id": "home",
-            "label": "Home"
+            "label": "Home",
+            "href": "#home"
         },
         {
             "id": "about",
-            "label": "About"
+            "label": "About",
+            "href": "#about"
         },
         {
-            "id": "skills",
-            "label": "Skills"
+            "id": "portfolio",
+            "label": "Portfolio",
+            "href": "#portfolio"
         },
         {
-            "id": "experiences",
-            "label": "Experiences"
-        },
-        {
-            "id": "projects",
-            "label": "Projects"
-        },
-        {
-            "id": "portofolio",
-            "label": "Portofolio"
+            "id": "cv",
+            "label": "CV",
+            "href": "https://drive.google.com/drive/folders/15O8n-smVbigJYJV2BbfdRZ2feBKaprLc?usp=share_link",
+            "target": "_blank"
         }
     ],
     "verticalMenuLinks": [
@@ -35,24 +32,21 @@
             "icon": "FaUser"
         },
         {
-            "href": "#skills",
-            "icon": "FaCode"
-        },
-        {
-            "href": "#experiences",
+            "href": "#work-experiences",
             "icon": "FaBriefcase"
         },
         {
-            "href": "#projects",
-            "icon": "FaProjectDiagram"
+            "href": "#personal-projects",
+            "icon": "FaLaptopCode"
         },
         {
-            "href": "#portofolio",
+            "href": "/portofolio",
             "icon": "FaBookReader"
         },
         {
             "href": "https://drive.google.com/drive/folders/15O8n-smVbigJYJV2BbfdRZ2feBKaprLc?usp=share_link",
-            "icon": "FaFileAlt"
+            "icon": "FaFileAlt",
+            "target": "_blank"
         }
     ]
 }

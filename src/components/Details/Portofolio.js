@@ -1,13 +1,13 @@
 import React, { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { FaHome, FaGithub, FaExternalLinkAlt, FaBuilding, FaLaptopCode, FaGlobe } from "react-icons/fa";
-import SyirkahWeb from "../../assets/syirkah-web.png"
-import DashboardSyirkah from "../../assets/dashboard-syirkah.png";
-import SyirkahWebTenant from "../../assets/web-mumtazah.png";
-import IBankMobileApp from "../../assets/homescreen-ibank.png";
-import LandingCompanyWeb from "../../assets/landing-company.png";
-import JKTHalalExpoWeb from "../../assets/jakarta-halal-expo.png";
-import SiamMianHomePage from "../../assets/siam-mian-homepage.png"
+// import SyirkahWeb from "../../assets/syirkah-web.png"
+// import DashboardSyirkah from "../../assets/dashboard-syirkah.png"
+// import SyirkahWebTenant from "../../assets/web-mumtazah.png"
+// import IBankMobileApp from "../../assets/homescreen-ibank.png"
+// import LandingCompanyWeb from "../../assets/landing-company.png"
+// import JKTHalalExpoWeb from "../../assets/jakarta-halal-expo.png"
+// import SiamMianHomePage from "../../assets/siam-mian-homepage.png"
 
 const Portfolio = () => {
   const [selectedCategory, setSelectedCategory] = useState("hunayn");
@@ -75,7 +75,7 @@ const Portfolio = () => {
           },
           type: "fullstack",
           role: "Full Stack Developer",
-          image: DashboardSyirkah,
+          image: "/assets/dashboard-syirkah.png",
         },
         {
           id: "hyn-be-core",
@@ -138,7 +138,7 @@ const Portfolio = () => {
           },
           type: "frontend",
           role: "Frontend Developer",
-          image: SyirkahWeb,
+          image: "/assets/syirkah-web.png",
         },
         {
           id: "syirkah-web-tenant",
@@ -172,7 +172,7 @@ const Portfolio = () => {
           },
           type: "frontend",
           role: "Frontend Developer",
-          image: SyirkahWebTenant,
+          image: "/assets/web-mumtazah.png",
         },
         {
           id: "ibank-syirkah",
@@ -202,7 +202,7 @@ const Portfolio = () => {
           },
           type: "mobile",
           role: "Mobile Developer",
-          image: IBankMobileApp,
+          image: "/assets/homescreen-ibank.png",
         },
         {
           id: "jakarta-halal-expo",
@@ -228,7 +228,7 @@ const Portfolio = () => {
           },
           type: "frontend",
           role: "Frontend Developer",
-          image: JKTHalalExpoWeb,
+          image: "/assets/jakarta-halal-expo.png",
         },
         {
           id: "corporate-website",
@@ -250,7 +250,7 @@ const Portfolio = () => {
           },
           type: "frontend",
           role: "Frontend Developer",
-          image: LandingCompanyWeb,
+          image: "/assets/landing-company.png",
         },
         {
           id: "siam-mian",
@@ -282,7 +282,7 @@ const Portfolio = () => {
           },
           type: "frontend",
           role: "Frontend Developer",
-          image: SiamMianHomePage,
+          image: "/assets/siam-mian-homepage.png",
         }
       ],
     },

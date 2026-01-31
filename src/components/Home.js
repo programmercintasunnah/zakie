@@ -1,6 +1,6 @@
 import React from "react";
 import { FaFilePdf } from "react-icons/fa";
-import profilePic from "../assets/zakie-circle.png";
+// import profilePic from "../assets/zakie-circle.png";
 import { useProfile } from "../context/ProfileContext";
 import { motion } from "framer-motion";
 
@@ -27,7 +27,7 @@ const Home = () => {
         className="w-48 h-48 md:w-64 md:h-64 rounded-full border-red-600 border-2 overflow-hidden"
       >
         <img
-          src={profilePic}
+          src="/assets/zakie-circle.png"
           alt="Profile"
           className="w-full h-full object-cover"
         />

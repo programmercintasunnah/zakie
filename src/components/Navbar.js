@@ -45,7 +45,9 @@ const Navbar = () => {
           {menuItems.map((item) => (
             <li className="mx-2" key={item.id}>
               <a
-                href={`#${item.id}`}
+                href={item.href}
+                target={item.target || "_self"}
+                rel={item.target === "_blank" ? "noopener noreferrer" : undefined}
                 className="text-white hover:text-gray-400"
               >
                 {item.label}

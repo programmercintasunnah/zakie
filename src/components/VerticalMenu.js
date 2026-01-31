@@ -1,56 +1,61 @@
+import React, { useState, useEffect } from "react";
+import { useProfile } from "../context/ProfileContext";
 import {
   FaHome,
   FaUser,
   FaCode,
   FaBriefcase,
-  FaProjectDiagram,
+  FaLaptopCode,
   FaFileAlt,
   FaBookReader,
 } from "react-icons/fa";
 
-const menuLinks = [
-  {
-    href: "#home",
-    icon: <FaHome size={24} />,
-  },
-  {
-    href: "#about",
-    icon: <FaUser size={24} />,
-  },
-  {
-    href: "#skills",
-    icon: <FaCode size={24} />,
-  },
-  {
-    href: "#experiences",
-    icon: <FaBriefcase size={24} />,
-  },
-  {
-    href: "#projects",
-    icon: <FaProjectDiagram size={24} />,
-  },
-  {
-    href: "#portofolio",
-    icon: <FaBookReader size={24} />,
-  },
-  {
-    href: "https://drive.google.com/drive/folders/15O8n-smVbigJYJV2BbfdRZ2feBKaprLc?usp=share_link",
-    icon: <FaFileAlt size={24} />,
-  },
-];
+// Icon mapping
+const iconMap = {
+  FaHome: FaHome,
+  FaUser: FaUser,
+  FaCode: FaCode,
+  FaBriefcase: FaBriefcase,
+  FaLaptopCode: FaLaptopCode,
+  FaFileAlt: FaFileAlt,
+  FaBookReader: FaBookReader,
+};
 
 const VerticalMenu = () => {
+  const { menuItems, verticalMenuLinks, loading } = useProfile();
+  const [isHovered, setIsHovered] = useState(false);
+
+  useEffect(() => {
+    document.querySelector("html").style.scrollBehavior = "smooth";
+  }, []);
+
+  if (loading) {
+    return null;
+  }
+
+  const getIconComponent = (iconName) => {
+    return iconMap[iconName] || FaCode;
+  };
+
   return (
     <div className="fixed right-2 top-1/2 transform -translate-y-1/2 flex flex-col items-center space-y-4 z-50">
-      {menuLinks.map((link, index) => (
-        <a
-          key={index}
-          href={link.href}
-          className="p-2 rounded-full bg-red-600 text-white hover:bg-red-700"
-        >
-          {link.icon}
-        </a>
-      ))}
+      {verticalMenuLinks?.map((link, index) => {
+        const IconComponent = getIconComponent(link.icon);
+        const isExternalLink = link.href.startsWith('http');
+        
+        return (
+          <a
+            key={index}
+            href={link.href}
+            target={isExternalLink ? "_blank" : "_self"}
+            rel={isExternalLink ? "noopener noreferrer" : undefined}
+            className="p-2 rounded-full bg-red-600 text-white hover:bg-red-700 transition-colors"
+            title={link.icon.replace('Fa', '')}
+          >
+            <IconComponent size={24} />
+          </a>
+        );
+      })}
     </div>
   );
 };

@@ -126,7 +126,23 @@ export const ProfileProvider = ({ children }) => {
         // Data dari JSON files
         skills: allData.skills?.skills || [],
         experiences: allData.experiences?.experiences || [],
-        projects: allData.projects?.projects || [],
+        personalProjects: allData.experiences?.personalProjects || allData.profile?.personalProjects || [],
+        personalData: allData.profile?.personalData || [],
+        educationData: allData.profile?.educationData || [],
+        certificates: allData.profile?.certificates || [],
+        workProjects: allData.experiences?.experiences?.reduce((projects, exp) => {
+          if (exp.projects && Array.isArray(exp.projects)) {
+            const projectsWithCompany = exp.projects.map(project => ({
+              ...project,
+              company: exp.company,
+              companyLogo: exp.logo,
+              period: exp.period,
+              position: exp.position
+            }));
+            return [...projects, ...projectsWithCompany];
+          }
+          return projects;
+        }, []) || [],
         socialLinks: allData.contacts?.socialLinks || [],
         menuItems: allData.navigation?.menuItems || [],
         verticalMenuLinks: allData.navigation?.verticalMenuLinks || [],
