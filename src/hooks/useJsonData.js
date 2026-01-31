@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+
+import { useState, useEffect, useMemo } from 'react';
 
 /**
  * Custom hook untuk load data dari file JSON
@@ -51,12 +52,15 @@ export const useMultipleJsonData = (jsonPaths) => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
+    const stablePaths = useMemo(() => jsonPaths, []);
+
     useEffect(() => {
         const loadAllData = async () => {
+            console.log('🔄 Loading data...');
             try {
                 setLoading(true);
 
-                const promises = Object.entries(jsonPaths).map(async ([key, path]) => {
+                const promises = Object.entries(stablePaths).map(async ([key, path]) => {
                     const fullPath = path.startsWith('/') ? path : `/${path}`;
                     const response = await fetch(fullPath);
 
@@ -71,17 +75,19 @@ export const useMultipleJsonData = (jsonPaths) => {
                 const results = await Promise.all(promises);
                 setData(Object.fromEntries(results));
                 setError(null);
+                console.log('✅ Data loaded successfully');
             } catch (err) {
                 setError(err.message);
+                console.error('❌ Error loading data:', err);
             } finally {
                 setLoading(false);
             }
         };
 
-        if (jsonPaths && Object.keys(jsonPaths).length > 0) {
+        if (Object.keys(stablePaths).length > 0) {
             loadAllData();
         }
-    }, [jsonPaths]);
+    }, [stablePaths]);
 
     return { data, loading, error };
 };

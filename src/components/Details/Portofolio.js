@@ -653,10 +653,10 @@ const Portfolio = () => {
           {/* Header */}
           <div className="bg-gradient-to-r from-blue-600 to-purple-600 px-6 py-8">
             <div className="flex justify-between items-center">
-              <div div
+              <div
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
-                
+                transition={{ duration: 0.5 }}
               >
                 <h1 className="text-3xl md:text-4xl font-bold text-white">{t.title}</h1>
                 <p className="text-blue-100 mt-2">{t.subtitle}</p>
@@ -679,9 +679,10 @@ const Portfolio = () => {
                   </div>
 
                   {showLanguageMenu && (
-                    <div div
+                    <div
                       initial={{ opacity: 0, y: -10 }}
                       animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.3 }}
                       className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-xl z-50 overflow-hidden"
                     >
                       {Object.entries(languages).map(([code, { flag, name }]) => (
@@ -722,7 +723,7 @@ const Portfolio = () => {
             <div div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
-              
+
               className="lg:w-80 bg-gray-50 border-r border-gray-200 p-6"
             >
               <h2 className="text-xl font-bold text-gray-800 mb-4">{t.filterBy}</h2>
@@ -780,7 +781,7 @@ const Portfolio = () => {
                   <div div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    
+
                     className="mb-8 bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl p-6 border border-blue-100"
                   >
                     <h2 className="text-2xl font-bold text-gray-800">{portfolioData[selectedCategory].name}</h2>
@@ -796,7 +797,7 @@ const Portfolio = () => {
                         ref={(el) => (projectRefs.current[project.id] = el)}
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        
+
                         className={`bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl  ${selectedProject === project.id ? "ring-4 ring-blue-400" : ""
                           }`}
                       >
@@ -886,7 +887,7 @@ const Portfolio = () => {
           </div>
         </div>
       </div>
-    </div>
+    </div >
   );
 };
 

@@ -33,15 +33,16 @@ export const ProfileProvider = ({ children }) => {
     totalPengalaman: { tahun: 0, bulan: 0, formatted: "" }
   });
 
+  // useEffect yang benar - hanya run sekali saat data loading selesai
   useEffect(() => {
     if (!loading && allData.profile && allData.contacts) {
       const experience = calculateExperience(allData.profile.startWorkDate || '');
-
+      
       const bioHomeWithExp = replacePlaceholders(
         allData.profile.bioHome || 'Experienced developer',
         { experience: experience.formatted }
       );
-
+      
       const bioAboutWithName = replacePlaceholders(
         allData.profile.bioAbout || 'About me',
         { name: allData.profile.name || 'Developer' }
@@ -63,6 +64,7 @@ export const ProfileProvider = ({ children }) => {
         totalPengalaman: experience
       });
     } else if (error) {
+      // Set fallback values when error
       setProfileData({
         name: 'Error Loading',
         nickName: 'Error',
@@ -79,12 +81,7 @@ export const ProfileProvider = ({ children }) => {
         totalPengalaman: { tahun: 0, bulan: 0, formatted: '0 years' }
       });
     }
-  }, [
-    loading,
-    error,
-    allData.profile,
-    allData.contacts
-  ]);
+  }, [loading, error]); // Tidak depend pada allData untuk prevent re-render
 
   return (
     <ProfileContext.Provider
@@ -112,7 +109,7 @@ export const ProfileProvider = ({ children }) => {
         socialLinks: allData.contacts?.socialLinks || [],
         menuItems: allData.navigation?.menuItems || [],
         verticalMenuLinks: allData.navigation?.verticalMenuLinks || [],
-
+        
         // Loading state
         loading
       }}
