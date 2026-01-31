@@ -15,13 +15,13 @@ import {
 import { useProfile } from "../context/ProfileContext";
 
 const About = () => {
-  const { 
-    bioAbout, 
-    email, 
-    github, 
-    wa, 
-    gitlab, 
-    address, 
+  const {
+    bioAbout,
+    email,
+    github,
+    wa,
+    gitlab,
+    address,
     personalData,
     educationData,
     certificates,
@@ -29,7 +29,7 @@ const About = () => {
   } = useProfile();
 
 
-  
+
   const [activeTab, setActiveTab] = useState("bio");
   const [selectedCertificateModal, setSelectedCertificateModal] = useState(null);
 
@@ -101,7 +101,7 @@ const About = () => {
                 <img
                   className="w-full rounded-xl lg:rounded-lg"
                   src={images?.profile || "/assets/zakie-fotor.png"}
-                  alt="Zakie's profile picture"
+                  alt="profile picture"
                 />
               </div>
             </div>
@@ -118,11 +118,10 @@ const About = () => {
                     data-aos="fade-up"
                     data-aos-duration="1000"
                     data-aos-delay={`${tabs.indexOf(tab) * 100}`}
-                    className={`px-4 py-2 rounded-lg font-semibold transition-all flex items-center gap-2 ${
-                      activeTab === tab.id
+                    className={`px-4 py-2 rounded-lg font-semibold transition-all flex items-center gap-2 ${activeTab === tab.id
                         ? "bg-blue-500 text-white shadow-lg"
                         : "text-gray-600 hover:text-gray-800"
-                    }`}
+                      }`}
                     onClick={() => setActiveTab(tab.id)}
                   >
                     {tab.icon}
@@ -361,7 +360,7 @@ const About = () => {
                   }}
                 />
               </div>
-              
+
               {/* Modal Footer */}
               <div className="flex justify-between items-center mt-4 pt-4 border-t border-gray-200">
                 <div className="text-sm text-gray-600">

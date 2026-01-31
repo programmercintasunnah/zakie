@@ -22,8 +22,7 @@ const iconMap = {
 };
 
 const VerticalMenu = () => {
-  const { menuItems, verticalMenuLinks, loading } = useProfile();
-  const [isHovered, setIsHovered] = useState(false);
+  const {  verticalMenuLinks, loading } = useProfile();
 
   useEffect(() => {
     document.querySelector("html").style.scrollBehavior = "smooth";

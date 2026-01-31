@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 
 /**
  * Custom hook untuk load data dari file JSON
@@ -50,6 +50,8 @@ export const useMultipleJsonData = (jsonPaths) => {
     const [data, setData] = useState({});
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+
+    const stablePaths = useMemo(() => jsonPaths, [jsonPaths]);
 
     useEffect(() => {
         const loadAllData = async () => {
@@ -104,7 +106,7 @@ export const useMultipleJsonData = (jsonPaths) => {
         if (Object.keys(jsonPaths).length > 0) {
             loadAllData();
         }
-    }, [JSON.stringify(jsonPaths)]);
+    }, [stablePaths]);
 
     return { data, loading, error };
 };
