@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+
 import { useProfile } from "../context/ProfileContext";
 import {
   FaHome,
@@ -24,9 +24,7 @@ const iconMap = {
 const VerticalMenu = () => {
   const { verticalMenuLinks, loading } = useProfile();
 
-  useEffect(() => {
-    document.querySelector("html").style.scrollBehavior = "smooth";
-  }, []);
+
 
   if (loading) {
     return null;
@@ -48,7 +46,7 @@ const VerticalMenu = () => {
             href={link.href}
             target={isExternalLink ? "_blank" : "_self"}
             rel={isExternalLink ? "noopener noreferrer" : undefined}
-            className="p-2 rounded-full bg-red-600 text-white hover:bg-red-700 transition-colors"
+            className="p-2 rounded-full bg-red-600 text-white hover:bg-red-700"
             title={link.icon.replace('Fa', '')}
           >
             <IconComponent size={24} />

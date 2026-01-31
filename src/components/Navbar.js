@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import {
   FaInstagram,
   FaLinkedin,
@@ -20,9 +20,7 @@ const iconMap = {
 const Navbar = () => {
   const { nickName, images, menuItems, socialLinks, loading } = useProfile();
 
-  useEffect(() => {
-    document.querySelector("html").style.scrollBehavior = "smooth";
-  }, []);
+
 
   if (loading) {
     return null;

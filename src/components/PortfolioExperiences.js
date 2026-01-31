@@ -28,29 +28,29 @@ const PortfolioExperiences = () => {
   const [activeTab, setActiveTab] = useState("work");
   const [selectedCompanyModal, setSelectedCompanyModal] = useState(null);
 
-  // Handle navigation from navbar/vertical menu
-  useEffect(() => {
-    const handleHashChange = () => {
-      const hash = window.location.hash.substring(1);
-      if (hash === 'portfolio') {
-        setActiveTab('work'); // Default to work tab
-      } else if (hash === 'work-experiences') {
-        setActiveTab('work');
-      } else if (hash === 'personal-projects') {
-        setActiveTab('personal');
-      }
-    };
+  // DISABLED HASHCHANGE LISTENER FOR DEBUGGING
+  // useEffect(() => {
+  //   const handleHashChange = () => {
+  //     const hash = window.location.hash.substring(1);
+  //     if (hash === 'portfolio') {
+  //       setActiveTab('work'); // Default to work tab
+  //     } else if (hash === 'work-experiences') {
+  //       setActiveTab('work');
+  //     } else if (hash === 'personal-projects') {
+  //       setActiveTab('personal');
+  //     }
+  //   };
 
-    // Handle initial load
-    handleHashChange();
+  //   // Handle initial load
+  //   handleHashChange();
 
-    // Handle hash change
-    window.addEventListener('hashchange', handleHashChange);
+  //   // Handle hash change
+  //   window.addEventListener('hashchange', handleHashChange);
 
-    return () => {
-      window.removeEventListener('hashchange', handleHashChange);
-    };
-  }, []);
+  //   return () => {
+  //     window.removeEventListener('hashchange', handleHashChange);
+  //   };
+  // }, []);
 
 
 
@@ -72,7 +72,7 @@ const PortfolioExperiences = () => {
 
   if (loading) {
     return (
-      <div id="portfolio" className="bg-slate-200 min-h-screen py-8 flex items-center justify-center">
+        <div id="portfolio" className="bg-slate-200 min-h-screen py-8 flex items-center justify-center">
         <p>Loading...</p>
       </div>
     );
@@ -82,8 +82,8 @@ const PortfolioExperiences = () => {
     <div id="portfolio" className="bg-slate-200 min-h-screen py-8">
       <div className="container mx-auto px-4 lg:px-8">
         <h1
-          data-aos="fade-up"
-          data-aos-duration="1000"
+          
+          
           className="text-3xl font-bold text-center mb-10"
         >
           Portfolio & Skills
@@ -93,9 +93,9 @@ const PortfolioExperiences = () => {
         <div className="flex justify-center mb-8">
           <div className="bg-white rounded-lg p-1 shadow-md flex">
             <button
-              data-aos="fade-up"
-              data-aos-duration="1000"
-              className={`px-6 py-2 rounded-lg font-semibold transition-all flex items-center gap-2 ${activeTab === "work"
+              
+              
+              className={`px-6 py-2 rounded-lg font-semibold  flex items-center gap-2 ${activeTab === "work"
                   ? "bg-blue-500 text-white"
                   : "text-gray-600 hover:text-gray-800"
                 }`}
@@ -105,9 +105,9 @@ const PortfolioExperiences = () => {
               Work Experiences
             </button>
             <button
-              data-aos="fade-up"
-              data-aos-duration="1000"
-              className={`px-6 py-2 rounded-lg font-semibold transition-all flex items-center gap-2 ${activeTab === "skills"
+              
+              
+              className={`px-6 py-2 rounded-lg font-semibold  flex items-center gap-2 ${activeTab === "skills"
                   ? "bg-blue-500 text-white"
                   : "text-gray-600 hover:text-gray-800"
                 }`}
@@ -117,9 +117,9 @@ const PortfolioExperiences = () => {
               Skills
             </button>
             <button
-              data-aos="fade-up"
-              data-aos-duration="1000"
-              className={`px-6 py-2 rounded-lg font-semibold transition-all flex items-center gap-2 ${activeTab === "personal"
+              
+              
+              className={`px-6 py-2 rounded-lg font-semibold  flex items-center gap-2 ${activeTab === "personal"
                   ? "bg-blue-500 text-white"
                   : "text-gray-600 hover:text-gray-800"
                 }`}
@@ -136,9 +136,9 @@ const PortfolioExperiences = () => {
           <div id="work-experiences" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {experiences?.map((experience) => (
               <div
-                data-aos="fade-up"
-                data-aos-duration="1000"
-                data-aos-delay="200"
+                
+                
+                
                 key={experience.id}
                 className="bg-white shadow-md rounded-lg p-6"
               >
@@ -179,13 +179,13 @@ const PortfolioExperiences = () => {
                 <div className="flex gap-2">
                   <button
                     onClick={handlePortfolioClick}
-                    className="flex-1 bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded transition-colors text-sm"
+                    className="flex-1 bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded  text-sm"
                   >
                     Portfolio
                   </button>
                   <button
                     onClick={() => handleCompanyDetailClick(experience)}
-                    className="flex-1 bg-gray-700 hover:bg-gray-800 text-white font-semibold py-2 px-4 rounded transition-colors text-sm"
+                    className="flex-1 bg-gray-700 hover:bg-gray-800 text-white font-semibold py-2 px-4 rounded  text-sm"
                   >
                     Detail Company
                   </button>
@@ -199,8 +199,8 @@ const PortfolioExperiences = () => {
         {activeTab === "skills" && (
           <div id="skills-section" className="min-h-screen bg-gray-50 flex flex-col items-center justify-center">
             <h2
-              data-aos="fade-up"
-              data-aos-duration="1000"
+              
+              
               className="text-3xl md:text-4xl font-bold mb-10"
             >
               Skills
@@ -210,9 +210,9 @@ const PortfolioExperiences = () => {
                 const IconComponent = getIconComponent(skill.icon);
                 return (
                   <div
-                    data-aos="fade-up"
-                    data-aos-duration="1000"
-                    data-aos-delay="200"
+                    
+                    
+                    
                     key={skill.id}
                     className="flex flex-col items-center justify-center"
                   >
@@ -230,8 +230,8 @@ const PortfolioExperiences = () => {
           <div id="personal-projects" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {personalProjects.map((project, index) => (
               <div
-                data-aos="fade-up"
-                data-aos-duration="1000"
+                
+                
                 data-aos-delay={`${index * 100}`}
                 key={project.id}
                 className="bg-white shadow-md rounded-lg p-6"
@@ -348,7 +348,7 @@ const PortfolioExperiences = () => {
                   </div>
                   <button
                     onClick={closeCompanyModal}
-                    className="p-2 bg-white bg-opacity-20 hover:bg-opacity-30 rounded-lg transition-colors"
+                    className="p-2 bg-white bg-opacity-20 hover:bg-opacity-30 rounded-lg "
                   >
                     <FaTimes className="w-5 h-5" />
                   </button>
@@ -419,13 +419,13 @@ const PortfolioExperiences = () => {
                 <div className="flex justify-end gap-3 pt-4 border-t border-gray-200 mt-6">
                   <button
                     onClick={handlePortfolioClick}
-                    className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                    className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 "
                   >
                     View Portfolio
                   </button>
                   <button
                     onClick={closeCompanyModal}
-                    className="px-4 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors"
+                    className="px-4 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 "
                   >
                     Close
                   </button>

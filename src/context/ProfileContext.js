@@ -7,7 +7,7 @@ const ProfileContext = createContext();
 export const useProfile = () => useContext(ProfileContext);
 
 export const ProfileProvider = ({ children }) => {
-  // Load semua data JSON yang diperlukan
+  // Enable JSON loading dengan dependency yang stable
   const { data: allData, loading, error } = useMultipleJsonData({
     profile: '/data/profile.json',
     contacts: '/data/contacts.json',
@@ -16,6 +16,28 @@ export const ProfileProvider = ({ children }) => {
     projects: '/data/projects.json',
     navigation: '/data/navigation.json'
   });
+
+
+
+
+
+
+
+  // DISABLED ANIMATION VARIANTS
+  // const textVariants = {
+  //   initial: { opacity: 0, y: -20 },
+  //   animate: { opacity: 1, y: 0 },
+  // };
+
+  // const buttonVariants = {
+  //   initial: { opacity: 0, x: 20 },
+  //   animate: { opacity: 1, x: 0 },
+  // };
+
+  // const imageVariants = {
+  //   initial: { scale: 0 },
+  //   animate: { scale: 1 },
+  // };
 
   const [profileData, setProfileData] = useState({
     name: "",
@@ -33,65 +55,45 @@ export const ProfileProvider = ({ children }) => {
     totalPengalaman: { tahun: 0, bulan: 0, formatted: "" }
   });
 
+  // useEffect yang benar - hanya run sekali saat data loading selesai
   useEffect(() => {
     if (!loading && allData.profile && allData.contacts) {
-      try {
-        const experience = calculateExperience(allData.profile.startWorkDate || '');
+      const experience = calculateExperience(allData.profile.startWorkDate || '');
+      
+      const bioHomeWithExp = replacePlaceholders(
+        allData.profile.bioHome || 'Experienced developer',
+        { experience: experience.formatted }
+      );
+      
+      const bioAboutWithName = replacePlaceholders(
+        allData.profile.bioAbout || 'About me',
+        { name: allData.profile.name || 'Developer' }
+      );
 
-        // Replace placeholder di bio dengan fallback values
-        const bioHomeWithExp = replacePlaceholders(
-          allData.profile.bioHome || 'Experienced developer',
-          { experience: experience.formatted }
-        );
-
-        const bioAboutWithName = replacePlaceholders(
-          allData.profile.bioAbout || 'About me',
-          { name: allData.profile.name || 'Developer' }
-        );
-
-        setProfileData({
-          name: allData.profile.name || '',
-          nickName: allData.profile.nickName || '',
-          jobTitle: allData.profile.jobTitle || '',
-          bioHome: bioHomeWithExp,
-          bioAbout: bioAboutWithName,
-          email: allData.contacts.email || '',
-          wa: allData.contacts.whatsapp || '',
-          github: allData.contacts.github || '',
-          gitlab: allData.contacts.gitlab || '',
-          address: allData.contacts.address || '',
-          cvLink: allData.profile.cvLink || '',
-          images: allData.profile.images || {},
-          totalPengalaman: experience
-        });
-      } catch (err) {
-        console.error('Error processing profile data:', err);
-        // Set default values to prevent crashes
-        setProfileData({
-          name: '',
-          nickName: '',
-          jobTitle: '',
-          bioHome: '',
-          bioAbout: '',
-          email: '',
-          wa: '',
-          github: '',
-          gitlab: '',
-          address: '',
-          cvLink: '',
-          images: {},
-          totalPengalaman: { tahun: 0, bulan: 0, formatted: '0 years' }
-        });
-      }
-    } else if (error) {
-      // Set default values when there's an error
       setProfileData({
-        name: '',
-        nickName: '',
-        jobTitle: '',
-        bioHome: '',
-        bioAbout: '',
-        email: '',
+        name: allData.profile.name || '',
+        nickName: allData.profile.nickName || '',
+        jobTitle: allData.profile.jobTitle || '',
+        bioHome: bioHomeWithExp,
+        bioAbout: bioAboutWithName,
+        email: allData.contacts.email || '',
+        wa: allData.contacts.whatsapp || '',
+        github: allData.contacts.github || '',
+        gitlab: allData.contacts.gitlab || '',
+        address: allData.contacts.address || '',
+        cvLink: allData.profile.cvLink || '',
+        images: allData.profile.images || {},
+        totalPengalaman: experience
+      });
+    } else if (error) {
+      // Set fallback values when error
+      setProfileData({
+        name: 'Error Loading',
+        nickName: 'Error',
+        jobTitle: 'Developer',
+        bioHome: 'Failed to load data',
+        bioAbout: 'Please check your connection',
+        email: 'error@example.com',
         wa: '',
         github: '',
         gitlab: '',
@@ -101,29 +103,12 @@ export const ProfileProvider = ({ children }) => {
         totalPengalaman: { tahun: 0, bulan: 0, formatted: '0 years' }
       });
     }
-  }, [loading, allData, error]);
-
-  // Animasi variants untuk framer motion
-  const textVariants = {
-    initial: { opacity: 0, y: -20 },
-    animate: { opacity: 1, y: 0 },
-  };
-
-  const buttonVariants = {
-    initial: { opacity: 0, x: 20 },
-    animate: { opacity: 1, x: 0 },
-  };
-
-  const imageVariants = {
-    initial: { scale: 0 },
-    animate: { scale: 1 },
-  };
+  }, [loading, error]); // Tidak depend pada allData untuk prevent re-render
 
   return (
     <ProfileContext.Provider
       value={{
         ...profileData,
-        // Data dari JSON files
         skills: allData.skills?.skills || [],
         experiences: allData.experiences?.experiences || [],
         personalProjects: allData.experiences?.personalProjects || allData.profile?.personalProjects || [],
@@ -146,10 +131,12 @@ export const ProfileProvider = ({ children }) => {
         socialLinks: allData.contacts?.socialLinks || [],
         menuItems: allData.navigation?.menuItems || [],
         verticalMenuLinks: allData.navigation?.verticalMenuLinks || [],
-        // Animation variants
-        textVariants,
-        buttonVariants,
-        imageVariants,
+        
+        // Animation variants - DISABLED
+        // textVariants,
+        // buttonVariants,
+        // imageVariants,
+        
         // Loading state
         loading
       }}

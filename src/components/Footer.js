@@ -3,12 +3,13 @@ import React, { useState, useEffect } from "react";
 const Footer = () => {
   const [time, setTime] = useState(new Date());
 
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      setTime(new Date());
-    }, 1000);
-    return () => clearInterval(intervalId);
-  }, []);
+  // DISABLED FOR DEBUGGING
+  // useEffect(() => {
+  //   const intervalId = setInterval(() => {
+  //     setTime(new Date());
+  //   }, 1000);
+  //   return () => clearInterval(intervalId);
+  // }, []);
 
   const day = time.toLocaleDateString("en-US", { weekday: "long" });
   const date = time.toLocaleDateString("en-US", {

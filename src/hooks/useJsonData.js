@@ -51,10 +51,11 @@ export const useMultipleJsonData = (jsonPaths) => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
-    const stablePaths = useMemo(() => jsonPaths, [jsonPaths]);
+    const stablePaths = useMemo(() => jsonPaths, []);
 
     useEffect(() => {
         const loadAllData = async () => {
+            console.log('🔄 Loading data...');
             try {
                 setLoading(true);
 
@@ -73,9 +74,10 @@ export const useMultipleJsonData = (jsonPaths) => {
                 const results = await Promise.all(promises);
                 setData(Object.fromEntries(results));
                 setError(null);
+                console.log('✅ Data loaded successfully');
             } catch (err) {
                 setError(err.message);
-                console.error(err);
+                console.error('❌ Error loading data:', err);
             } finally {
                 setLoading(false);
             }

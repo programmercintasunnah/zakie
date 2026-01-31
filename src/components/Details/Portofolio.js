@@ -573,12 +573,13 @@ const Portfolio = () => {
 
   const scrollToProject = (projectId) => {
     setSelectedProject(projectId);
-    setTimeout(() => {
-      projectRefs.current[projectId]?.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    }, 100);
+    // DISABLED SCROLL
+    // setTimeout(() => {
+    //   projectRefs.current[projectId]?.scrollIntoView({
+    //     behavior: "smooth",
+    //     block: "start",
+    //   });
+    // }, 100);
   };
 
   const handleBack = () => {
@@ -652,33 +653,33 @@ const Portfolio = () => {
           {/* Header */}
           <div className="bg-gradient-to-r from-blue-600 to-purple-600 px-6 py-8">
             <div className="flex justify-between items-center">
-              <motion.div
+              <div div
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5 }}
+                
               >
                 <h1 className="text-3xl md:text-4xl font-bold text-white">{t.title}</h1>
                 <p className="text-blue-100 mt-2">{t.subtitle}</p>
-              </motion.div>
+              </div>
               <div className="flex items-center space-x-3">
                 {/* Language Selector */}
                 <div className="relative">
-                  <motion.button
+                  <div
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
                     onClick={() => setShowLanguageMenu(!showLanguageMenu)}
-                    className="p-3 rounded-full bg-white text-blue-600 hover:bg-blue-50 transition-colors shadow-lg flex items-center space-x-2"
+                    className="p-3 rounded-full bg-white text-blue-600 hover:bg-blue-50  shadow-lg flex items-center space-x-2"
                   >
                     <FaGlobe className="text-xl" />
                     <span className="text-sm font-medium hidden sm:inline">
                       {languages[language].flag}
                     </span>
-                  </motion.button>
+                  </div>
 
                   {showLanguageMenu && (
-                    <motion.div
+                    <div div
                       initial={{ opacity: 0, y: -10 }}
                       animate={{ opacity: 1, y: 0 }}
                       className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-xl z-50 overflow-hidden"
@@ -690,38 +691,38 @@ const Portfolio = () => {
                             setLanguage(code);
                             setShowLanguageMenu(false);
                           }}
-                          className={`w-full flex items-center space-x-3 px-4 py-3 hover:bg-blue-50 transition-colors ${language === code ? "bg-blue-100" : ""
+                          className={`w-full flex items-center space-x-3 px-4 py-3 hover:bg-blue-50  ${language === code ? "bg-blue-100" : ""
                             }`}
                         >
                           <span className="text-2xl">{flag}</span>
                           <span className="text-gray-700 font-medium">{name}</span>
                         </button>
                       ))}
-                    </motion.div>
+                    </div>
                   )}
                 </div>
 
                 {/* Home Button */}
-                <motion.button
+                <div
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
                   onClick={handleBack}
-                  className="p-3 rounded-full bg-white text-blue-600 hover:bg-blue-50 transition-colors shadow-lg"
+                  className="p-3 rounded-full bg-white text-blue-600 hover:bg-blue-50  shadow-lg"
                 >
                   <FaHome className="text-xl" />
-                </motion.button>
+                </div>
               </div>
             </div>
           </div>
 
           <div className="flex flex-col lg:flex-row">
             {/* Sidebar */}
-            <motion.div
+            <div div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
+              
               className="lg:w-80 bg-gray-50 border-r border-gray-200 p-6"
             >
               <h2 className="text-xl font-bold text-gray-800 mb-4">{t.filterBy}</h2>
@@ -735,7 +736,7 @@ const Portfolio = () => {
                       setSelectedCategory(category.key);
                       setSelectedProject(null);
                     }}
-                    className={`w-full flex items-center space-x-3 px-4 py-3 rounded-lg transition-all ${selectedCategory === category.key
+                    className={`w-full flex items-center space-x-3 px-4 py-3 rounded-lg  ${selectedCategory === category.key
                       ? "bg-blue-600 text-white shadow-lg"
                       : "bg-white text-gray-700 hover:bg-gray-100"
                       }`}
@@ -757,7 +758,7 @@ const Portfolio = () => {
                       <button
                         key={project.id}
                         onClick={() => scrollToProject(project.id)}
-                        className={`w-full text-left px-3 py-2 rounded-lg transition-all ${selectedProject === project.id
+                        className={`w-full text-left px-3 py-2 rounded-lg  ${selectedProject === project.id
                           ? "bg-blue-100 text-blue-700 border-l-4 border-blue-600"
                           : "bg-white text-gray-700 hover:bg-gray-100"
                           }`}
@@ -769,34 +770,34 @@ const Portfolio = () => {
                   </div>
                 </div>
               )}
-            </motion.div>
+            </div>
 
             {/* Main Content */}
             <div className="flex-1 p-6 lg:p-8 overflow-y-auto" style={{ maxHeight: "calc(150vh - 200px)" }}>
               {portfolioData[selectedCategory] && (
                 <>
                   {/* Company Info */}
-                  <motion.div
+                  <div div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5 }}
+                    
                     className="mb-8 bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl p-6 border border-blue-100"
                   >
                     <h2 className="text-2xl font-bold text-gray-800">{portfolioData[selectedCategory].name}</h2>
                     <p className="text-gray-600 mt-2">{portfolioData[selectedCategory].role}</p>
                     <p className="text-sm text-gray-500 mt-1">{portfolioData[selectedCategory].period}</p>
-                  </motion.div>
+                  </div>
 
                   {/* Projects Grid */}
                   <div className="space-y-6">
                     {portfolioData[selectedCategory].projects.map((project, index) => (
-                      <motion.div
+                      <div div
                         key={project.id}
                         ref={(el) => (projectRefs.current[project.id] = el)}
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5, delay: index * 0.1 }}
-                        className={`bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all ${selectedProject === project.id ? "ring-4 ring-blue-400" : ""
+                        
+                        className={`bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl  ${selectedProject === project.id ? "ring-4 ring-blue-400" : ""
                           }`}
                       >
                         <div className={`flex flex-col ${project.image ? "md:flex-row" : ""}`}>
@@ -827,7 +828,7 @@ const Portfolio = () => {
                                     href={project.github}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="p-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition-colors"
+                                    className="p-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 "
                                   >
                                     <FaGithub />
                                   </a>
@@ -837,7 +838,7 @@ const Portfolio = () => {
                                     href={project.demo}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="p-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                                    className="p-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 "
                                   >
                                     <FaExternalLinkAlt />
                                   </a>
@@ -876,7 +877,7 @@ const Portfolio = () => {
                             </div>
                           </div>
                         </div>
-                      </motion.div>
+                      </div>
                     ))}
                   </div>
                 </>

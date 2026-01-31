@@ -94,8 +94,8 @@ const About = () => {
           {activeTab !== "certificates" && (
             <div className="relative mb-8 lg:mb-0 lg:flex-shrink-0">
               <div
-                data-aos="fade-up"
-                data-aos-duration="1000"
+
+
                 className="w-full rounded-2xl lg:absolute lg:h-auto lg:w-auto lg:rounded-xl overflow-hidden bg-white p-1"
               >
                 <img
@@ -115,12 +115,12 @@ const About = () => {
                 {tabs.map((tab) => (
                   <button
                     key={tab.id}
-                    data-aos="fade-up"
-                    data-aos-duration="1000"
+
+
                     data-aos-delay={`${tabs.indexOf(tab) * 100}`}
-                    className={`px-4 py-2 rounded-lg font-semibold transition-all flex items-center gap-2 ${activeTab === tab.id
-                        ? "bg-blue-500 text-white shadow-lg"
-                        : "text-gray-600 hover:text-gray-800"
+                    className={`px-4 py-2 rounded-lg font-semibold  flex items-center gap-2 ${activeTab === tab.id
+                      ? "bg-blue-500 text-white shadow-lg"
+                      : "text-gray-600 hover:text-gray-800"
                       }`}
                     onClick={() => setActiveTab(tab.id)}
                   >
@@ -133,31 +133,31 @@ const About = () => {
 
             {/* Bio Tab */}
             {activeTab === "bio" && (
-              <motion.div
+              <div div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
+
               >
                 <h1
-                  data-aos="fade-up"
-                  data-aos-duration="1000"
-                  data-aos-delay="200"
+
+
+
                   className="text-4xl font-bold mb-4"
                 >
                   About Me
                 </h1>
                 <p
-                  data-aos="fade-up"
-                  data-aos-duration="1000"
-                  data-aos-delay="300"
+
+
+
                   className="text-gray-600 text-lg leading-relaxed mb-8"
                 >
                   {bioAbout}
                 </p>
                 <h2
-                  data-aos="fade-up"
-                  data-aos-duration="1000"
-                  data-aos-delay="400"
+
+
+
                   className="text-2xl font-bold mb-4"
                 >
                   Contact Information
@@ -165,15 +165,15 @@ const About = () => {
                 <div className="flex flex-col space-y-4">
                   {contactMethods.map((method, index) => (
                     <div
-                      data-aos="fade-up"
-                      data-aos-duration="1000"
+
+
                       data-aos-delay={`${500 + index * 100}`}
                       key={index}
                       className="flex items-center p-3 bg-gray-50 rounded-lg"
                     >
                       {method.icon}
                       {method.link ? (
-                        <a href={method.link} className="text-lg text-gray-900 hover:text-blue-600 transition-colors">
+                        <a href={method.link} className="text-lg text-gray-900 hover:text-blue-600 ">
                           {method.label}
                         </a>
                       ) : (
@@ -182,20 +182,20 @@ const About = () => {
                     </div>
                   ))}
                 </div>
-              </motion.div>
+              </div>
             )}
 
             {/* Personal Data Tab */}
             {activeTab === "personal" && (
-              <motion.div
+              <div div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
+
               >
                 <h1
-                  data-aos="fade-up"
-                  data-aos-duration="1000"
-                  data-aos-delay="200"
+
+
+
                   className="text-4xl font-bold mb-6"
                 >
                   Personal Data
@@ -203,8 +203,8 @@ const About = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {personalData?.map((data, index) => (
                     <div
-                      data-aos="fade-up"
-                      data-aos-duration="1000"
+
+
                       data-aos-delay={`${300 + index * 50}`}
                       key={data.label}
                       className="border border-gray-300 rounded-lg shadow-sm"
@@ -218,20 +218,20 @@ const About = () => {
                     </div>
                   ))}
                 </div>
-              </motion.div>
+              </div>
             )}
 
             {/* Education Tab */}
             {activeTab === "education" && (
-              <motion.div
+              <div div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
+
               >
                 <h1
-                  data-aos="fade-up"
-                  data-aos-duration="1000"
-                  data-aos-delay="200"
+
+
+
                   className="text-4xl font-bold mb-6"
                 >
                   Education
@@ -239,8 +239,8 @@ const About = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {educationData?.map((data, index) => (
                     <div
-                      data-aos="fade-up"
-                      data-aos-duration="1000"
+
+
                       data-aos-delay={`${300 + index * 100}`}
                       key={data.label}
                       className="border border-gray-300 rounded-lg shadow-sm"
@@ -257,20 +257,20 @@ const About = () => {
                     </div>
                   ))}
                 </div>
-              </motion.div>
+              </div>
             )}
 
             {/* Certificates Tab */}
             {activeTab === "certificates" && (
-              <motion.div
+              <div div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
+
               >
                 <h1
-                  data-aos="fade-up"
-                  data-aos-duration="1000"
-                  data-aos-delay="200"
+
+
+
                   className="text-4xl font-bold mb-6"
                 >
                   Certificates
@@ -278,11 +278,11 @@ const About = () => {
                 <div className={`grid ${activeTab === "certificates" ? "grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4" : "grid-cols-1 md:grid-cols-2 lg:grid-cols-3"} gap-6`}>
                   {certificates?.map((certificate, index) => (
                     <div
-                      data-aos="fade-up"
-                      data-aos-duration="1000"
+
+
                       data-aos-delay={`${300 + index * 100}`}
                       key={certificate.id}
-                      className={`border border-gray-300 ${activeTab === "certificates" ? "rounded-lg shadow-xl" : "rounded-lg shadow-lg"} overflow-hidden hover:shadow-xl transition-shadow cursor-pointer bg-white ${activeTab === "certificates" ? "h-96" : "h-80"}`}
+                      className={`border border-gray-300 ${activeTab === "certificates" ? "rounded-lg shadow-xl" : "rounded-lg shadow-lg"} overflow-hidden hover:shadow-xl  cursor-pointer bg-white ${activeTab === "certificates" ? "h-96" : "h-80"}`}
                       onClick={() => setSelectedCertificateModal(certificate)}
                     >
                       <div className={`relative ${activeTab === "certificates" ? "h-full" : "h-full"}`}>
@@ -295,7 +295,7 @@ const About = () => {
                             e.target.parentElement.innerHTML = `<div class="${activeTab === "certificates" ? "h-[calc(100%-3rem)]" : "h-[calc(100%-6rem)]"} bg-gray-200 flex items-center justify-center"><span class="text-gray-500">Certificate Image</span></div>`;
                           }}
                         />
-                        <div className="absolute top-2 right-2 bg-blue-600 text-white rounded-full p-2 opacity-0 hover:opacity-100 transition-opacity">
+                        <div className="absolute top-2 right-2 bg-blue-600 text-white rounded-full p-2 opacity-0 hover:opacity-100 ">
                           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-6h3m-3 0h3" />
                           </svg>
@@ -308,7 +308,7 @@ const About = () => {
                     </div>
                   ))}
                 </div>
-              </motion.div>
+              </div>
             )}
           </div>
         </div>
@@ -316,13 +316,13 @@ const About = () => {
 
       {/* Certificate Modal */}
       {selectedCertificateModal && (
-        <motion.div
+        <div div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           className="fixed inset-0 bg-black bg-opacity-75 z-50 flex items-center justify-center p-4"
           onClick={() => setSelectedCertificateModal(null)}
         >
-          <motion.div
+          <div div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             className="bg-white rounded-xl shadow-2xl max-w-6xl w-full max-h-[90vh] overflow-hidden"
@@ -337,7 +337,7 @@ const About = () => {
                 </div>
                 <button
                   onClick={() => setSelectedCertificateModal(null)}
-                  className="p-2 bg-white bg-opacity-20 hover:bg-opacity-30 rounded-lg transition-colors"
+                  className="p-2 bg-white bg-opacity-20 hover:bg-opacity-30 rounded-lg "
                 >
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -374,21 +374,21 @@ const About = () => {
                       link.download = `certificate-${selectedCertificateModal.id}.png`;
                       link.click();
                     }}
-                    className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors text-sm font-medium"
+                    className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700  text-sm font-medium"
                   >
                     Download
                   </button>
                   <button
                     onClick={() => setSelectedCertificateModal(null)}
-                    className="px-4 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors text-sm font-medium"
+                    className="px-4 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700  text-sm font-medium"
                   >
                     Close
                   </button>
                 </div>
               </div>
             </div>
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
       )}
     </div>
   );

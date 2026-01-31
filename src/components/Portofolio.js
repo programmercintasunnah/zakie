@@ -13,17 +13,17 @@ const Portofolio = () => {
       className="bg-slate-200 flex flex-col items-center justify-center p-8 gap-6"
     >
       <h1
-        data-aos="fade-up"
-        data-aos-duration="1000"
+        
+        
         className="text-3xl font-bold text-center"
       >
         Portofolio
       </h1>
 
       <button
-        data-aos="fade-up"
-        data-aos-duration="1000"
-        data-aos-delay="200"
+        
+        
+        
         className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
         onClick={handleToPortofolio}
       >
