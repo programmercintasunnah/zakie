@@ -61,40 +61,38 @@ const PortfolioExperiences = () => {
           Portfolio & Skills
         </h1>
 
-        {/* Tab Navigation - Horizontal */}
-        <div className="flex justify-center mb-8">
-          <div className="bg-white rounded-lg p-1 shadow-md flex">
+        {/* Tab Navigation - Responsive */}
+        <div className="flex justify-center mb-8 px-4">
+          <div className="bg-white rounded-lg p-1 shadow-md flex flex-col sm:flex-row gap-1 w-full sm:w-auto">
             <button
-
-
-              className={`px-6 py-2 rounded-lg font-semibold  flex items-center gap-2 ${activeTab === "work"
+              className={`px-4 sm:px-6 py-2 rounded-lg font-semibold flex items-center justify-center gap-2 text-sm sm:text-base ${activeTab === "work"
                 ? "bg-blue-500 text-white"
                 : "text-gray-600 hover:text-gray-800"
                 }`}
               onClick={() => setActiveTab("work")}
             >
-              <FaBriefcase />
-              Work Experiences
+              <FaBriefcase className="flex-shrink-0" />
+              <span className="whitespace-nowrap">Work Experiences</span>
             </button>
             <button
-              className={`px-6 py-2 rounded-lg font-semibold  flex items-center gap-2 ${activeTab === "skills"
+              className={`px-4 sm:px-6 py-2 rounded-lg font-semibold flex items-center justify-center gap-2 text-sm sm:text-base ${activeTab === "skills"
                 ? "bg-blue-500 text-white"
                 : "text-gray-600 hover:text-gray-800"
                 }`}
               onClick={() => setActiveTab("skills")}
             >
-              <FaTools />
-              Skills
+              <FaTools className="flex-shrink-0" />
+              <span className="whitespace-nowrap">Skills</span>
             </button>
             <button
-              className={`px-6 py-2 rounded-lg font-semibold  flex items-center gap-2 ${activeTab === "personal"
+              className={`px-4 sm:px-6 py-2 rounded-lg font-semibold flex items-center justify-center gap-2 text-sm sm:text-base ${activeTab === "personal"
                 ? "bg-blue-500 text-white"
                 : "text-gray-600 hover:text-gray-800"
                 }`}
               onClick={() => setActiveTab("personal")}
             >
-              <FaLaptopCode />
-              Personal Projects
+              <FaLaptopCode className="flex-shrink-0" />
+              <span className="whitespace-nowrap">Personal Projects</span>
             </button>
           </div>
         </div>
