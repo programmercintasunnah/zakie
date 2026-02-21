@@ -1,5 +1,5 @@
 import React from "react";
-import { FaFilePdf } from "react-icons/fa";
+import { FaFilePdf, FaBriefcase } from "react-icons/fa";
 import { useProfile } from "../context/ProfileContext";
 // import { motion } from "framer-motion";
 
@@ -53,10 +53,19 @@ const Home = () => {
           target="_blank"
           rel="noreferrer"
           href="https://drive.google.com/drive/folders/15O8n-smVbigJYJV2BbfdRZ2feBKaprLc?usp=share_link"
-          className="inline-flex hover:bg-red-500 bg-red-600 hover:border-2 hover:border-white text-white font-bold py-3 px-6 rounded-lg items-center"
+          className="inline-flex hover:bg-white hover:text-red-600 bg-red-600 hover:border-2 hover:border-red-600 text-white font-bold py-3 px-6 rounded-lg items-center border-2 border-transparent"
         >
           <FaFilePdf className="mr-2" />
           Download CV
+        </a>
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href="#portfolio"
+          className="inline-flex hover:bg-red-600 hover:text-white bg-white hover:border-2 hover:border-white text-red-600 font-bold py-3 px-6 rounded-lg items-center ml-3"
+        >
+          <FaBriefcase className="mr-2" />
+          Portofolio
         </a>
       </div>
     </div>
