@@ -32,16 +32,8 @@
             "icon": "FaUser"
         },
         {
-            "href": "#work-experiences",
+            "href": "#portfolio",
             "icon": "FaBriefcase"
-        },
-        {
-            "href": "#personal-projects",
-            "icon": "FaLaptopCode"
-        },
-        {
-            "href": "/portofolio",
-            "icon": "FaBookReader"
         },
         {
             "href": "https://drive.google.com/drive/folders/15O8n-smVbigJYJV2BbfdRZ2feBKaprLc?usp=share_link",

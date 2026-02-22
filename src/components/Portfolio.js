@@ -1,7 +1,7 @@
 import { useState, useRef } from "react";
 // import { motion } from "framer-motion";
 import { FaGithub, FaExternalLinkAlt, FaBuilding, FaTools, FaLaptopCode, FaMapMarker, FaClock } from "react-icons/fa";
-import { useProfile } from "../../context/ProfileContext";
+import { useProfile } from "../context/ProfileContext";
 // import SyirkahWeb from "../../assets/syirkah-web.png"
 // import DashboardSyirkah from "../../assets/dashboard-syirkah.png"
 // import SyirkahWebTenant from "../../assets/web-mumtazah.png"
