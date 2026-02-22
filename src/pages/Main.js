@@ -1,5 +1,5 @@
 import About from "../components/About";
-import PortfolioExperiences from "../components/PortfolioExperiences";
+import Portofolio from "../components/Details/Portofolio";
 import Home from "../components/Home";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -12,7 +12,7 @@ const Main = () => {
       <VerticalMenu />
       <Home />
       <About />
-      <PortfolioExperiences />
+      <Portofolio />
       <Footer />
     </>
   );

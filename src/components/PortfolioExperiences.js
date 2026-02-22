@@ -37,7 +37,10 @@ const PortfolioExperiences = () => {
   };
 
   const handlePortfolioClick = () => {
-    window.location.href = "/portofolio";
+    const portfolioSection = document.getElementById('portfolio');
+    if (portfolioSection) {
+      portfolioSection.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   const handleCompanyDetailClick = (company) => {

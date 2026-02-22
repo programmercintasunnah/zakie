@@ -1,6 +1,7 @@
 import { useState, useRef } from "react";
 // import { motion } from "framer-motion";
-import { FaHome, FaGithub, FaExternalLinkAlt, FaBuilding, FaGlobe } from "react-icons/fa";
+import { FaGithub, FaExternalLinkAlt, FaBuilding, FaTools, FaLaptopCode, FaMapMarker, FaClock } from "react-icons/fa";
+import { useProfile } from "../../context/ProfileContext";
 // import SyirkahWeb from "../../assets/syirkah-web.png"
 // import DashboardSyirkah from "../../assets/dashboard-syirkah.png"
 // import SyirkahWebTenant from "../../assets/web-mumtazah.png"
@@ -10,16 +11,21 @@ import { FaHome, FaGithub, FaExternalLinkAlt, FaBuilding, FaGlobe } from "react-
 // import SiamMianHomePage from "../../assets/siam-mian-homepage.png"
 
 const Portfolio = () => {
-  const [selectedCategory, setSelectedCategory] = useState("hunayn");
-  const [selectedProject, setSelectedProject] = useState(null);
-  const [language, setLanguage] = useState("en");
-  const [showLanguageMenu, setShowLanguageMenu] = useState(false);
+  const { experiences, personalProjects, loading } = useProfile();
+  const [selectedCategory, setSelectedCategory] = useState("hunayn-teknologi");
+  const [selectedProjectModal, setSelectedProjectModal] = useState(null);
+  const [activeTab, setActiveTab] = useState("work");
   const projectRefs = useRef({});
 
   const portfolioData = {
     hunayn: {
       name: "Hunayn Teknologi",
-      period: "May 2023 - Present (2 years 8 months)",
+      nameEn: "Hunayn Teknologi",
+      nameId: "Hunayn Teknologi",
+      description: "Perusahaan teknologi yang fokus pada pengembangan solusi digital untuk sektor keuangan syariah, khususnya sistem manajemen Koperasi Syariah dengan arsitektur modern dan skalabel.",
+      website: "https://hunayn.tech",
+      period: "Mei 2023 - Sekarang (2 tahun 8 bulan)",
+      periodEn: "May 2023 - Present (2 years 8 months)",
       role: "Software Engineer",
       projects: [
         {
@@ -257,27 +263,43 @@ const Portfolio = () => {
           name: "Sistem Informasi Akademik MIAN",
           description: {
             ar: ".....",
-            en: "A web-based academic information system for Ma'had Imam An-Nawawi that helps students access schedules, quizzes, attendance, learning materials, and academic activities through a modern and responsive interface.",
-            id: "Sistem informasi akademik berbasis web untuk Ma'had Imam An-Nawawi yang memudahkan santri mengakses jadwal, kuis, presensi, materi pembelajaran, dan aktivitas akademik melalui antarmuka yang modern dan responsif.",
+            en: "A web-based academic information system for Ma'had Imam An-Nawawi (MIAN) designed for Santri to access schedules, quizzes, attendance, learning materials, muroja'ah videos, profile, and payments through a modern and responsive mobile-first interface with API integration.",
+            id: "Sistem informasi akademik berbasis web untuk Ma'had Imam An-Nawawi (MIAN) yang dirancang untuk Santri agar dapat mengakses jadwal, kuis, presensi, materi pembelajaran, video muroja'ah, profil, dan pembayaran melalui antarmuka modern dan responsif dengan pendekatan mobile-first serta integrasi API.",
           },
-          techStack: ["React", "Typescript"],
+          techStack: ["React", "TypeScript", "Vite", "Tailwind CSS", "Strapi"],
           features: {
             ar: ["....."],
             en: [
-              "Student dashboard with academic overview",
-              "Quiz and exam listing with deadline information",
-              "Attendance management (present, permission, etc)",
-              "Class schedule and detailed schedule modal",
-              "Responsive mobile-first UI",
-              "Interactive tab navigation and smooth scrolling",
+              "Authentication system (login, register) with step validation and error handling",
+              "Home page with schedule, quiz/deadline, muroja'ah video, presensi (clock in/out)",
+              "Class page with course listing and detail page with schedule & quiz tabs",
+              "Lesson detail with description, content, and zoom in/out functionality",
+              "Quiz page supporting multiple_choice, single_choice, true_false, and essay (with image in RTE)",
+              "Quiz result and detail with score visualization (ScoreCircle component)",
+              "Profile page with user data, avatar upload, and SP payment integration",
+              "Payment page with sorting, filter, and load more functionality",
+              "Overdue modal notification for payment obligations",
+              "Payment gateway integration (Doku) with webhook n8n",
+              "Reusable components: Bottom Navigation, Tab Navigation, Modal, Loading State (Skeleton)",
+              "API integration with service layer abstraction and error handling",
+              "Route protection based on authentication status",
+              "Responsive mobile-first UI deployed to Cloudflare Pages",
             ],
             id: [
-              "Dashboard santri dengan ringkasan akademik",
-              "Daftar kuis dan ujian beserta batas waktu",
-              "Manajemen presensi (hadir, izin, dll)",
-              "Jadwal pelajaran dan detail jadwal dalam modal",
-              "Tampilan responsif dengan pendekatan mobile-first",
-              "Navigasi tab interaktif dengan scroll yang halus",
+              "Sistem autentikasi (login, register) dengan validasi bertahap dan penanganan error",
+              "Halaman utama dengan jadwal, kuis/batas waktu, video muroja'ah, presensi (clock in/out)",
+              "Halaman kelas dengan daftar kursus dan halaman detail dengan tab jadwal & kuis",
+              "Detail pelajaran dengan deskripsi, konten, dan fungsi zoom in/out",
+              "Halaman kuis mendukung multiple_choice, single_choice, true_false, dan essay (dengan gambar di RTE)",
+              "Hasil kuis dan detail dengan visualisasi skor (komponen ScoreCircle)",
+              "Halaman profil dengan data pengguna, upload avatar, dan integrasi pembayaran SPP",
+              "Halaman pembayaran dengan pengurutan, filter, dan fungsionalitas load more",
+              "Modal notifikasi tunggakan untuk kewajiban pembayaran",
+              "Integrasi payment gateway (Doku) dengan webhook n8n",
+              "Komponen reusable: Bottom Navigation, Tab Navigation, Modal, Loading State (Skeleton)",
+              "Integrasi API dengan lapisan abstraksi service dan penanganan error",
+              "Route protection berdasarkan status autentikasi",
+              "Tampilan responsif mobile-first yang di-deploy ke Cloudflare Pages",
             ],
           },
           type: "frontend",
@@ -286,9 +308,53 @@ const Portfolio = () => {
         }
       ],
     },
+    "pps-ibnu-masud": {
+      name: "PPS Ibnu Mas'ud",
+      nameEn: "PPS Ibnu Mas'ud",
+      nameId: "PPS Ibnu Mas'ud",
+      description: "Sekolah Tahfiz tingkat SD yang berada di Koto Perambahan, Kampar, Riau. Pondok Pengajian Subulan fokus pada pendidikan agama Islam dan hafalan Al-Quran untuk siswa-siswa usia sekolah dasar.",
+      website: null,
+      period: "Februari 2020 - Maret 2020 (1 bulan)",
+      periodEn: "February 2020 - March 2020 (1 month)",
+      role: "Software Developer",
+      projects: [
+        {
+          id: "presence-app",
+          name: "Presence App",
+          description: {
+            ar: "...",
+            en: "Employee attendance management system for college internship assignment at PPS Ibnu Mas'ud",
+            id: "Sistem manajemen kehadiran karyawan untuk tugas magang kampus di PPS Ibnu Mas'ud",
+          },
+          techStack: ["PHP", "CodeIgniter", "MySQL"],
+          features: {
+            en: [
+              "Employee attendance tracking",
+              "Presence functionality",
+              "Attendance reports",
+              "Admin dashboard for managing attendance",
+            ],
+            id: [
+              "Pelacakan kehadiran karyawan",
+              "Fitur absensi kehadiran",
+              "Laporan kehadiran",
+              "Dashboard admin untuk mengelola kehadiran",
+            ],
+          },
+          type: "fullstack",
+          role: "Developer",
+          image: "/assets/kp-app.png",
+        }
+      ],
+    },
     rkit: {
       name: "Ruang Kreasi Inovasi Teknologi",
-      period: "April 2022 - February 2023 (11 months)",
+      nameEn: "Ruang Kreasi Inovasi Teknologi (RKIT)",
+      nameId: "Ruang Kreasi Inovasi Teknologi",
+      description: "Perusahaan yang bergerak di bidang teknologi informasi, pengembangan software, dan solusi digital untuk berbagai sektor bisnis termasuk manajemen coworking space dan event.",
+      website: "https://rakitek.com",
+      period: "April 2022 - February 2023 (11 bulan)",
+      periodEn: "April 2022 - February 2023 (11 months)",
       role: "Web Programmer",
       projects: [
         {
@@ -381,7 +447,12 @@ const Portfolio = () => {
     },
     pragma: {
       name: "Pragma Informatika",
-      period: "October 2021 - March 2022 (6 months)",
+      nameEn: "Pragma Informatika",
+      nameId: "Pragma Informatika",
+      description: "Perusahaan teknologi informasi yang fokus pada pengembangan sistem manajemen untuk sektor industri, khususnya sistem HSSE (Health, Safety, Security, Environment) untuk PLN dan perusahaan energi lainnya.",
+      website: "https://pragmainf.id",
+      period: "Oktober 2021 - Maret 2022 (6 bulan)",
+      periodEn: "October 2021 - March 2022 (6 months)",
       role: "Web Developer",
       projects: [
         {
@@ -572,41 +643,27 @@ const Portfolio = () => {
   };
 
   const scrollToProject = (projectId) => {
-    setSelectedProject(projectId);
-    // DISABLED SCROLL
-    // setTimeout(() => {
-    //   projectRefs.current[projectId]?.scrollIntoView({
-    //     behavior: "smooth",
-    //     block: "start",
-    //   });
-    // }, 100);
-  };
-
-  const handleBack = () => {
-    window.location.href = "/";
-  };
-
-  const languages = {
-    en: { flag: "🇬🇧", name: "English" },
-    id: { flag: "🇮🇩", name: "Indonesia" },
-    ar: { flag: "🇸🇦", name: "العربية" },
+    const project = portfolioData[selectedCategory].projects.find(p => p.id === projectId);
+    if (project) {
+      setSelectedProjectModal(project);
+    }
   };
 
   const translations = {
-    en: {
-      title: "Portfolio Projects",
-      subtitle: "Muhammad Zakie - Software Engineer",
-      filterBy: "Filter by Company",
-      projects: "Projects",
-      techStack: "Tech Stack:",
-      keyFeatures: "Key Features:",
-      companies: {
-        hunayn: "Hunayn Teknologi",
-        rkit: "RKIT",
-        pragma: "Pragma Informatika",
-        personal: "Personal Projects",
-      },
-    },
+    // en: {
+    //   title: "Portfolio Projects",
+    //   subtitle: "Muhammad Zakie - Software Engineer",
+    //   filterBy: "Filter by Company",
+    //   projects: "Projects",
+    //   techStack: "Tech Stack:",
+    //   keyFeatures: "Key Features:",
+    //   companies: {
+    //     hunayn: "Hunayn Teknologi",
+    //     rkit: "RKIT",
+    //     pragma: "Pragma Informatika",
+    //     personal: "Personal Projects",
+    //   },
+    // },
     id: {
       title: "Proyek Portfolio",
       subtitle: "Muhammad Zakie - Software Engineer",
@@ -621,274 +678,409 @@ const Portfolio = () => {
         personal: "Proyek Pribadi",
       },
     },
-    ar: {
-      title: "مشاريع الحافظة",
-      subtitle: "محمد زكي - مهندس برمجيات",
-      filterBy: "تصفية حسب الشركة",
-      projects: "المشاريع",
-      techStack: "التقنيات:",
-      keyFeatures: "الميزات الرئيسية:",
-      companies: {
-        hunayn: "حنين تكنولوجي",
-        rkit: "راكيتك",
-        pragma: "براغما إنفورماتيكا",
-        personal: "المشاريع الشخصية",
-      },
-    },
   };
 
-  const t = translations[language];
+  const t = translations.id;
 
   const categoryButtons = [
     { key: "hunayn", label: t.companies.hunayn, icon: <FaBuilding /> },
-    // { key: "rkit", label: t.companies.rkit, icon: <FaBuilding /> },
-    // { key: "pragma", label: t.companies.pragma, icon: <FaBuilding /> },
-    // { key: "personal", label: t.companies.personal, icon: <FaLaptopCode /> },
+    { key: "rkit", label: t.companies.rkit, icon: <FaBuilding /> },
+    { key: "pragma", label: t.companies.pragma, icon: <FaBuilding /> },
+    { key: "personal", label: t.companies.personal, icon: <FaBuilding /> },
   ];
 
+  const tabs = [
+    { key: "work", label: "Pengalaman Kerja", icon: <FaBuilding /> },
+    { key: "skills", label: "Skills", icon: <FaTools /> },
+    { key: "personal", label: "Proyek Pribadi", icon: <FaLaptopCode /> },
+  ];
+
+  // Helper function to get features from portfolioData
+  const getProjectFeatures = (projectName) => {
+    for (const companyKey in portfolioData) {
+      const company = portfolioData[companyKey];
+      const project = company.projects.find(p => p.name.toLowerCase().includes(projectName.toLowerCase()) || projectName.toLowerCase().includes(p.name.toLowerCase()));
+      if (project && project.features) {
+        return project.features.id || project.features.en || null;
+      }
+    }
+    return null;
+  };
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 py-8 px-4">
+    <div id="portfolio" className="bg-slate-200 py-12 px-4">
       <div className="max-w-7xl mx-auto">
-        <div className="bg-white rounded-2xl shadow-2xl overflow-hidden">
-          {/* Header */}
-          <div className="bg-gradient-to-r from-blue-600 to-purple-600 px-6 py-8">
-            <div className="flex justify-between items-center">
-              <div
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5 }}
+        <h1 className="text-3xl font-bold text-center mb-10">{t.title}</h1>
+
+        {/* Main Tabs */}
+        <div className="flex justify-center mb-8 px-4">
+          <div className="bg-white rounded-lg p-1 shadow-md flex flex-col sm:flex-row gap-1 w-full sm:w-auto">
+            {tabs.map((tab) => (
+              <button
+                key={tab.key}
+                onClick={() => setActiveTab(tab.key)}
+                className={`px-4 sm:px-6 py-2 rounded-lg font-semibold flex items-center justify-center gap-2 text-sm sm:text-base ${
+                  activeTab === tab.key
+                    ? "bg-blue-500 text-white"
+                    : "text-gray-600 hover:text-gray-800"
+                }`}
               >
-                <h1 className="text-3xl md:text-4xl font-bold text-white">{t.title}</h1>
-                <p className="text-blue-100 mt-2">{t.subtitle}</p>
-              </div>
-              <div className="flex items-center space-x-3">
-                {/* Language Selector */}
-                <div className="relative">
-                  <div
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.95 }}
-                    onClick={() => setShowLanguageMenu(!showLanguageMenu)}
-                    className="p-3 rounded-full bg-white text-blue-600 hover:bg-blue-50  shadow-lg flex items-center space-x-2"
-                  >
-                    <FaGlobe className="text-xl" />
-                    <span className="text-sm font-medium hidden sm:inline">
-                      {languages[language].flag}
-                    </span>
-                  </div>
-
-                  {showLanguageMenu && (
-                    <div
-                      initial={{ opacity: 0, y: -10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.3 }}
-                      className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-xl z-50 overflow-hidden"
-                    >
-                      {Object.entries(languages).map(([code, { flag, name }]) => (
-                        <button
-                          key={code}
-                          onClick={() => {
-                            setLanguage(code);
-                            setShowLanguageMenu(false);
-                          }}
-                          className={`w-full flex items-center space-x-3 px-4 py-3 hover:bg-blue-50  ${language === code ? "bg-blue-100" : ""
-                            }`}
-                        >
-                          <span className="text-2xl">{flag}</span>
-                          <span className="text-gray-700 font-medium">{name}</span>
-                        </button>
-                      ))}
-                    </div>
-                  )}
-                </div>
-
-                {/* Home Button */}
-                <div
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
-                  onClick={handleBack}
-                  className="p-3 rounded-full bg-white text-blue-600 hover:bg-blue-50  shadow-lg"
-                >
-                  <FaHome className="text-xl" />
-                </div>
-              </div>
-            </div>
+                <span className="flex-shrink-0">{tab.icon}</span>
+                <span className="whitespace-nowrap">{tab.label}</span>
+              </button>
+            ))}
           </div>
+        </div>
 
-          <div className="flex flex-col lg:flex-row">
-            {/* Sidebar */}
-            <div div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-
-              className="lg:w-80 bg-gray-50 border-r border-gray-200 p-6"
-            >
-              <h2 className="text-xl font-bold text-gray-800 mb-4">{t.filterBy}</h2>
-
-              {/* Category Buttons */}
-              <div className="space-y-2 mb-6">
-                {categoryButtons.map((category) => (
-                  <button
-                    key={category.key}
-                    onClick={() => {
-                      setSelectedCategory(category.key);
-                      setSelectedProject(null);
-                    }}
-                    className={`w-full flex items-center space-x-3 px-4 py-3 rounded-lg  ${selectedCategory === category.key
-                      ? "bg-blue-600 text-white shadow-lg"
-                      : "bg-white text-gray-700 hover:bg-gray-100"
-                      }`}
-                  >
-                    <span className="text-lg">{category.icon}</span>
-                    <span className="font-medium text-sm">{category.label}</span>
-                  </button>
-                ))}
-              </div>
-
-              {/* Project List */}
-              {portfolioData[selectedCategory] && (
-                <div className="mt-6">
-                  <h3 className="text-sm font-semibold text-gray-600 mb-3 uppercase">
-                    {t.projects} ({portfolioData[selectedCategory].projects.length})
-                  </h3>
-                  <div className="space-y-2 max-h-96 overflow-y-auto">
-                    {portfolioData[selectedCategory].projects.map((project) => (
+        {/* Work Tab */}
+        {activeTab === "work" && (
+          <>
+            {loading ? (
+              <div className="text-center py-8">Loading...</div>
+            ) : (
+              <>
+                {/* Company Tabs with Logo */}
+                <div className="flex justify-center mb-8 px-4">
+                  <div className="bg-white rounded-lg p-1 shadow-md flex flex-col sm:flex-row gap-1 w-full sm:w-auto">
+                    {experiences?.map((exp) => (
                       <button
-                        key={project.id}
-                        onClick={() => scrollToProject(project.id)}
-                        className={`w-full text-left px-3 py-2 rounded-lg  ${selectedProject === project.id
-                          ? "bg-blue-100 text-blue-700 border-l-4 border-blue-600"
-                          : "bg-white text-gray-700 hover:bg-gray-100"
-                          }`}
+                        key={exp.id}
+                        onClick={() => setSelectedCategory(exp.company.toLowerCase().replace(/[^a-z0-9]/g, '-'))}
+                        className={`px-4 sm:px-6 py-2 rounded-lg font-semibold flex items-center justify-center gap-2 text-sm sm:text-base ${
+                          selectedCategory === exp.company.toLowerCase().replace(/[^a-z0-9]/g, '-')
+                            ? "bg-blue-500 text-white"
+                            : "text-gray-600 hover:text-gray-800"
+                        }`}
                       >
-                        <div className="font-medium text-sm">{project.name}</div>
-                        <div className="text-xs text-gray-500 mt-1">{project.role}</div>
+                        <img
+                          src={exp.logo}
+                          alt={exp.company}
+                          className="w-6 h-6 rounded-full object-contain"
+                        />
+                        <span className="whitespace-nowrap">{exp.company}</span>
                       </button>
                     ))}
                   </div>
                 </div>
-              )}
-            </div>
 
-            {/* Main Content */}
-            <div className="flex-1 p-6 lg:p-8 overflow-y-auto" style={{ maxHeight: "calc(150vh - 200px)" }}>
-              {portfolioData[selectedCategory] && (
-                <>
-                  {/* Company Info */}
-                  <div div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-
-                    className="mb-8 bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl p-6 border border-blue-100"
-                  >
-                    <h2 className="text-2xl font-bold text-gray-800">{portfolioData[selectedCategory].name}</h2>
-                    <p className="text-gray-600 mt-2">{portfolioData[selectedCategory].role}</p>
-                    <p className="text-sm text-gray-500 mt-1">{portfolioData[selectedCategory].period}</p>
-                  </div>
-
-                  {/* Projects Grid */}
-                  <div className="space-y-6">
-                    {portfolioData[selectedCategory].projects.map((project, index) => (
-                      <div div
-                        key={project.id}
-                        ref={(el) => (projectRefs.current[project.id] = el)}
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-
-                        className={`bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl  ${selectedProject === project.id ? "ring-4 ring-blue-400" : ""
-                          }`}
-                      >
-                        <div className={`flex flex-col ${project.image ? "md:flex-row" : ""}`}>
-                          {/* Project Image */}
-                          {project.image && (
-                            <div className="md:w-2/5 bg-gray-100 flex items-center justify-center p-4">
-                              <img
-                                src={project.image}
-                                alt={project.name}
-                                className="w-full h-auto object-contain rounded-lg shadow-md"
-                                style={{ maxHeight: "400px" }}
-                              />
+                {/* Selected Company Info & Projects */}
+                {experiences?.map((exp) => {
+                  const categoryKey = exp.company.toLowerCase().replace(/[^a-z0-9]/g, '-');
+                  if (selectedCategory !== categoryKey) return null;
+                  
+                  return (
+                    <div key={exp.id}>
+                      {/* Company Info */}
+                      <div className="bg-white rounded-lg shadow-md p-6 mb-8">
+                        <div className="flex items-center gap-4">
+                          <img
+                            src={exp.logo}
+                            alt={exp.company}
+                            className="w-20 h-20 rounded-full object-contain bg-gray-50 p-2"
+                          />
+                          <div className="flex-1">
+                            <h2 className="text-2xl font-bold text-gray-800">{exp.company}</h2>
+                            <p className="text-gray-600 font-medium">{exp.position}</p>
+                            <div className="flex items-center gap-4 mt-1 text-sm text-gray-500">
+                              <span className="flex items-center gap-1">
+                                <FaMapMarker /> {exp.location}
+                              </span>
+                              <span className="flex items-center gap-1">
+                                <FaClock /> {exp.period}
+                              </span>
                             </div>
-                          )}
-
-                          {/* Project Content */}
-                          <div className={`p-6 ${project.image ? "md:w-3/5" : "w-full"}`}>
-                            <div className="flex items-start justify-between mb-4">
-                              <div>
-                                <h3 className="text-xl font-bold text-gray-800">{project.name}</h3>
-                                <span className="inline-block mt-2 px-3 py-1 bg-blue-100 text-blue-700 text-xs font-semibold rounded-full">
-                                  {project.type}
-                                </span>
-                              </div>
-                              <div className="flex space-x-2">
-                                {project.github && (
-                                  <a
-                                    href={project.github}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="p-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 "
-                                  >
-                                    <FaGithub />
-                                  </a>
-                                )}
-                                {project.demo && (
-                                  <a
-                                    href={project.demo}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="p-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 "
-                                  >
-                                    <FaExternalLinkAlt />
-                                  </a>
-                                )}
-                              </div>
-                            </div>
-
-                            <p className="text-gray-600 mb-4">{project.description[language]}</p>
-
-                            {/* Tech Stack */}
-                            <div className="mb-4">
-                              <h4 className="text-sm font-semibold text-gray-700 mb-2">{t.techStack}</h4>
-                              <div className="flex flex-wrap gap-2">
-                                {project.techStack.map((tech, idx) => (
-                                  <span
-                                    key={idx}
-                                    className="px-3 py-1 bg-gray-100 text-gray-700 text-xs rounded-full border border-gray-200"
-                                  >
-                                    {tech}
-                                  </span>
-                                ))}
-                              </div>
-                            </div>
-
-                            {/* Features */}
-                            <div>
-                              <h4 className="text-sm font-semibold text-gray-700 mb-2">{t.keyFeatures}</h4>
-                              <ul className="space-y-1">
-                                {project.features[language].map((feature, idx) => (
-                                  <li key={idx} className="flex items-start text-sm text-gray-600">
-                                    <span className="text-blue-500 mr-2">•</span>
-                                    <span>{feature}</span>
-                                  </li>
-                                ))}
-                              </ul>
-                            </div>
+                            <p className="text-sm text-gray-500 mt-1">{exp.type}</p>
                           </div>
                         </div>
+                        
+                        {/* Company Description & Website */}
+                        {(() => {
+                          // Find matching company in portfolioData by checking if company name contains the key
+                          let companyData = null;
+                          const companyLower = exp.company.toLowerCase();
+                          
+                          // Map company names to portfolioData keys
+                          const companyKeyMap = {
+                            'hunayn': 'hunayn',
+                            'rakitek': 'rkit',
+                            'pragma': 'pragma',
+                            'ibnu': 'pps-ibnu-masud',
+                          };
+                          
+                          // Try to find matching key
+                          for (const [searchKey, portfolioKey] of Object.entries(companyKeyMap)) {
+                            if (companyLower.includes(searchKey)) {
+                              companyData = portfolioData[portfolioKey];
+                              break;
+                            }
+                          }
+                          
+                          if (!companyData) return null;
+                          return (
+                            <div className="mt-6 pt-4 border-t border-gray-200">
+                              {companyData.description && (
+                                <p className="text-gray-600 mb-3">{companyData.description}</p>
+                              )}
+                              {companyData.website && (
+                                <a
+                                  href={companyData.website}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="inline-flex items-center gap-2 text-blue-500 hover:text-blue-700 font-medium"
+                                >
+                                  <FaExternalLinkAlt /> Kunjungi Website
+                                </a>
+                              )}
+                            </div>
+                          );
+                        })()}
                       </div>
-                    ))}
-                  </div>
-                </>
-              )}
+
+                      {/* Company Projects */}
+                      {exp.projects && exp.projects.length > 0 ? (
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                          {exp.projects.map((project) => (
+                            <div
+                              key={project.id}
+                              className="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition-shadow"
+                            >
+                              {project.screenshot && (
+                                <div className="bg-gray-100 flex items-center justify-center p-4">
+                                  <img
+                                    src={project.screenshot}
+                                    alt={project.name}
+                                    className="w-full h-48 object-contain rounded"
+                                  />
+                                </div>
+                              )}
+                              <div className="p-6">
+                                <h3 className="text-lg font-bold text-gray-800 mb-2">{project.name}</h3>
+                                <p className="text-gray-600 text-sm mb-4">{project.description}</p>
+                                <div className="flex flex-wrap gap-1 mb-4">
+                                  {project.technologies?.slice(0, 5).map((tech, idx) => (
+                                    <span key={idx} className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">
+                                      {tech}
+                                    </span>
+                                  ))}
+                                </div>
+                                <button
+                                  onClick={() => setSelectedProjectModal(project)}
+                                  className="w-full bg-blue-500 hover:bg-blue-600 text-white py-2 px-3 rounded text-sm"
+                                >
+                                  Lihat Detail
+                                </button>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      ) : (
+                        <p className="text-gray-500 text-center py-4">Tidak ada proyek untuk ditampilkan</p>
+                      )}
+                    </div>
+                  );
+                })}
+              </>
+            )}
+          </>
+        )}
+
+        {/* Skills Tab */}
+        {activeTab === "skills" && (
+          <div className="min-h-[50vh] bg-white rounded-lg shadow-md p-8">
+            <h2 className="text-2xl font-bold text-center mb-8">Skills</h2>
+            <div className="flex flex-wrap gap-8 justify-center items-center">
+              <div className="flex flex-col items-center">
+                <span className="text-6xl mb-2 text-orange-600">⚙️</span>
+                <span className="text-lg font-medium">Backend</span>
+                <span className="text-sm text-gray-500">Golang, Node.js, Python, PHP, Laravel</span>
+              </div>
+              <div className="flex flex-col items-center">
+                <span className="text-6xl mb-2 text-blue-600">💻</span>
+                <span className="text-lg font-medium">Frontend</span>
+                <span className="text-sm text-gray-500">React, Vue, Svelte, TypeScript</span>
+              </div>
+              <div className="flex flex-col items-center">
+                <span className="text-6xl mb-2 text-green-600">📱</span>
+                <span className="text-lg font-medium">Mobile</span>
+                <span className="text-sm text-gray-500">React Native, Flutter</span>
+              </div>
+              <div className="flex flex-col items-center">
+                <span className="text-6xl mb-2 text-purple-600">🗄️</span>
+                <span className="text-lg font-medium">Database</span>
+                <span className="text-sm text-gray-500">PostgreSQL, MySQL, MongoDB</span>
+              </div>
+              <div className="flex flex-col items-center">
+                <span className="text-6xl mb-2 text-gray-600">☁️</span>
+                <span className="text-lg font-medium">DevOps</span>
+                <span className="text-sm text-gray-500">Docker, AWS, Azure</span>
+              </div>
             </div>
           </div>
-        </div>
+        )}
+
+        {/* Personal Tab */}
+        {activeTab === "personal" && (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {personalProjects.map((project) => (
+              <div
+                key={project.id}
+                className="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition-shadow"
+              >
+                {project.screenshot && (
+                  <div className="bg-gray-100 flex items-center justify-center p-4">
+                    <img
+                      src={project.screenshot}
+                      alt={project.name}
+                      className="w-full h-48 object-contain rounded"
+                    />
+                  </div>
+                )}
+                <div className="p-6">
+                  <h3 className="text-lg font-bold text-gray-800 mb-2">{project.name}</h3>
+                  <p className="text-gray-600 text-sm mb-4">{project.description}</p>
+                  <div className="flex flex-wrap gap-1 mb-4">
+                    {project.technologies?.slice(0, 5).map((tech, idx) => (
+                      <span key={idx} className="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                  <button
+                    onClick={() => setSelectedProjectModal(project)}
+                    className="w-full bg-blue-500 hover:bg-blue-600 text-white text-center py-2 px-3 rounded text-sm"
+                  >
+                    Lihat Detail
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+
+        {/* Project Detail Modal */}
+        {selectedProjectModal && (
+          <div 
+            className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4"
+            onClick={() => setSelectedProjectModal(null)}
+          >
+            <div 
+              className="bg-white rounded-xl shadow-2xl max-w-3xl w-full max-h-[90vh] overflow-hidden"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Modal Header */}
+              <div className="bg-blue-600 px-6 py-4 text-white">
+                <div className="flex justify-between items-start">
+                  <div>
+                    <h2 className="text-xl font-bold">{selectedProjectModal.name}</h2>
+                    <p className="text-blue-100 text-sm mt-1">{selectedProjectModal.role || selectedProjectModal.position}</p>
+                  </div>
+                  <button
+                    onClick={() => setSelectedProjectModal(null)}
+                    className="p-2 hover:bg-white hover:bg-opacity-20 rounded-lg"
+                  >
+                    ✕
+                  </button>
+                </div>
+              </div>
+
+              {/* Modal Content */}
+              <div className="p-6 overflow-y-auto max-h-[70vh]">
+                {/* Project Image */}
+                {(selectedProjectModal.screenshot || selectedProjectModal.image) && (
+                  <div className="mb-6 bg-gray-100 rounded-lg p-4">
+                    <img
+                      src={selectedProjectModal.screenshot || selectedProjectModal.image}
+                      alt={selectedProjectModal.name}
+                      className="w-full h-auto object-contain rounded"
+                      style={{ maxHeight: "300px" }}
+                    />
+                  </div>
+                )}
+
+                {/* Description */}
+                <div className="mb-6">
+                  <h3 className="text-lg font-semibold text-gray-800 mb-2">Deskripsi</h3>
+                  <p className="text-gray-600">
+                    {selectedProjectModal.description?.id || selectedProjectModal.description}
+                  </p>
+                </div>
+
+                {/* Tech Stack */}
+                <div className="mb-6">
+                  <h3 className="text-lg font-semibold text-gray-800 mb-2">{t.techStack}</h3>
+                  <div className="flex flex-wrap gap-2">
+                    {(selectedProjectModal.technologies || selectedProjectModal.techStack || []).map((tech, idx) => (
+                      <span
+                        key={idx}
+                        className="bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Key Features - get from portfolioData */}
+                {(() => {
+                  const features = getProjectFeatures(selectedProjectModal.name);
+                  return features && features.length > 0 ? (
+                    <div className="mb-6">
+                      <h3 className="text-lg font-semibold text-gray-800 mb-3">{t.keyFeatures}</h3>
+                      <ul className="space-y-2">
+                        {features.map((feature, idx) => (
+                          <li key={idx} className="flex items-start text-gray-600">
+                            <span className="text-blue-500 mr-2 mt-1">✓</span>
+                            <span>{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ) : null;
+                })()}
+
+                {/* Links for Personal Projects */}
+                {selectedProjectModal.photoLink && (
+                  <div className="mb-4">
+                    <a
+                      href={selectedProjectModal.photoLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-4 py-2 bg-pink-600 text-white rounded-lg hover:bg-pink-700"
+                    >
+                      📷 Photos
+                    </a>
+                  </div>
+                )}
+                {selectedProjectModal.youtubeLink && (
+                  <div className="mb-4">
+                    <a
+                      href={selectedProjectModal.youtubeLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700"
+                    >
+                      📹 Video
+                    </a>
+                  </div>
+                )}
+                {selectedProjectModal.fileLink && (
+                  <div className="mb-4">
+                    <a
+                      href={selectedProjectModal.fileLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-4 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700"
+                    >
+                      📄 Files
+                    </a>
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+        )}
       </div>
-    </div >
+    </div>
   );
 };
-
 export default Portfolio;

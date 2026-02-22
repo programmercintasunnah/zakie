@@ -10,7 +10,16 @@
             "period": "Februari 1st 2020 to March 1st 2020",
             "path": "/ibnumasud",
             "category": "work",
-            "projects": []
+            "projects": [
+                {
+                    "id": "presence-app",
+                    "name": "Presence App",
+                    "screenshot": "/assets/kp-app.png",
+                    "description": "Employee attendance management system for college internship assignment",
+                    "technologies": ["PHP", "CodeIgniter", "MySQL"],
+                    "projectType": "work"
+                }
+            ]
         },
         {
             "id": 2,
@@ -162,17 +171,6 @@
             "photoLink": "https://www.youtube.com/watch?v=6Mz97_9o9Ww&list=PLGwA21JLpwoMtXpnQHnhv0kasbL2tXWlt&index=27",
             "youtubeLink": "https://www.youtube.com/watch?v=Y0H0mE7x_TQ&list=PLGwA21JLpwoMtXpnQHnhv0kasbL2tXWlt&index=21",
             "fileLink": "https://drive.google.com/drive/folders/1K-BJsYkDLeG1ovnBlyJDp7piKHCHFyKA?usp=share_link"
-        },
-        {
-            "id": "personal-3",
-            "name": "Presence App",
-            "screenshot": "/assets/kp-app.png",
-            "description": "Employee attendance management system for college internship assignment",
-            "technologies": ["PHP", "CodeIgniter", "MySQL"],
-            "projectType": "personal",
-            "photoLink": "https://drive.google.com/drive/folders/1i2_93PzA_nvZKagSAYdxwfaMu4s5L6ql?usp=sharing",
-            "youtubeLink": "https://www.youtube.com/watch?v=OCB_eXbcEJc&list=PLGwA21JLpwoMtXpnQHnhv0kasbL2tXWlt&index=12",
-            "fileLink": "https://drive.google.com/file/d/1qmRCHve8qW3IZ11KZreBczAQFuaUd55z/view?usp=sharing"
         }
     ]
 }

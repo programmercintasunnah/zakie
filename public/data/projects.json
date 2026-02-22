@@ -10,15 +10,6 @@
             "fileLink": "https://drive.google.com/file/d/13sBtMJYVvlvJBxXhCkTvrWKestOpHS9V/view?usp=sharing"
         },
         {
-            "id": "project2",
-            "name": "Presence App",
-            "screenshot": "/assets/kp-app.png",
-            "description": "this is a project for employee attendance, and this project is a college assignment, namely an internship assignment. This web-based application uses the codeigniter framework with a database in the form of mysql. To see more details, you can click the icon file button",
-            "photoLink": "https://drive.google.com/drive/folders/1i2_93PzA_nvZKagSAYdxwfaMu4s5L6ql?usp=sharing",
-            "youtubeLink": "https://www.youtube.com/watch?v=OCB_eXbcEJc&list=PLGwA21JLpwoMtXpnQHnhv0kasbL2tXWlt&index=12",
-            "fileLink": "https://drive.google.com/file/d/1qmRCHve8qW3IZ11KZreBczAQFuaUd55z/view?usp=sharing"
-        },
-        {
             "id": "project3",
             "name": "Darsalafy App",
             "screenshot": "/assets/darsal-app.png",
