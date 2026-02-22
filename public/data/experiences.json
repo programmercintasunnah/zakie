@@ -93,15 +93,22 @@
                 {
                     "id": "hunayn-1",
                     "name": "Syirkah Web Application",
-                    "screenshot": "/assets/syirkah-web.png",
+                    "screenshot": "/assets/dashboard-syirkah.png",
                     "description": "Core multi-tenant Sharia cooperative system covering backend and frontend, designed with Clean Architecture to support scalability, security, and complex business processes",
                     "technologies": ["Golang", "React.js", "PostgreSQL", "Clean Architecture", "Docker", "Azure"],
                     "projectType": "work"
                 },
                 {
+                    "id": "hunayn-1a",
+                    "name": "Syirkah Website Per Tenant",
+                    "screenshot": "/assets/web-mumtazah.png",
+                    "description": "Main web and dynamic per-tenant websites for Sharia cooperatives with customizable content, features, and branding for each tenant",
+                    "technologies": ["React.js", "REST API"],
+                    "projectType": "work"
+                },
+                {
                     "id": "hunayn-2",
                     "name": "Hunayn Ghazi - Core Backend",
-                    "screenshot": "/assets/dashboard-syirkah.png",
                     "description": "Core backend service for a multi-tenant Sharia cooperative system, designed with Clean Architecture to ensure scalability, maintainability, and reusability across multiple applications",
                     "technologies": ["Golang", "PostgreSQL", "SQLX", "AWS S3", "Azure Blob Storage"],
                     "projectType": "work"
@@ -109,7 +116,7 @@
                 {
                     "id": "hunayn-3",
                     "name": "Syirkah Website",
-                    "screenshot": "/assets/web-mumtazah.png",
+                    "screenshot": "/assets/syirkah-web.png",
                     "description": "Main web for Sharia cooperatives with static informational pages, feature overview, pricing, solutions, and partner showcase",
                     "technologies": ["React.js"],
                     "projectType": "work"
