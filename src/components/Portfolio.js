@@ -270,36 +270,36 @@ const Portfolio = () => {
           features: {
             ar: ["....."],
             en: [
-              "Authentication system (login, register) with step validation and error handling",
-              "Home page with schedule, quiz/deadline, muroja'ah video, presensi (clock in/out)",
-              "Class page with course listing and detail page with schedule & quiz tabs",
-              "Lesson detail with description, content, and zoom in/out functionality",
-              "Quiz page supporting multiple_choice, single_choice, true_false, and essay (with image in RTE)",
-              "Quiz result and detail with score visualization (ScoreCircle component)",
-              "Profile page with user data, avatar upload, and SP payment integration",
-              "Payment page with sorting, filter, and load more functionality",
-              "Overdue modal notification for payment obligations",
-              "Payment gateway integration (Doku) with webhook n8n",
-              "Reusable components: Bottom Navigation, Tab Navigation, Modal, Loading State (Skeleton)",
-              "API integration with service layer abstraction and error handling",
-              "Route protection based on authentication status",
-              "Responsive mobile-first UI deployed to Cloudflare Pages",
+              "Authentication (login, register) with step validation, error handling, and route protection",
+              "Home page: schedule, quiz/deadline filter, muroja'ah video, attendance (clock in/out), dynamic greeting by gender",
+              "Class page with course categories (reguler, arsip, Masdar, Mulakhash), detail page with schedule, quiz, grades/rapor, silabus, and attendance tabs",
+              "Lesson detail with rich text content, Arabic text support, zoom in/out, and syllabus download",
+              "Quiz: multiple_choice, single_choice, true_false, essay; retake logic, image in RTE, result with score visualization",
+              "Profile: user data, avatar upload, change password, SPP payment summary with responsibility & due date",
+              "SPP payment page with sorting, filter, load more; Doku payment gateway with n8n webhook for callback handling and WhatsApp notification",
+              "Registration flow (multi-step) with dynamic commitments from Strapi, address autocomplete, phone code selector, and conditional fields",
+              "Doku payment gateway on registration: n8n workflow for payment creation, Doku callback handling, auto status check, and WhatsApp notification (Watzap) after successful payment",
+              "Teacher dashboard: class & lesson management, attendance, grades, quiz results, rich text editor, dark mode",
+              "Admin role with separate auth (Strapi Admin Panel), dashboard, and responsive layout",
+              "e-Maktabah: book listing with search, filter by course/lesson, and PDF detail page",
+              "Reusable components: Bottom Navigation, Tab Navigation, Skeleton Loading, Modal, ScoreCircle",
+              "API service layer abstraction, React Query caching, and Cloudflare Pages CI/CD deployment",
             ],
             id: [
-              "Sistem autentikasi (login, register) dengan validasi bertahap dan penanganan error",
-              "Halaman utama dengan jadwal, kuis/batas waktu, video muroja'ah, presensi (clock in/out)",
-              "Halaman kelas dengan daftar kursus dan halaman detail dengan tab jadwal & kuis",
-              "Detail pelajaran dengan deskripsi, konten, dan fungsi zoom in/out",
-              "Halaman kuis mendukung multiple_choice, single_choice, true_false, dan essay (dengan gambar di RTE)",
-              "Hasil kuis dan detail dengan visualisasi skor (komponen ScoreCircle)",
-              "Halaman profil dengan data pengguna, upload avatar, dan integrasi pembayaran SPP",
-              "Halaman pembayaran dengan pengurutan, filter, dan fungsionalitas load more",
-              "Modal notifikasi tunggakan untuk kewajiban pembayaran",
-              "Integrasi payment gateway (Doku) dengan webhook n8n",
-              "Komponen reusable: Bottom Navigation, Tab Navigation, Modal, Loading State (Skeleton)",
-              "Integrasi API dengan lapisan abstraksi service dan penanganan error",
-              "Route protection berdasarkan status autentikasi",
-              "Tampilan responsif mobile-first yang di-deploy ke Cloudflare Pages",
+              "Autentikasi (login, register) dengan validasi bertahap, penanganan error, dan route protection",
+              "Beranda: jadwal, filter kuis/deadline, video muroja'ah, presensi (clock in/out), sapaan dinamis berdasarkan gender",
+              "Halaman kelas dengan kategori (reguler, arsip, Masdar, Mulakhash), detail kelas dengan tab jadwal, kuis, nilai/rapor, silabus, dan absensi",
+              "Detail pelajaran dengan konten rich text, dukungan teks Arab, zoom in/out, dan unduh silabus",
+              "Kuis: multiple_choice, single_choice, true_false, essay; logika retake, gambar di RTE, hasil dengan visualisasi skor",
+              "Profil: data pengguna, upload avatar, ubah password, ringkasan tagihan SPP dengan tab tanggungan & jatuh tempo",
+              "Halaman pembayaran SPP dengan sorting, filter, load more; payment gateway Doku dengan webhook n8n untuk handling callback dan notifikasi WhatsApp",
+              "Alur registrasi multi-step dengan komitmen dinamis dari Strapi, autocomplete alamat, pilihan kode telepon, dan field kondisional",
+              "Payment gateway Doku untuk biaya pendaftaran: workflow n8n untuk pembuatan pembayaran, handling callback Doku, pengecekan status otomatis, dan notifikasi WhatsApp (Watzap) setelah pembayaran berhasil",
+              "Dashboard Guru: manajemen kelas & pertemuan, absensi, nilai, hasil kuis, rich text editor, dark mode",
+              "Role Admin dengan autentikasi terpisah (Strapi Admin Panel), dashboard, dan layout responsif",
+              "e-Maktabah: daftar buku dengan pencarian, filter berdasarkan kursus/pelajaran, dan halaman detail PDF",
+              "Komponen reusable: Bottom Navigation, Tab Navigation, Skeleton Loading, Modal, ScoreCircle",
+              "Abstraksi service layer API, caching React Query, dan deployment CI/CD ke Cloudflare Pages",
             ],
           },
           type: "frontend",
@@ -719,11 +719,10 @@ const Portfolio = () => {
               <button
                 key={tab.key}
                 onClick={() => setActiveTab(tab.key)}
-                className={`px-4 sm:px-6 py-2 rounded-lg font-semibold flex items-center justify-center gap-2 text-sm sm:text-base ${
-                  activeTab === tab.key
-                    ? "bg-blue-500 text-white"
-                    : "text-gray-600 hover:text-gray-800"
-                }`}
+                className={`px-4 sm:px-6 py-2 rounded-lg font-semibold flex items-center justify-center gap-2 text-sm sm:text-base ${activeTab === tab.key
+                  ? "bg-blue-500 text-white"
+                  : "text-gray-600 hover:text-gray-800"
+                  }`}
               >
                 <span className="flex-shrink-0">{tab.icon}</span>
                 <span className="whitespace-nowrap">{tab.label}</span>
@@ -746,11 +745,10 @@ const Portfolio = () => {
                       <button
                         key={exp.id}
                         onClick={() => setSelectedCategory(exp.company.toLowerCase().replace(/[^a-z0-9]/g, '-'))}
-                        className={`px-4 sm:px-6 py-2 rounded-lg font-semibold flex items-center justify-center gap-2 text-sm sm:text-base ${
-                          selectedCategory === exp.company.toLowerCase().replace(/[^a-z0-9]/g, '-')
-                            ? "bg-blue-500 text-white"
-                            : "text-gray-600 hover:text-gray-800"
-                        }`}
+                        className={`px-4 sm:px-6 py-2 rounded-lg font-semibold flex items-center justify-center gap-2 text-sm sm:text-base ${selectedCategory === exp.company.toLowerCase().replace(/[^a-z0-9]/g, '-')
+                          ? "bg-blue-500 text-white"
+                          : "text-gray-600 hover:text-gray-800"
+                          }`}
                       >
                         <img
                           src={exp.logo}
@@ -767,7 +765,7 @@ const Portfolio = () => {
                 {experiences?.map((exp) => {
                   const categoryKey = exp.company.toLowerCase().replace(/[^a-z0-9]/g, '-');
                   if (selectedCategory !== categoryKey) return null;
-                  
+
                   return (
                     <div key={exp.id}>
                       {/* Company Info */}
@@ -792,13 +790,13 @@ const Portfolio = () => {
                             <p className="text-sm text-gray-500 mt-1">{exp.type}</p>
                           </div>
                         </div>
-                        
+
                         {/* Company Description & Website */}
                         {(() => {
                           // Find matching company in portfolioData by checking if company name contains the key
                           let companyData = null;
                           const companyLower = exp.company.toLowerCase();
-                          
+
                           // Map company names to portfolioData keys
                           const companyKeyMap = {
                             'hunayn': 'hunayn',
@@ -806,7 +804,7 @@ const Portfolio = () => {
                             'pragma': 'pragma',
                             'ibnu': 'pps-ibnu-masud',
                           };
-                          
+
                           // Try to find matching key
                           for (const [searchKey, portfolioKey] of Object.entries(companyKeyMap)) {
                             if (companyLower.includes(searchKey)) {
@@ -814,7 +812,7 @@ const Portfolio = () => {
                               break;
                             }
                           }
-                          
+
                           if (!companyData) return null;
                           return (
                             <div className="mt-6 pt-4 border-t border-gray-200">
@@ -959,11 +957,11 @@ const Portfolio = () => {
 
         {/* Project Detail Modal */}
         {selectedProjectModal && (
-          <div 
+          <div
             className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4"
             onClick={() => setSelectedProjectModal(null)}
           >
-            <div 
+            <div
               className="bg-white rounded-xl shadow-2xl max-w-3xl w-full max-h-[90vh] overflow-hidden"
               onClick={(e) => e.stopPropagation()}
             >
