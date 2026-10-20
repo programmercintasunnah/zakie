@@ -1,0 +1,29 @@
+{
+    "menuItems": [
+        {
+            "id": "home",
+            "label": "Home",
+            "labelId": "Beranda",
+            "href": "#home"
+        },
+        {
+            "id": "about",
+            "label": "About",
+            "labelId": "Tentang",
+            "href": "#about"
+        },
+        {
+            "id": "portfolio",
+            "label": "Portfolio",
+            "labelId": "Portofolio",
+            "href": "#portfolio"
+        },
+        {
+            "id": "cv",
+            "label": "Download CV",
+            "labelId": "Download CV",
+            "href": "https://drive.google.com/drive/folders/15O8n-smVbigJYJV2BbfdRZ2feBKaprLc?usp=share_link",
+            "target": "_blank"
+        }
+    ]
+}

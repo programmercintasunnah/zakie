@@ -1,0 +1,507 @@
+{
+    "experiences": [
+        {
+            "id": 4,
+            "company": "Hunayn Teknologi",
+            "logo": "/assets/hunayn-logo.webp",
+            "position": "Software Engineer",
+            "type": "Full-time WFH",
+            "location": "Tangerang, Indonesia",
+            "period": "May 2023 - Present",
+            "website": "https://hunayn.tech",
+            "description": "Hunayn Teknologi is an IT consulting company founded in 2023 and based in BSD Tangerang, Indonesia. It focuses on building digital solutions for the sharia finance sector, especially multi-tenant cooperative management systems.",
+            "descriptionId": "Hunayn Teknologi adalah perusahaan konsultan IT yang didirikan pada 2023 dan berbasis di BSD Tangerang, Indonesia. Perusahaan ini berfokus membangun solusi digital untuk sektor keuangan syariah, terutama sistem manajemen koperasi multi-tenant.",
+            "links": [
+                {
+                    "label": "Photos",
+                    "url": "https://drive.google.com/drive/folders/11KB8Fg_E6xItulb63BPsbPNLzT_6hGQa?usp=sharing"
+                },
+                {
+                    "label": "Files",
+                    "url": "https://drive.google.com/drive/folders/11KB8Fg_E6xItulb63BPsbPNLzT_6hGQa?usp=sharing"
+                }
+            ],
+            "projects": [
+                {
+                    "id": "syirkah-app",
+                    "name": "Syirkah Web Application",
+                    "screenshot": "/assets/dashboard-syirkah.webp",
+                    "description": "Core multi-tenant Sharia cooperative system covering backend and frontend, designed with Clean Architecture to support scalability, security, and complex business processes.",
+                    "descriptionId": "Sistem inti koperasi syariah multi-tenant yang mencakup backend dan frontend, dirancang dengan Clean Architecture untuk mendukung skalabilitas, keamanan, dan proses bisnis yang kompleks.",
+                    "role": "Full Stack Developer",
+                    "technologies": ["Golang", "React.js", "PostgreSQL", "Clean Architecture", "Docker", "Azure"],
+                    "features": [
+                        "Arsitektur multi-tenant dengan pemisahan schema untuk setiap koperasi syariah",
+                        "Fitur utama super admin untuk melakukan switch antar koperasi",
+                        "Sistem migrasi database berbasis versi dengan pembaruan schema otomatis",
+                        "Implementasi Clean Architecture di sisi backend",
+                        "Sistem autentikasi aman dengan login, registrasi, dan Two-Factor Authentication (2FA)",
+                        "Manajemen hak akses berbasis role (RBAC) dengan permission yang granular",
+                        "Modul manajemen koperasi yang lengkap (anggota, produk, cabang, role, dan konfigurasi)",
+                        "Modul akuntansi dan keuangan meliputi chart of account, jurnal, buku besar, dan laporan keuangan",
+                        "Manajemen siklus pembiayaan (pengajuan, persetujuan, realisasi, cicilan, dan perhitungan ulang)",
+                        "Dashboard dan laporan untuk monitoring operasional dan keuangan",
+                        "Manajemen konten dinamis per koperasi (logo, banner, konten, dan konfigurasi)",
+                        "Generasi dokumen dan integrasi penyimpanan cloud (export PDF, storage)",
+                        "Base CRUD reusable yang dioptimalkan untuk kebutuhan multi-tenant",
+                        "Pengembangan UI frontend untuk dashboard, form, dan operasional koperasi"
+                    ],
+                    "featuresEn": [
+                        "Multi-tenant architecture supporting multiple Sharia cooperatives with isolated schemas",
+                        "Super admin capability to switch between cooperatives seamlessly",
+                        "Version-based database migration system with automatic schema updates",
+                        "Clean Architecture implementation across backend layers",
+                        "Secure authentication system with login, registration, and Two-Factor Authentication (2FA)",
+                        "Role-based access control (RBAC) with granular permissions",
+                        "Comprehensive cooperative management modules (members, products, branches, roles, and configurations)",
+                        "Accounting and financial modules including chart of accounts, journals, ledger, and financial reports",
+                        "Financing lifecycle management (request, approval, realization, installment, and recalculation)",
+                        "Dashboard and reporting features for operational and financial insights",
+                        "Dynamic content management per cooperative (logos, banners, content, and configurations)",
+                        "Document generation and storage integration (PDF export, cloud storage)",
+                        "Reusable base CRUD system optimized for multi-tenant environments",
+                        "Frontend UI implementation for dashboards, forms, and cooperative operations"
+                    ]
+                },
+                {
+                    "id": "hyn-be-core",
+                    "name": "Hunayn Ghazi - Core Backend",
+                    "description": "Core backend service for a multi-tenant Sharia cooperative system, designed with Clean Architecture to ensure scalability, maintainability, and reusability across multiple applications.",
+                    "descriptionId": "Backend inti untuk sistem koperasi syariah multi-tenant, dirancang dengan Clean Architecture untuk memastikan skalabilitas, kemudahan pemeliharaan, dan reusabilitas di berbagai aplikasi.",
+                    "role": "Backend Developer",
+                    "technologies": ["Golang", "PostgreSQL", "SQLX", "AWS S3", "Azure Blob Storage"],
+                    "features": [
+                        "Modul backend inti yang reusable dan digunakan di berbagai proyek",
+                        "Arsitektur database multi-tenant dengan isolasi berbasis skema",
+                        "Implementasi Base CRUD generik menggunakan GORM",
+                        "Migrasi Base CRUD dari GORM ke SQLX untuk performa dan kontrol yang lebih baik",
+                        "Integrasi AWS S3 untuk penyimpanan file dan dokumen secara aman",
+                        "Integrasi Azure Blob Storage sebagai alternatif penyimpanan"
+                    ],
+                    "featuresEn": [
+                        "Reusable core backend modules shared across multiple projects",
+                        "Multi-tenant database architecture with schema-based isolation",
+                        "Generic Base CRUD implementation using GORM",
+                        "Migration of Base CRUD from GORM to SQLX for better performance and control",
+                        "Integration with AWS S3 for secure file and document storage",
+                        "Integration with Azure Blob Storage as an alternative storage provider"
+                    ]
+                },
+                {
+                    "id": "syirkah-web",
+                    "name": "Syirkah Website",
+                    "screenshot": "/assets/syirkah-web.webp",
+                    "description": "Main web for Sharia cooperatives with static informational pages, feature overview, pricing, solutions, and partner showcase.",
+                    "descriptionId": "Web utama untuk koperasi syariah dengan halaman informasi statis, ringkasan fitur, harga, solusi, dan mitra.",
+                    "role": "Frontend Developer",
+                    "technologies": ["React.js"],
+                    "features": [
+                        "Website statis informatif untuk produk koperasi syariah",
+                        "Halaman fitur untuk menjelaskan kapabilitas sistem",
+                        "Halaman harga dengan paket layanan yang jelas dan terstruktur",
+                        "Halaman solusi yang disesuaikan dengan kebutuhan koperasi",
+                        "Halaman mitra dan kolaborasi",
+                        "Halaman kontak untuk kebutuhan informasi dan komunikasi bisnis"
+                    ],
+                    "featuresEn": [
+                        "Static informational website for Sharia cooperative products",
+                        "Feature overview pages explaining system capabilities",
+                        "Pricing page with clear and structured service plans",
+                        "Solutions page tailored for cooperative business needs",
+                        "Partner and collaboration showcase",
+                        "Contact page for inquiries and business communication"
+                    ]
+                },
+                {
+                    "id": "syirkah-web-tenant",
+                    "name": "Syirkah Website Per Tenant",
+                    "screenshot": "/assets/web-mumtazah.webp",
+                    "description": "Main web and dynamic per-tenant websites for Sharia cooperatives with customizable content, features, and branding for each tenant.",
+                    "descriptionId": "Web utama dan website dinamis per-tenant untuk koperasi syariah dengan konten, fitur, dan branding yang dapat disesuaikan.",
+                    "role": "Frontend Developer",
+                    "technologies": ["React.js", "REST API"],
+                    "features": [
+                        "Kustomisasi dinamis spesifik per-tenant",
+                        "Konten berbasis REST API untuk setiap tenant",
+                        "Bagian dinamis seperti logo, banner, dan testimoni",
+                        "Bagian statis yang digunakan bersama antar tenant (FAQ, produk, dan lainnya)",
+                        "Arsitektur komponen yang reusable dan scalable",
+                        "Fitur autentikasi pengguna (login dan registrasi)",
+                        "Fitur simulasi pembiayaan syariah untuk calon anggota"
+                    ],
+                    "featuresEn": [
+                        "Dynamic tenant-specific customization",
+                        "Content driven by REST API for each tenant",
+                        "Dynamic sections such as logo, banners, and testimonials",
+                        "Shared static sections across tenants (FAQ, products, etc.)",
+                        "Reusable and scalable component-based architecture",
+                        "User authentication (login and registration)",
+                        "Sharia financing simulation feature for prospective members"
+                    ]
+                },
+                {
+                    "id": "ibank-syirkah",
+                    "name": "iBank Syirkah Mobile App",
+                    "screenshot": "/assets/homescreen-ibank.webp",
+                    "description": "Mobile banking application for Syirkah cooperatives built with React Native Expo.",
+                    "descriptionId": "Aplikasi mobile banking untuk koperasi Syirkah yang dibangun dengan React Native Expo.",
+                    "role": "Mobile Developer",
+                    "technologies": ["React Native", "Expo", "TypeScript", "REST API"],
+                    "features": [
+                        "Aplikasi mobile berbasis web",
+                        "Riwayat transaksi dan mutasi",
+                        "Unduh mutasi PDF",
+                        "Perbarui profil dan kata sandi",
+                        "Buat dan update PIN transaksi"
+                    ],
+                    "featuresEn": [
+                        "Web-based mobile application",
+                        "Transaction and mutation history",
+                        "Download mutation PDF",
+                        "Update profile and password",
+                        "Create and update transaction PIN"
+                    ]
+                },
+                {
+                    "id": "jakarta-halal-expo",
+                    "name": "Jakarta Halal Expo Website",
+                    "screenshot": "/assets/jakarta-halal-expo.webp",
+                    "description": "Modern and responsive web for Jakarta Halal Expo event with interactive floor plan.",
+                    "descriptionId": "Web modern dan responsif untuk acara Jakarta Halal Expo dengan denah lantai interaktif.",
+                    "role": "Frontend Developer",
+                    "technologies": ["Svelte", "JavaScript"],
+                    "features": [
+                        "Tampilan informasi acara dan jadwal",
+                        "Denah lantai interaktif",
+                        "Desain responsif untuk semua perangkat"
+                    ],
+                    "featuresEn": [
+                        "Event information and schedule display",
+                        "Interactive floor plan",
+                        "Responsive design for all devices"
+                    ]
+                },
+                {
+                    "id": "corporate-website",
+                    "name": "Hunayn Corporate Website",
+                    "screenshot": "/assets/landing-company.webp",
+                    "description": "Maintained the company's corporate website with a focus on UI refinements and enhancements.",
+                    "descriptionId": "Melakukan pemeliharaan pada website korporat perusahaan dengan fokus pada penyempurnaan tampilan.",
+                    "role": "Frontend Developer",
+                    "technologies": ["Svelte", "JavaScript"],
+                    "features": [
+                        "Penyempurnaan tampilan UI pada halaman yang sudah ada"
+                    ],
+                    "featuresEn": [
+                        "UI enhancements on existing pages"
+                    ]
+                },
+                {
+                    "id": "siam-mian",
+                    "name": "Sistem Informasi Akademik MIAN",
+                    "screenshot": "/assets/siam-mian-homepage.webp",
+                    "description": "A web-based academic information system for Ma'had Imam An-Nawawi (MIAN) where students can access schedules, quizzes, attendance, learning materials, muroja'ah videos, profile, and payments through a modern mobile-first interface with API integration.",
+                    "descriptionId": "Sistem informasi akademik berbasis web untuk Ma'had Imam An-Nawawi (MIAN) yang dirancang agar santri dapat mengakses jadwal, kuis, presensi, materi pembelajaran, video muroja'ah, profil, dan pembayaran melalui antarmuka modern dan responsif dengan pendekatan mobile-first serta integrasi API.",
+                    "role": "Frontend Developer",
+                    "technologies": ["React", "TypeScript", "Vite", "Tailwind CSS", "Strapi"],
+                    "features": [
+                        "Autentikasi (login, register) dengan validasi bertahap, penanganan error, dan route protection",
+                        "Beranda: jadwal, filter kuis/deadline, video muroja'ah, presensi (clock in/out), sapaan dinamis berdasarkan gender",
+                        "Halaman kelas dengan kategori (reguler, arsip, Masdar, Mulakhash), detail kelas dengan tab jadwal, kuis, nilai/rapor, silabus, dan absensi",
+                        "Detail pelajaran dengan konten rich text, dukungan teks Arab, zoom in/out, dan unduh silabus",
+                        "Kuis: multiple choice, single choice, true/false, essay; logika retake, gambar di RTE, hasil dengan visualisasi skor",
+                        "Profil: data pengguna, upload avatar, ubah password, ringkasan tagihan SPP dengan tab tanggungan & jatuh tempo",
+                        "Halaman pembayaran SPP dengan sorting, filter, load more; payment gateway Doku dengan webhook n8n untuk handling callback dan notifikasi WhatsApp",
+                        "Alur registrasi multi-step dengan komitmen dinamis dari Strapi, autocomplete alamat, pilihan kode telepon, dan field kondisional",
+                        "Payment gateway Doku untuk biaya pendaftaran: workflow n8n untuk pembuatan pembayaran, handling callback Doku, pengecekan status otomatis, dan notifikasi WhatsApp (Watzap) setelah pembayaran berhasil",
+                        "Dashboard Guru: manajemen kelas & pertemuan, absensi, nilai, hasil kuis, rich text editor, dark mode",
+                        "Role Admin dengan autentikasi terpisah (Strapi Admin Panel), dashboard, dan layout responsif",
+                        "e-Maktabah: daftar buku dengan pencarian, filter berdasarkan kursus/pelajaran, dan halaman detail PDF",
+                        "Komponen reusable: Bottom Navigation, Tab Navigation, Skeleton Loading, Modal, ScoreCircle",
+                        "Abstraksi service layer API, caching React Query, dan deployment CI/CD ke Cloudflare Pages"
+                    ],
+                    "featuresEn": [
+                        "Authentication (login, register) with step validation, error handling, and route protection",
+                        "Home page: schedule, quiz/deadline filter, muroja'ah video, attendance (clock in/out), dynamic greeting by gender",
+                        "Class page with course categories, detail page with schedule, quiz, grades, syllabus, and attendance tabs",
+                        "Lesson detail with rich text content, Arabic text support, zoom in/out, and syllabus download",
+                        "Quiz: multiple choice, single choice, true/false, essay; retake logic, images in RTE, result with score visualization",
+                        "Profile: user data, avatar upload, change password, SPP payment summary with responsibility & due date",
+                        "SPP payment page with sorting, filter, load more; Doku payment gateway with n8n webhook callback and WhatsApp notification",
+                        "Multi-step registration flow with dynamic commitments from Strapi, address autocomplete, phone code selector, and conditional fields",
+                        "Doku payment gateway on registration: n8n workflow for payment creation, callback handling, auto status check, and WhatsApp notification (Watzap)",
+                        "Teacher dashboard: class & lesson management, attendance, grades, quiz results, rich text editor, dark mode",
+                        "Admin role with separate authentication (Strapi Admin Panel), dashboard, and responsive layout",
+                        "e-Maktabah: book listing with search, filter by course/lesson, and PDF detail page",
+                        "Reusable components: Bottom Navigation, Tab Navigation, Skeleton Loading, Modal, ScoreCircle",
+                        "API service layer abstraction, React Query caching, and Cloudflare Pages CI/CD deployment"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "company": "Rakitek",
+            "logo": "/assets/rakitek.webp",
+            "position": "Web Programmer",
+            "type": "Full-time WFH",
+            "location": "Jakarta, Indonesia",
+            "period": "Apr 2022 - Feb 2023",
+            "website": "https://rakitek.com",
+            "description": "Ruang Kreasi Inovasi Teknologi (Rakitek) is an IT consulting company founded in 2017 and based in South Jakarta. It builds software and digital solutions for coworking spaces, serviced offices, and event businesses.",
+            "descriptionId": "Ruang Kreasi Inovasi Teknologi (Rakitek) adalah perusahaan konsultan IT yang didirikan pada 2017 dan berbasis di Jakarta Selatan. Perusahaan ini membangun perangkat lunak dan solusi digital untuk bisnis coworking space, serviced office, dan event.",
+            "links": [
+                {
+                    "label": "Photos",
+                    "url": "https://drive.google.com/file/d/14JePYsb-7cy9qWyX7vCxIr8CHy0t7jp5/view?usp=share_link"
+                },
+                {
+                    "label": "Video",
+                    "url": "https://www.youtube.com/watch?v=6ctdEJ5wctA&list=PLGwA21JLpwoMtXpnQHnhv0kasbL2tXWlt&index=24"
+                },
+                {
+                    "label": "Files",
+                    "url": "https://drive.google.com/file/d/1hSvLMee5s4q_e4BjKAPmXtS4B7Mmc-bJ/view?usp=share_link"
+                }
+            ],
+            "projects": [
+                {
+                    "id": "rakomsis-v3",
+                    "name": "Rakomsis v3.0",
+                    "screenshot": "/assets/rakomsis-app.webp",
+                    "description": "Complete redevelopment of a business management system for serviced offices, coworking spaces, and event spaces.",
+                    "descriptionId": "Pengembangan ulang lengkap sistem manajemen bisnis untuk serviced office, coworking space, dan event space.",
+                    "role": "Full Stack Developer",
+                    "technologies": ["Laravel", "MySQL", "JavaScript", "jQuery", "Ajax"],
+                    "features": [
+                        "Manajemen terintegrasi untuk berbagai jenis bisnis",
+                        "Migrasi data dari v1.5 ke v3.0",
+                        "Sistem booking dan reservasi",
+                        "Manajemen invoice dan pembayaran",
+                        "Manajemen hubungan pelanggan"
+                    ],
+                    "featuresEn": [
+                        "Integrated management for multiple business types",
+                        "Data migration from v1.5 to v3.0",
+                        "Booking and reservation system",
+                        "Invoice and payment management",
+                        "Customer relationship management"
+                    ]
+                },
+                {
+                    "id": "rakomsis-portal",
+                    "name": "Portal Rakomsis",
+                    "screenshot": "/assets/portal-rakomsis.webp",
+                    "description": "Customer-facing portal for Rakomsis users built with Vue.js.",
+                    "descriptionId": "Portal customer untuk pengguna Rakomsis yang dibangun dengan Vue.js.",
+                    "role": "Frontend Developer",
+                    "technologies": ["Vue.js", "JavaScript", "REST API", "CSS3"],
+                    "features": [
+                        "Antarmuka booking yang user-friendly",
+                        "Pengecekan ketersediaan real-time",
+                        "Integrasi payment gateway",
+                        "Riwayat booking dan manajemen"
+                    ],
+                    "featuresEn": [
+                        "User-friendly booking interface",
+                        "Real-time availability checking",
+                        "Payment gateway integration",
+                        "Booking history and management"
+                    ]
+                },
+                {
+                    "id": "atm-checklist",
+                    "name": "ATM Checklist Application",
+                    "description": "Mobile application for ATM maintenance checklist and monitoring.",
+                    "descriptionId": "Aplikasi mobile untuk checklist pemeliharaan dan monitoring ATM.",
+                    "role": "Support Developer",
+                    "technologies": ["Flutter", "Dart", "REST API"],
+                    "features": [
+                        "Formulir checklist digital",
+                        "Dokumentasi foto",
+                        "Dukungan offline dengan sinkronisasi",
+                        "Pelaporan dan analitik"
+                    ],
+                    "featuresEn": [
+                        "Digital checklist forms",
+                        "Photo documentation",
+                        "Offline support with sync",
+                        "Reporting and analytics"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "company": "Pragma Informatika",
+            "logo": "/assets/pragma.webp",
+            "position": "Web Developer",
+            "type": "Full-time WFO",
+            "location": "Bandung, Indonesia",
+            "period": "Oct 2021 - Mar 2022",
+            "website": "https://pragmainf.id",
+            "description": "Pragma Informatika is a software house based in Bandung, founded in 2010. It develops web and mobile applications using PHP and Java with MySQL, Oracle, and PostgreSQL for government, state-owned enterprise, and private-sector clients.",
+            "descriptionId": "Pragma Informatika adalah software house berbasis di Bandung yang didirikan pada 2010. Perusahaan mengembangkan aplikasi web dan mobile menggunakan PHP dan Java dengan database MySQL, Oracle, dan PostgreSQL untuk klien pemerintah, BUMN, dan swasta.",
+            "links": [
+                {
+                    "label": "Photos",
+                    "url": "https://drive.google.com/drive/folders/1sx-9HrZ7BGOPNftD9G21hOCsUnc0TQYg?usp=share_link"
+                },
+                {
+                    "label": "Video",
+                    "url": "https://www.youtube.com/watch?v=-N7urlAJ5Zc&list=PLGwA21JLpwoMtXpnQHnhv0kasbL2tXWlt&index=21"
+                },
+                {
+                    "label": "Files",
+                    "url": "https://drive.google.com/file/d/1KBzWCtZ1-MU5jo6BgouwUOAczMEQXOsX/view?usp=share_link"
+                },
+                {
+                    "label": "Report (PDF)",
+                    "url": "https://drive.google.com/file/d/1pF32Rd0_fX_Q19uol-4lpMNTb3OVH7vH/view"
+                }
+            ],
+            "projects": [
+                {
+                    "id": "hsse-kalimantan",
+                    "name": "HSSE Kalimantan Multi-Tenant",
+                    "screenshot": "/assets/hsse-kalimantan.webp",
+                    "description": "Health, Safety, Security, and Environment management system with multi-tenant architecture for PLN units.",
+                    "descriptionId": "Sistem manajemen Health, Safety, Security, dan Environment dengan arsitektur multi-tenant untuk unit PLN.",
+                    "role": "Full Stack Developer",
+                    "technologies": ["Laravel 8", "MySQL", "JavaScript", "Multi-tenant"],
+                    "features": [
+                        "Upgrade dari Laravel 5.7 ke Laravel 8",
+                        "Implementasi arsitektur multi-tenant",
+                        "Dukungan untuk berbagai unit PLN di Kalimantan",
+                        "Manajemen data terpusat dengan isolasi tenant"
+                    ],
+                    "featuresEn": [
+                        "Upgraded from Laravel 5.7 to Laravel 8",
+                        "Multi-tenant architecture implementation",
+                        "Support for multiple PLN units across Kalimantan",
+                        "Centralized data management with tenant isolation"
+                    ]
+                },
+                {
+                    "id": "hsse-pin-security",
+                    "name": "HSSE PIN Security Feature",
+                    "screenshot": "/assets/hsse-kalbar.webp",
+                    "description": "Enhanced security feature with PIN authentication for the HSSE application.",
+                    "descriptionId": "Fitur keamanan yang ditingkatkan dengan autentikasi PIN untuk aplikasi HSSE.",
+                    "role": "Backend Developer",
+                    "technologies": ["Laravel", "MySQL", "JavaScript", "Security"],
+                    "features": [
+                        "Sistem autentikasi berbasis PIN",
+                        "Pembuatan dokumentasi pengguna",
+                        "Implementasi peningkatan keamanan",
+                        "Integrasi dengan sistem HSSE yang ada"
+                    ],
+                    "featuresEn": [
+                        "PIN-based authentication system",
+                        "User documentation creation",
+                        "Security enhancement implementation",
+                        "Integration with existing HSSE system"
+                    ]
+                },
+                {
+                    "id": "waskita-karya",
+                    "name": "Waskita Karya",
+                    "screenshot": "/assets/waskita-app.webp",
+                    "description": "Custom feature development for Waskita Karya based on specific requirements.",
+                    "descriptionId": "Pengembangan fitur khusus untuk Waskita Karya berdasarkan kebutuhan spesifik.",
+                    "role": "Full Stack Developer",
+                    "technologies": ["Laravel", "MySQL", "JavaScript", "jQuery"],
+                    "features": [
+                        "Implementasi fitur khusus",
+                        "Analisis kebutuhan dan pengembangan",
+                        "Desain dan optimasi database",
+                        "Fungsionalitas spesifik klien"
+                    ],
+                    "featuresEn": [
+                        "Custom feature implementation",
+                        "Requirements analysis and development",
+                        "Database design and optimization",
+                        "Client-specific functionality"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 1,
+            "company": "PPS Ibnu Mas'ud",
+            "logo": "/assets/ibnumasud.webp",
+            "position": "Software Developer",
+            "type": "Internship",
+            "location": "Kampar, Indonesia",
+            "period": "Feb 2020 - Mar 2020",
+            "website": null,
+            "description": "Pondok Pesantren Tahfidz Al-Qur'an Ibnu Mas'ud Kampar is an Islamic boarding school focused on Quran memorization, located in Kampar, Riau. The internship project replaced a manual paper-based employee attendance process with a web-based information system.",
+            "descriptionId": "Pondok Pesantren Tahfidz Al-Qur'an Ibnu Mas'ud Kampar adalah pesantren yang berfokus pada hafalan Al-Qur'an di Kampar, Riau. Proyek magang ini menggantikan proses absensi karyawan manual berbasis kertas dengan sistem informasi berbasis web.",
+            "links": [
+                {
+                    "label": "GitHub",
+                    "url": "https://github.com/programmercintasunnah/kp-ibnu_masud_kampar-ci"
+                },
+                {
+                    "label": "Photos",
+                    "url": "https://drive.google.com/drive/folders/1i2_93PzA_nvZKagSAYdxwfaMu4s5L6ql?usp=sharing"
+                },
+                {
+                    "label": "Video",
+                    "url": "https://www.youtube.com/watch?v=OCB_eXbcEJc&list=PLGwA21JLpwoMtXpnQHnhv0kasbL2tXWlt&index=12"
+                },
+                {
+                    "label": "Report (PDF)",
+                    "url": "https://drive.google.com/file/d/1qmRCHve8qW3IZ11KZreBczAQFuaUd55z/view?usp=sharing"
+                }
+            ],
+            "projects": [
+                {
+                    "id": "presence-app",
+                    "name": "Presence App",
+                    "screenshot": "/assets/kp-app.webp",
+                    "description": "Employee attendance management system for a college internship assignment at PPS Ibnu Mas'ud, built with CodeIgniter and MySQL.",
+                    "descriptionId": "Sistem manajemen kehadiran karyawan untuk tugas magang kampus di PPS Ibnu Mas'ud, dibangun dengan CodeIgniter dan MySQL.",
+                    "role": "Developer",
+                    "technologies": ["PHP", "CodeIgniter", "MySQL"],
+                    "features": [
+                        "Pelacakan kehadiran karyawan",
+                        "Fitur absensi kehadiran",
+                        "Laporan kehadiran",
+                        "Dashboard admin untuk mengelola kehadiran"
+                    ],
+                    "featuresEn": [
+                        "Employee attendance tracking",
+                        "Presence functionality",
+                        "Attendance reports",
+                        "Admin dashboard for managing attendance"
+                    ]
+                }
+            ]
+        }
+    ],
+    "personalProjects": [
+        {
+            "id": "personal-1",
+            "name": "E-Voting Blockchain",
+            "screenshot": "/assets/ta-app.webp",
+            "description": "E-voting system using React.js and Ethereum blockchain for secure and transparent voting.",
+            "role": "Full Stack Developer",
+            "technologies": ["React.js", "Ethereum", "Solidity", "Web3.js"],
+            "photoLink": "https://drive.google.com/drive/folders/1Ldwc4z4sRoZ02m_47MnZ1av-j8vme_Hp?usp=share_link",
+            "youtubeLink": "https://drive.google.com/file/d/1YnWmXpUCLXGvckNcPK6kS79mYmT_gnWw/view?usp=share_link",
+            "fileLink": "https://drive.google.com/file/d/13sBtMJYVvlvJBxXhCkTvrWKestOpHS9V/view?usp=sharing"
+        },
+        {
+            "id": "personal-2",
+            "name": "Darsal App",
+            "screenshot": "/assets/darsal-app.webp",
+            "description": "Islamic learning and education platform for Quran and Hadith studies.",
+            "role": "Full Stack Developer",
+            "technologies": ["Laravel 8", "MySQL", "Vue.js"],
+            "photoLink": "https://www.youtube.com/watch?v=6Mz97_9o9Ww&list=PLGwA21JLpwoMtXpnQHnhv0kasbL2tXWlt&index=27",
+            "youtubeLink": "https://www.youtube.com/watch?v=Y0H0mE7x_TQ&list=PLGwA21JLpwoMtXpnQHnhv0kasbL2tXWlt&index=21",
+            "fileLink": "https://drive.google.com/drive/folders/1K-BJsYkDLeG1ovnBlyJDp7piKHCHFyKA?usp=share_link"
+        }
+    ]
+}

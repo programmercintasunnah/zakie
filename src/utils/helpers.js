@@ -1,51 +1,64 @@
-import moment from 'moment';
-
 /**
- * Menghitung total pengalaman kerja dari tanggal mulai
- * @param {string} startDate - Tanggal mulai kerja format DD-MM-YYYY
- * @returns {object} - { tahun, bulan, formatted }
+ * Menghitung total pengalaman kerja dari tanggal mulai (DD-MM-YYYY).
+ * @param {string} startDate
+ * @returns {{tahun: number, bulan: number, formatted: string, formattedId: string}}
  */
 export const calculateExperience = (startDate) => {
-    const mulaiKerja = moment(startDate, 'DD-MM-YYYY');
-    const sekarang = moment();
+  const empty = {
+    tahun: 0,
+    bulan: 0,
+    formatted: "0 years",
+    formattedId: "0 tahun",
+  };
+  if (!startDate) return empty;
 
-    const selisihTahun = sekarang.diff(mulaiKerja, 'years');
-    mulaiKerja.add(selisihTahun, 'years');
-    const selisihBulan = sekarang.diff(mulaiKerja, 'months');
+  const [day, month, year] = startDate.split("-").map(Number);
+  if (!day || !month || !year) return empty;
 
-    const formatted = `${selisihTahun} year${selisihTahun > 1 ? 's' : ''} and ${selisihBulan} month${selisihBulan > 1 ? 's' : ''}`;
+  const start = new Date(year, month - 1, day);
+  const now = new Date();
 
-    return {
-        tahun: selisihTahun,
-        bulan: selisihBulan,
-        formatted
-    };
+  let totalMonths =
+    (now.getFullYear() - start.getFullYear()) * 12 +
+    (now.getMonth() - start.getMonth());
+
+  if (now.getDate() < start.getDate()) totalMonths -= 1;
+  totalMonths = Math.max(0, totalMonths);
+
+  const tahun = Math.floor(totalMonths / 12);
+  const bulan = totalMonths % 12;
+
+  return {
+    tahun,
+    bulan,
+    formatted: `${tahun} year${tahun === 1 ? "" : "s"} and ${bulan} month${
+      bulan === 1 ? "" : "s"
+    }`,
+    formattedId: `${tahun} tahun ${bulan} bulan`,
+  };
 };
 
 /**
- * Replace placeholders dalam string dengan values
- * @param {string} text - Text dengan placeholders {key}
- * @param {object} values - Object dengan key-value untuk replace
- * @returns {string} - Text dengan placeholders diganti
+ * Replace placeholder {key} di dalam string.
+ * @param {string} text
+ * @param {Record<string, string>} values
+ * @returns {string}
  */
 export const replacePlaceholders = (text, values) => {
-    if (!text || !values) return text;
+  if (!text || !values) return text;
 
-    let result = text;
-    Object.entries(values).forEach(([key, value]) => {
-        const placeholder = `{${key}}`;
-        result = result.replace(new RegExp(placeholder, 'g'), value);
-    });
-
-    return result;
+  return Object.entries(values).reduce((result, [key, value]) => {
+    return result.split(`{${key}}`).join(value);
+  }, text);
 };
 
 /**
- * Get icon component berdasarkan nama icon string
- * @param {string} iconName - Nama icon dari react-icons
- * @param {object} icons - Object berisi import icons
- * @returns {JSX.Element} - Icon component
+ * Membuat slug sederhana untuk kebutuhan key/filter.
+ * @param {string} value
+ * @returns {string}
  */
-export const getIconComponent = (iconName, icons) => {
-    return icons[iconName] || null;
-};
+export const slugify = (value = "") =>
+  value
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");

@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <link
+      rel="preload"
+      as="image"
+      href="/assets/zakie-circle.webp"
+      fetchpriority="high"
+    />
+    <meta name="theme-color" content="#0f172a" />
+    <meta name="color-scheme" content="light dark" />
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem("theme");
+          var prefersDark = window.matchMedia(
+            "(prefers-color-scheme: dark)"
+          ).matches;
+          if (stored === "dark" || (!stored && prefersDark)) {
+            document.documentElement.classList.add("dark");
+            document.documentElement.style.colorScheme = "dark";
+          }
+        } catch (error) {
+          // ignore storage access errors
+        }
+      })();
+    </script>
+
+    <title>Muhammad Zakie — Software Engineer</title>
+    <meta
+      name="description"
+      content="Portfolio of Muhammad Zakie, a software engineer specializing in Go, React, TypeScript, and PostgreSQL. Explore professional projects and experience in sharia finance, SaaS, and web application development."
+    />
+    <meta
+      name="keywords"
+      content="Muhammad Zakie, Zakie, Software Engineer, Full Stack Developer, Backend Developer, Golang, React, TypeScript, Portfolio, Pekanbaru, Indonesia"
+    />
+    <meta name="author" content="Muhammad Zakie" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://zakie.vercel.app/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="id_ID" />
+    <meta property="og:locale:alternate" content="en_US" />
+    <meta
+      property="og:site_name"
+      content="Muhammad Zakie — Software Engineer"
+    />
+    <meta property="og:title" content="Muhammad Zakie — Software Engineer" />
+    <meta
+      property="og:description"
+      content="Portfolio of Muhammad Zakie, a software engineer specializing in Go, React, TypeScript, and PostgreSQL."
+    />
+    <meta property="og:url" content="https://zakie.vercel.app/" />
+    <meta property="og:image" content="https://zakie.vercel.app/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Muhammad Zakie — Software Engineer"
+    />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Muhammad Zakie — Software Engineer" />
+    <meta
+      name="twitter:description"
+      content="Portfolio of Muhammad Zakie, a software engineer specializing in Go, React, TypeScript, and PostgreSQL."
+    />
+    <meta
+      name="twitter:image"
+      content="https://zakie.vercel.app/og-image.png"
+    />
+    <meta
+      name="twitter:image:alt"
+      content="Muhammad Zakie — Software Engineer"
+    />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://zakie.vercel.app/#website",
+            "url": "https://zakie.vercel.app/",
+            "name": "Muhammad Zakie — Software Engineer",
+            "description": "Portfolio of Muhammad Zakie, a software engineer specializing in Go, React, TypeScript, and PostgreSQL.",
+            "inLanguage": ["id", "en"],
+            "publisher": { "@id": "https://zakie.vercel.app/#person" }
+          },
+          {
+            "@type": "Person",
+            "@id": "https://zakie.vercel.app/#person",
+            "name": "Muhammad Zakie",
+            "jobTitle": "Software Engineer",
+            "description": "Software engineer building modern web applications with Go, React, TypeScript, and PostgreSQL.",
+            "url": "https://zakie.vercel.app/",
+            "image": "https://zakie.vercel.app/assets/zakie-fotor.webp",
+            "email": "mailto:muhammadzakie22g@gmail.com",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Pekanbaru",
+              "addressRegion": "Riau",
+              "addressCountry": "ID"
+            },
+            "alumniOf": {
+              "@type": "CollegeOrUniversity",
+              "name": "UIN Sultan Syarif Kasim Riau"
+            },
+            "knowsLanguage": ["id", "en"],
+            "sameAs": [
+              "https://www.linkedin.com/in/muhammadzakie/",
+              "https://github.com/programmercintasunnah",
+              "https://gitlab.com/zakiepragma",
+              "https://instagram.com/zakie.alelm",
+              "https://www.youtube.com/channel/UCfLBG0ean6WnQ1ftTsyMt0w"
+            ]
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <noscript>
+      <style>
+        .reveal {
+          opacity: 1 !important;
+          transform: none !important;
+        }
+      </style>
+    </noscript>
+    <div id="root"></div>
+    <noscript>
+      Website ini membutuhkan JavaScript untuk ditampilkan. Silakan aktifkan
+      JavaScript di browser Anda.
+    </noscript>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

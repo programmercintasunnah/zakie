@@ -1,0 +1,132 @@
+{
+    "name": "Muhammad Zakie",
+    "nickName": "Zakie",
+    "jobTitle": "Software Engineer",
+    "jobTitleId": "Software Engineer",
+    "startWorkDate": "15-10-2021",
+    "bioHome": "I am a software engineer with a strong passion for building modern and high-quality web applications. I specialize in technologies such as Go, React, TypeScript, JavaScript, jQuery, Ajax, MySQL, PostgreSQL and Linux. With {experience} of experience, I have developed a solid foundation in software development principles and enjoy working on both front-end and back-end development. I am a fast learner, a problem solver, and someone who consistently seeks opportunities to improve my skills and deliver better solutions. Let's work together to build something exceptional.",
+    "bioHomeId": "Saya adalah software engineer yang bersemangat membangun aplikasi web modern dan berkualitas tinggi. Saya menguasai teknologi seperti Go, React, TypeScript, JavaScript, jQuery, Ajax, MySQL, PostgreSQL, dan Linux. Dengan pengalaman {experience}, saya memiliki fondasi yang kuat dalam prinsip pengembangan perangkat lunak serta senang mengerjakan sisi front-end maupun back-end. Saya cepat belajar, suka memecahkan masalah, dan selalu mencari peluang untuk meningkatkan kemampuan serta memberikan solusi yang lebih baik. Mari bekerja sama membangun sesuatu yang luar biasa.",
+    "bioAbout": "My name is {name}, and I graduated from State Islamic University Sultan Syarif Kasim Riau (UIN Suska Riau) with a Bachelor's degree in Information Technology. I studied from 2017 to 2021 and graduated with a GPA of 3.51 out of 4.00. I am a passionate learner and always looking for opportunities to improve my skills and knowledge in the field of technology.",
+    "bioAboutId": "Nama saya {name}, lulusan Universitas Islam Negeri Sultan Syarif Kasim Riau (UIN Suska Riau) dengan gelar Sarjana Teknologi Informasi. Saya kuliah dari tahun 2017 hingga 2021 dan lulus dengan IPK 3,51 dari 4,00. Saya pembelajar yang bersemangat dan selalu mencari peluang untuk meningkatkan keterampilan serta pengetahuan di bidang teknologi.",
+    "cvLink": "https://drive.google.com/drive/folders/15O8n-smVbigJYJV2BbfdRZ2feBKaprLc?usp=share_link",
+    "images": {
+        "profile": "/assets/zakie-fotor.webp",
+        "circle": "/assets/zakie-circle.webp",
+        "icon": "/assets/zakie-circle.webp"
+    },
+    "personalData": [
+        { "label": "Name", "labelId": "Nama", "value": "Muhammad Zakie" },
+        {             "label": "Place, Date of Birth",
+            "labelId": "Tempat, Tanggal Lahir",
+            "value": "Pd. Merbau, September 22, 1998",
+            "valueId": "Pd. Merbau, 22 September 1998" },
+        { "label": "Nationality", "labelId": "Kewarganegaraan", "value": "Indonesia" },
+        {             "label": "Hobby",
+            "labelId": "Hobi",
+            "value": "Coding, Football, Badminton",
+            "valueId": "Coding, Sepak Bola, Bulu Tangkis" },
+        { "label": "Address", "labelId": "Alamat", "value": "Pekanbaru, Riau, Indonesia" }
+    ],
+    "educationData": [
+        {
+            "label": "Elementary School",
+            "labelId": "Sekolah Dasar",
+            "value": "SD Negeri 015 Koto Perambahan",
+            "period": "2005-2011"
+        },
+        {
+            "label": "Junior High School",
+            "labelId": "Sekolah Menengah Pertama",
+            "value": "MTs Negeri Kampar",
+            "period": "2011-2014"
+        },
+        {
+            "label": "Senior High School",
+            "labelId": "Sekolah Menengah Atas",
+            "value": "SMA Negeri 1 Kampar Timur",
+            "period": "2014-2017"
+        },
+        {
+            "label": "University",
+            "labelId": "Perguruan Tinggi",
+            "value": "UIN Suska Riau",
+            "period": "2017-2021"
+        }
+    ],
+    "certificates": [
+        {
+            "id": 1,
+            "title": "Belajar Dasar Pemrograman Web",
+            "issuer": "Dicoding",
+            "date": "18 Juli 2022",
+            "image": "/assets/certificate1.webp",
+            "alt": "Sertifikat Dicoding Belajar Dasar Pemrograman Web"
+        },
+        {
+            "id": 2,
+            "title": "International Guest Lecture — Certificate of Attendance",
+            "issuer": "UIN Suska Riau",
+            "date": "9 Juli 2021",
+            "image": "/assets/certificate2.webp",
+            "alt": "Sertifikat International Guest Lecture UIN Suska Riau"
+        },
+        {
+            "id": 3,
+            "title": "Belajar Membuat Aplikasi Android untuk Pemula",
+            "issuer": "Dicoding",
+            "date": "19 Januari 2020",
+            "image": "/assets/certificate3.webp",
+            "alt": "Sertifikat Dicoding Belajar Membuat Aplikasi Android untuk Pemula"
+        },
+        {
+            "id": 4,
+            "title": "Tren Implementasi dan Pengembangan Augmented Reality",
+            "issuer": "Dicoding",
+            "date": "8 April 2021",
+            "image": "/assets/certificate4.webp",
+            "alt": "Sertifikat Dicoding Tren Implementasi dan Pengembangan Augmented Reality"
+        },
+        {
+            "id": 5,
+            "title": "Kesalahan Umum Ketika Belajar Pemrograman dengan Python",
+            "issuer": "Dicoding",
+            "date": "29 April 2021",
+            "image": "/assets/certificate5.webp",
+            "alt": "Sertifikat Dicoding Kesalahan Umum Ketika Belajar Pemrograman dengan Python"
+        },
+        {
+            "id": 6,
+            "title": "Membangun UI Android Menggunakan Material Design",
+            "issuer": "Dicoding",
+            "date": "25 Maret 2021",
+            "image": "/assets/certificate6.webp",
+            "alt": "Sertifikat Dicoding Membangun UI Android Menggunakan Material Design"
+        }
+    ],
+    "personalProjects": [
+        {
+            "id": "personal-1",
+            "name": "E-Voting Blockchain",
+            "screenshot": "/assets/ta-app.webp",
+            "description": "E-voting system using React.js and Ethereum blockchain for secure and transparent voting",
+            "descriptionId": "Sistem e-voting menggunakan React.js dan blockchain Ethereum untuk pemungutan suara yang aman dan transparan",
+            "technologies": ["React.js", "Ethereum", "Solidity", "Web3.js"],
+            "projectType": "personal",
+            "photoLink": "https://drive.google.com/drive/folders/1Ldwc4z4sRoZ02m_47MnZ1av-j8vme_Hp?usp=share_link",
+            "youtubeLink": "https://drive.google.com/file/d/1YnWmXpUCLXGvckNcPK6kS79mYmT_gnWw/view?usp=share_link",
+            "fileLink": "https://drive.google.com/file/d/13sBtMJYVvlvJBxXhCkTvrWKestOpHS9V/view?usp=sharing"
+        },
+        {
+            "id": "personal-2",
+            "name": "Darsal App",
+            "screenshot": "/assets/darsal-app.webp",
+            "description": "Islamic learning and education platform for Quran and Hadith studies",
+            "descriptionId": "Platform pembelajaran dan pendidikan Islam untuk kajian Al-Qur'an dan Hadis",
+            "technologies": ["Laravel 8", "MySQL", "Vue.js"],
+            "projectType": "personal",
+            "photoLink": "https://www.youtube.com/watch?v=6Mz97_9o9Ww&list=PLGwA21JLpwoMtXpnQHnhv0kasbL2tXWlt&index=27",
+            "youtubeLink": "https://www.youtube.com/watch?v=Y0H0mE7x_TQ&list=PLGwA21JLpwoMtXpnQHnhv0kasbL2tXWlt&index=21",
+            "fileLink": "https://drive.google.com/drive/folders/1K-BJsYkDLeG1ovnBlyJDp7piKHCHFyKA?usp=share_link"
+        }
+    ]
+}

@@ -1,70 +1,121 @@
-# Getting Started with Create React App
+# Zakie Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Personal portfolio website of **Muhammad Zakie**, a software engineer. The site is fully static and prerendered at build time: every page is shipped as real HTML, then hydrated on the client. All content lives in JSON files under `src/data`, so it can be updated without touching the components.
 
-## Available Scripts
+## Tech Stack
 
-In the project directory, you can run:
+- React 18 + Vite 7
+- Tailwind CSS 3 (light/dark mode)
+- react-icons
+- Plain JSON data layer (static imports)
+- Build-time prerendering with `react-dom/server`
+- PWA via `vite-plugin-pwa` (Workbox)
+- Vitest + Testing Library
 
-### `npm start`
+## Getting Started
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```bash
+npm install
+npm run dev
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Open http://localhost:3000.
 
-### `npm test`
+## Scripts
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+| Command              | Description                                                       |
+| -------------------- | ----------------------------------------------------------------- |
+| `npm run dev`        | Start the development server                                      |
+| `npm run build`      | Build the client, prerender HTML, and generate the service worker |
+| `npm run preview`    | Preview the production build locally                              |
+| `npm test`           | Run the test suite once                                           |
+| `npm run test:watch` | Run tests in watch mode                                           |
+| `npm run lint`       | Lint the project with ESLint                                      |
+| `npm run format`     | Format the project with Prettier                                  |
+| `npm run og`         | Regenerate `public/og-image.png` (1200x630)                       |
+| `npm run icons`      | Regenerate SVG/PNG app icons from `public/icon.svg`               |
 
-### `npm run build`
+> `npm install` may require `--legacy-peer-deps` on older npm versions due to the Vitest peer dependency tree.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Features
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **Prerendered static HTML** for SEO and fast first paint, hydrated with `hydrateRoot`.
+- **Bilingual content** (Indonesian default, English optional) with a navbar toggle persisted in `localStorage`.
+- **Dark mode** with a no-flash inline script, `prefers-color-scheme` fallback, and persisted preference.
+- **Reveal-on-scroll** animation that respects `prefers-reduced-motion` and degrades gracefully without JavaScript.
+- **Accessible UI**: skip-to-content link, keyboard-navigable tabs, focus-trapped modals, ARIA labels.
+- **Security headers** for Vercel and Netlify/Cloudflare (`vercel.json`, `public/_headers`).
+- **PWA**: installable with SVG/PNG and maskable icons, app-shell precache, and runtime image caching.
+- **Performance**: preloaded hero image, `fetchpriority`, and `content-visibility` for below-the-fold grids.
+- **Tests** covering helpers, contexts, navigation, hero, about tabs, portfolio interactions, and reveal.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Project Structure
 
-### `npm run eject`
+```
+├── index.html                 # HTML shell, SEO meta tags, theme script, JSON-LD
+├── eslint.config.mjs          # ESLint flat config
+├── vercel.json                # Security and cache headers for Vercel
+├── scripts/
+│   ├── prerender.mjs          # Renders the app into dist/index.html
+│   ├── generate-og.mjs        # Generates the Open Graph banner
+│   └── generate-icons.mjs     # Generates SVG/PNG app icons
+├── public/
+│   ├── assets/                # Images (WebP)
+│   ├── icon.svg               # Source icon
+│   ├── icon-192.png           # PWA icon
+│   ├── icon-512.png           # PWA icon
+│   ├── maskable-512.png       # PWA maskable icon
+│   ├── og-image.png           # Social share banner
+│   ├── _headers               # Headers for Netlify/Cloudflare
+│   └── ...
+└── src/
+    ├── components/            # Navbar, Home, About, Portfolio, Footer, Modal, Reveal
+    ├── context/               # LanguageContext, ProfileContext
+    ├── data/                  # Editable site content
+    │   ├── profile.json       # Profile, bio, personal data, education, certificates
+    │   ├── contacts.json      # Contact info and social links
+    │   ├── experiences.json   # Work experience, projects, personal projects
+    │   ├── skills.json        # Skills grouped by category
+    │   └── navigation.json    # Navbar menu items
+    ├── hooks/                 # Active section, scroll lock, reveal
+    ├── pages/                 # Page composition
+    ├── test/                  # Test setup and provider helper
+    ├── utils/                 # Helper functions
+    ├── App.jsx
+    ├── entry-server.jsx       # Server render entry for prerendering
+    ├── i18n.js                # ID/EN dictionaries
+    └── main.jsx               # Hydration and service worker registration
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Updating Content
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Edit the relevant file in `src/data/`.
+2. Add or replace images in `public/assets/`.
+3. Reference them with an absolute path, e.g. `/assets/project.webp`.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Bilingual fields
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- `profile.json`: `bioHome`/`bioHomeId`, `bioAbout`/`bioAboutId`, `label`/`labelId`, `value`/`valueId`.
+- `experiences.json`: `description`/`descriptionId`, `features`/`featuresEn`.
+- `navigation.json`: `label`/`labelId`.
 
-## Learn More
+If an Indonesian variant is missing, the English value is used as a fallback.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Deployment
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+`npm run build` produces a static `dist/` folder that can be deployed to Vercel, Netlify, Cloudflare Pages, or any static host. The canonical URL in `index.html`, `robots.txt`, and `sitemap.xml` currently points to `https://zakie.vercel.app/`; update these if the domain changes.
 
-### Code Splitting
+Security headers are defined in `vercel.json` and `public/_headers`. Long-lived caching is applied to hashed assets, while `sw.js` is always revalidated.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Lighthouse
 
-### Analyzing the Bundle Size
+Latest audit on the production build:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+| Category       | Mobile | Desktop |
+| -------------- | ------ | ------- |
+| Performance    | 81     | 99      |
+| Accessibility  | 100    | 100     |
+| Best Practices | 100    | 100     |
+| SEO            | 100    | 100     |
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Mobile performance is limited by the CPU-throttled lab environment (software rendering); accessibility, best practices, and SEO are perfect.

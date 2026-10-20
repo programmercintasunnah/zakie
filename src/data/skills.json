@@ -1,0 +1,27 @@
+{
+    "skills": [
+        { "id": 1, "name": "Golang", "category": "Backend", "icon": "FaCode" },
+        { "id": 2, "name": "Node.js", "category": "Backend", "icon": "FaNodeJs" },
+        { "id": 3, "name": "PHP", "category": "Backend", "icon": "FaPhp" },
+        { "id": 4, "name": "Laravel", "category": "Backend", "icon": "FaLaravel" },
+        { "id": 5, "name": "CodeIgniter", "category": "Backend", "icon": "FaCode" },
+        { "id": 6, "name": "REST API", "category": "Backend", "icon": "FaServer" },
+        { "id": 7, "name": "React", "category": "Frontend", "icon": "FaReact" },
+        { "id": 8, "name": "Vue.js", "category": "Frontend", "icon": "FaVuejs" },
+        { "id": 9, "name": "Svelte", "category": "Frontend", "icon": "FaCode" },
+        { "id": 10, "name": "TypeScript", "category": "Frontend", "icon": "FaCode" },
+        { "id": 11, "name": "JavaScript", "category": "Frontend", "icon": "FaJs" },
+        { "id": 12, "name": "jQuery", "category": "Frontend", "icon": "FaCode" },
+        { "id": 13, "name": "Tailwind CSS", "category": "Frontend", "icon": "FaCode" },
+        { "id": 14, "name": "React Native", "category": "Mobile", "icon": "FaMobileAlt" },
+        { "id": 15, "name": "Flutter", "category": "Mobile", "icon": "FaMobileAlt" },
+        { "id": 16, "name": "PostgreSQL", "category": "Database", "icon": "FaDatabase" },
+        { "id": 17, "name": "MySQL", "category": "Database", "icon": "FaDatabase" },
+        { "id": 18, "name": "MongoDB", "category": "Database", "icon": "FaDatabase" },
+        { "id": 19, "name": "Docker", "category": "DevOps & Tools", "icon": "FaDocker" },
+        { "id": 20, "name": "AWS", "category": "DevOps & Tools", "icon": "FaAws" },
+        { "id": 21, "name": "Azure", "category": "DevOps & Tools", "icon": "FaCloud" },
+        { "id": 22, "name": "Git", "category": "DevOps & Tools", "icon": "FaGitAlt" },
+        { "id": 23, "name": "Linux", "category": "DevOps & Tools", "icon": "FaLinux" }
+    ]
+}
